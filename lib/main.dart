@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // A widget which will be started on application startup
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -28,12 +27,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // The title text which will be shown on the action bar
         title: Text(title),
       ),
       body: Center(
         child: Text(
-          'Hello, World!',
+          'Hello, World! ',
         ),
       ),
     );
