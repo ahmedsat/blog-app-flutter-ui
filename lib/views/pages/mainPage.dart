@@ -1,4 +1,4 @@
-import 'package:BlogApp/views/pages/login.dart';
+import 'package:elmhanes/views/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 
@@ -64,8 +64,7 @@ class _MainPageState extends State<MainPage> {
         priority: 6,
         title: 'log out',
         onTap: () async {
-          Navigator.pushNamedAndRemoveUntil(
-              context, Login.id, (route) => false);
+          Navigator.pushNamedAndRemoveUntil(context, Login.id, (route) => false);
         },
         icon: Icon(Icons.exit_to_app),
       ),
@@ -77,10 +76,7 @@ class _MainPageState extends State<MainPage> {
           children: <Widget>[
             Text(
               'Our',
-              style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.blue),
             ),
             Text(
               'App ',

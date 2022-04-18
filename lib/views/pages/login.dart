@@ -1,4 +1,4 @@
-import 'package:BlogApp/views/pages/mainPage.dart';
+import 'package:elmhanes/views/pages/mainPage.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -15,10 +15,7 @@ class Login extends StatelessWidget {
           children: <Widget>[
             Text(
               'Our',
-              style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.blue),
             ),
             Text(
               'App',
@@ -35,10 +32,7 @@ class Login extends StatelessWidget {
           Center(
             child: Text(
               'Welcome to our app ',
-              style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.blue),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: Colors.blue),
             ),
           ),
           SizedBox(
