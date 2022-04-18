@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 import 'package:BlogApp/views/pages/create_blog.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,8 +36,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => CreateBlog()));
+          Navigator.pushNamed(context, CreateBlog.id);
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,

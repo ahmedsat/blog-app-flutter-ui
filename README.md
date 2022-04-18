@@ -1,5 +1,15 @@
 # Blog App
 
-* [ ] login page
+----------
+
+## TODO
+
+### UI
+
+* [X] ~~*login page*~~ [2022-04-18]
 * [ ] home page
-* [ ] admin dashboard
+* [ ] category page
+* [ ] content page
+* [ ] admin dashboard main page
+
+### LOGIC

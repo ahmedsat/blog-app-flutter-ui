@@ -1,7 +1,5 @@
+import 'package:BlogApp/views/pages/home.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
-import 'package:BlogApp/views/pages//create_blog.dart';
 
 class Login extends StatefulWidget {
   static String id = 'Login';
@@ -36,25 +34,54 @@ class _LoginState extends State<Login> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: Text(
-                'Welcome to our app ',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.blue),
-              ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Text(
+              'Welcome to our app',
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.blue),
             ),
-            TextField(
-              decoration: InputDecoration(hintText: 'Username'),
-              onChanged: (value) {},
-            )
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 100,
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 32),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(hintText: 'Username'),
+                  onChanged: (value) {},
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                TextField(
+                  decoration: InputDecoration(hintText: 'Password '),
+                  onChanged: (value) {},
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.popAndPushNamed(context, HomePage.id);
+                  },
+                  child: Container(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.blue,
+                    child: Icon(Icons.login),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
