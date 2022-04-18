@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.flutlab.hello_world.hello_world">
+    package="com.ahmedsat303.elmhanes">
    <application
-        android:label="blogapp"
+        android:label="fix"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
