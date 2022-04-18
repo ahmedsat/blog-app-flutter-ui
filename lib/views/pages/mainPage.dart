@@ -2,15 +2,15 @@ import 'package:BlogApp/views/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 
-class HomePage extends StatefulWidget {
-  static String id = 'HomePage';
-  HomePage({Key? key}) : super(key: key);
+class MainPage extends StatefulWidget {
+  static String id = 'MainPage';
+  MainPage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainPageState extends State<MainPage> {
   PageController page = PageController();
 
   @override

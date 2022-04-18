@@ -1,7 +1,7 @@
+import 'package:BlogApp/views/pages/admin/create_blog.dart';
 import 'package:BlogApp/views/pages/login.dart';
 import 'package:flutter/material.dart';
-import 'package:BlogApp/views/admin/create_blog.dart';
-import 'package:BlogApp/views/pages/home.dart';
+import 'package:BlogApp/views/pages/mainPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
 
       initialRoute: Login.id,
-      // initialRoute: HomePage.id,
+      // initialRoute: MainPage.id,
 
       routes: {
         Login.id: (context) => Login(),
-        HomePage.id: (context) => HomePage(),
+        MainPage.id: (context) => MainPage(),
         CreateBlog.id: (context) => CreateBlog()
       },
     );

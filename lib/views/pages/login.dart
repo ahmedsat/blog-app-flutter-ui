@@ -1,15 +1,10 @@
-import 'package:BlogApp/views/pages/home.dart';
+import 'package:BlogApp/views/pages/mainPage.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
+class Login extends StatelessWidget {
   static String id = 'Login';
-  Login({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
-}
-
-class _LoginState extends State<Login> {
   String username = '', password = '';
   @override
   Widget build(BuildContext context) {
@@ -39,7 +34,7 @@ class _LoginState extends State<Login> {
         children: <Widget>[
           Center(
             child: Text(
-              'Welcome to our app',
+              'Welcome to our app ',
               style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w900,
@@ -69,7 +64,7 @@ class _LoginState extends State<Login> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.popAndPushNamed(context, HomePage.id);
+                    Navigator.popAndPushNamed(context, MainPage.id);
                   },
                   child: Container(
                     height: 50,
