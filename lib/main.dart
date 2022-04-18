@@ -1,7 +1,7 @@
-import 'package:BlogApp/views/pages/admin/create_blog.dart';
-import 'package:BlogApp/views/pages/login.dart';
+import 'package:elmhanes/views/pages/admin/create_blog.dart';
+import 'package:elmhanes/views/pages/login.dart';
 import 'package:flutter/material.dart';
-import 'package:BlogApp/views/pages/mainPage.dart';
+import 'package:elmhanes/views/pages/mainPage.dart';
 
 void main() => runApp(MyApp());
 
