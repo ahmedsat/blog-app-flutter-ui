@@ -1,4 +1,6 @@
 import 'package:elmhanes/views/pages/mainPage.dart';
+import 'package:elmhanes/views/widgets/custom_app_bar.dart';
+import 'package:elmhanes/views/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -8,31 +10,20 @@ class Login extends StatelessWidget {
   String username = '', password = '';
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Our',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.blue),
-            ),
-            Text(
-              'App',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      // CustomAppBar
+      appBar: CustomAppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
             child: Text(
               'Welcome to our app ',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: Colors.blue),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900,
+                  color: colorScheme.primary),
             ),
           ),
           SizedBox(
@@ -63,7 +54,7 @@ class Login extends StatelessWidget {
                   child: Container(
                     height: 50,
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.blue,
+                    color: colorScheme.primary,
                     child: Icon(Icons.login),
                   ),
                 ),

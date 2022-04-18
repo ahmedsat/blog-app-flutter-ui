@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Hello World',
       // Application theme data, you can set the colors for the application as
       // you want
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
 
-      initialRoute: Login.id,
-      // initialRoute: MainPage.id,
+      // initialRoute: Login.id,
+      initialRoute: MainPage.id,
 
       routes: {
         Login.id: (context) => Login(),
