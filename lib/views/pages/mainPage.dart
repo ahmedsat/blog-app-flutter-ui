@@ -1,9 +1,12 @@
 import 'package:elmhanes/views/pages/login.dart';
-import 'package:elmhanes/views/pages/user/home.dart';
-import 'package:elmhanes/views/widgets/contentPage.dart';
+import 'package:elmhanes/views/widgets/customDrawer.dart';
+import 'package:elmhanes/views/widgets/extraSmallContentCardRic.dart';
+import 'package:elmhanes/views/widgets/extraSmallContentCardSquare.dart';
+import 'package:elmhanes/views/widgets/smallContentCard.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
+
 import 'package:flutter/material.dart';
-import 'package:easy_sidemenu/easy_sidemenu.dart';
+import 'package:flutter/rendering.dart';
 
 class MainPage extends StatefulWidget {
   static String id = 'MainPage';
@@ -14,163 +17,192 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  PageController page = PageController();
+  final List<Widget> topList = [
+    SmallContentCard(
+      title: 'الأدوات',
+      icon: Icons.handyman,
+      startColor: Colors.blue,
+      endColor: Colors.lightBlue,
+    ),
+    SmallContentCard(
+      title: 'الأجهزة',
+      icon: Icons.handyman,
+      startColor: Colors.green,
+      endColor: Colors.lightGreen,
+    ),
+    SmallContentCard(
+      title: 'المكونات المادية',
+      icon: Icons.handyman,
+      startColor: Color(0xff45d6b5),
+      endColor: Color(0xff63c6c1),
+    ),
+    SmallContentCard(
+      title: 'المكونات الالكترونية',
+      icon: Icons.handyman,
+      startColor: Colors.orange,
+      endColor: Colors.orangeAccent,
+    ),
+    ///////////////////////////////
+    SmallContentCard(
+      title: 'الأدوات',
+      icon: Icons.handyman,
+      startColor: Colors.blue,
+      endColor: Colors.lightBlue,
+    ),
+    SmallContentCard(
+      title: 'الأجهزة',
+      icon: Icons.handyman,
+      startColor: Colors.green,
+      endColor: Colors.lightGreen,
+    ),
+    SmallContentCard(
+      title: 'المكونات المادية',
+      icon: Icons.handyman,
+      startColor: Color(0xff45d6b5),
+      endColor: Color(0xff63c6c1),
+    ),
+    SmallContentCard(
+      title: 'المكونات الالكترونية',
+      icon: Icons.handyman,
+      startColor: Colors.orange,
+      endColor: Colors.orangeAccent,
+    ),
+  ];
+
+  final List<Widget> midList = [
+    ExtraSmallContentCardSquare(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardSquare(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardSquare(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardSquare(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardSquare(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardSquare(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+  ];
+
+  final List<Widget> lowList = [
+    ExtraSmallContentCardRic(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardRic(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardRic(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardRic(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardRic(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+    ExtraSmallContentCardRic(
+      title: 'test',
+      icon: Icons.ac_unit,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    List<SideMenuItem> items = [
-      SideMenuItem(
-        priority: 0,
-        title: 'Home page',
-        onTap: () {
-          page.jumpToPage(0);
-        },
-        icon: Icon(Icons.home),
-        // badgeContent: Text(
-        //   '3',
-        //   style: TextStyle(color: Colors.white),
-        // ),
-      ),
-      SideMenuItem(
-        priority: 1,
-        title: 'search',
-        onTap: () {
-          page.jumpToPage(1);
-        },
-        icon: Icon(Icons.search),
-      ),
-      SideMenuItem(
-        priority: 2,
-        title: 'categories',
-        onTap: () {
-          page.jumpToPage(2);
-        },
-        icon: Icon(Icons.category),
-      ),
-      SideMenuItem(
-        priority: 3,
-        title: 'account',
-        onTap: () {
-          page.jumpToPage(3);
-        },
-        icon: Icon(Icons.supervisor_account),
-      ),
-      SideMenuItem(
-        priority: 4,
-        title: 'Settings',
-        onTap: () {
-          page.jumpToPage(4);
-        },
-        icon: Icon(Icons.settings),
-      ),
-      SideMenuItem(
-        priority: 6,
-        title: 'log out',
-        onTap: () async {
-          Navigator.pushNamedAndRemoveUntil(
-              context, Login.id, (route) => false);
-        },
-        icon: Icon(Icons.exit_to_app),
-      ),
-    ];
-
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+
+      /** */
+      body: ListView(
         children: [
-          SideMenu(
-            controller: page,
-            style: SideMenuStyle(
-              displayMode: SideMenuDisplayMode.auto,
-              hoverColor: Colors.blue[100],
-              selectedColor: Colors.lightBlue,
-              selectedTitleTextStyle: TextStyle(color: Colors.white),
-              selectedIconColor: Colors.white,
-              // decoration: BoxDecoration(
-              //   borderRadius: BorderRadius.all(Radius.circular(10)),
-              // ),
-              // backgroundColor: Colors.blueGrey[700]
-            ),
-            title: Column(
-              children: [
-                // ConstrainedBox(
-                //   constraints: BoxConstraints(
-                //     maxHeight: 150,
-                //     maxWidth: 150,
-                //   ),
-                //   child: Image.asset(
-                //     'assets/images/easy_sidemenu.png',
-                //   ),
-                // ),
-                Divider(
-                  indent: 8.0,
-                  endIndent: 8.0,
-                ),
-              ],
-            ),
-            // footer: Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Text(
-            //     'mohada',
-            //     style: TextStyle(fontSize: 15),
-            //   ),
-            // ),
-            items: items,
+          SizedBox(
+            height: 50,
           ),
-          Expanded(
-            child: PageView(
-              controller: page,
-              children: [
-                ContentPage(
-                  child: HomePage(),
-                ),
-                ContentPage(
-                  child: Center(
-                    child: Text(
-                      'Search',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-                ContentPage(
-                  child: Center(
-                    child: Text(
-                      'Categories',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-                ContentPage(
-                  child: Center(
-                    child: Text(
-                      'Account',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-                ContentPage(
-                  child: Center(
-                    child: Text(
-                      'Settings',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-              ],
+          Container(
+            margin: EdgeInsets.all(10),
+            height: 300,
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 2 / 3,
+                crossAxisCount: 2,
+              ),
+              scrollDirection: Axis.horizontal,
+              itemCount: topList.length,
+              itemBuilder: (BuildContext ctx, index) {
+                return topList[index];
+              },
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            height: 100,
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 1,
+                crossAxisCount: 1,
+              ),
+              scrollDirection: Axis.horizontal,
+              itemCount: midList.length,
+              itemBuilder: (BuildContext ctx, index) {
+                return midList[index];
+              },
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            height: 200,
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 1 / 2,
+                crossAxisCount: 2,
+              ),
+              scrollDirection: Axis.horizontal,
+              itemCount: lowList.length,
+              itemBuilder: (BuildContext ctx, index) {
+                return lowList[index];
+              },
             ),
           ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, CreateBlog.id);
-      //   },
-      //   child: Icon(Icons.add),
-      //   backgroundColor: Colors.blue,
-      //   tooltip: 'Create new topic',
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      /**/
+      drawer: CustomDrawer(),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: 50,
+          width: 50,
+        ),
+        color: Colors.black,
+        elevation: 10,
+      ),
     );
   }
 }

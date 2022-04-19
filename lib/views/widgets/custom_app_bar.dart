@@ -16,10 +16,12 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
+    var colorScheme = Theme.of(context).colorScheme;
     return AppBar(
       title: Logo(),
       backgroundColor: Colors.transparent,
       elevation: 0,
+      iconTheme: IconThemeData(color: colorScheme.primary),
     );
   }
 }
