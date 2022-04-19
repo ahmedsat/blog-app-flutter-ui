@@ -2,8 +2,8 @@ import 'package:elmhanes/views/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  CustomAppBar({Key? key})
-      : preferredSize = Size.fromHeight(kToolbarHeight + 0),
+  const CustomAppBar({Key? key})
+      : preferredSize = const Size.fromHeight(kToolbarHeight + 0),
         super(key: key);
 
   @override
