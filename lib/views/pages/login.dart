@@ -19,89 +19,88 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-
-        // body: SingleChildScrollView(
-        //   controller: controller,
-        //   child: Column(
-        //     crossAxisAlignment: CrossAxisAlignment.start,
-        //     children: <Widget>[
-        //       MyHeader(
-        //         image: "assets/icons/barbecue.svg",
-        //         textTop: "El-Mohandes ",
-        //         textBottom: "الحل لكل مشاكلك",
-        //         offset: offset,
-        //       ),
-        //       Padding(
-        //         padding: const EdgeInsets.symmetric(horizontal: 20),
-        //         child: Column(
-        //           crossAxisAlignment: CrossAxisAlignment.start,
-        //           children: <Widget>[
-        //             loginCard(),
-        //             const SizedBox(height: 40),
-        //             InkWell(
-        //               child: Container(
-        //                 width: 330,
-        //                 height: 100,
-        //                 decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
-        //                   BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
-        //                 ]),
-        //                 child: Material(
-        //                   color: Colors.transparent,
-        //                   child: InkWell(
-        //                     onTap: () {
-        //                       Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
-        //                     },
-        //                     child: const Center(
-        //                       child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
-        //                     ),
-        //                   ),
-        //                 ),
-        //               ),
-        //             ),
-        //             const SizedBox(height: 40),
-        //             Row(
-        //               children: <Widget>[
-        //                 const SizedBox(
-        //                   width: 12.0,
-        //                 ),
-        //                 GestureDetector(
-        //                   onTap: _radio,
-        //                   child: radioButton(_isSelected),
-        //                 ),
-        //                 const SizedBox(
-        //                   width: 8.0,
-        //                 ),
-        //                 const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
-        //               ],
-        //             ),
-        //             const SizedBox(height: 40),
-        //             Row(
-        //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //               children: <Widget>[],
-        //             ),
-        //             const SizedBox(
-        //               height: 30,
-        //             ),
-        //             Row(
-        //               mainAxisAlignment: MainAxisAlignment.center,
-        //               children: <Widget>[
-        //                 const Text(
-        //                   "New User? ",
-        //                   style: TextStyle(fontFamily: "Poppins-Medium"),
-        //                 ),
-        //                 InkWell(
-        //                   onTap: () {},
-        //                   child: const Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
-        //                 )
-        //               ],
-        //             )
-        //           ],
-        //         ),
-        //       )
-        //     ],
-        //   ),
-        // ),
-        );
+      body: SingleChildScrollView(
+        controller: controller,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            MyHeader(
+              image: "assets/icons/barbecue.svg",
+              textTop: "El-Mohandes ",
+              textBottom: "الحل لكل مشاكلك",
+              offset: offset,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  loginCard(),
+                  const SizedBox(height: 40),
+                  InkWell(
+                    child: Container(
+                      width: 330,
+                      height: 100,
+                      decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
+                        BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
+                      ]),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
+                          },
+                          child: const Center(
+                            child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+                  Row(
+                    children: <Widget>[
+                      const SizedBox(
+                        width: 12.0,
+                      ),
+                      GestureDetector(
+                        onTap: _radio,
+                        child: radioButton(_isSelected),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
+                    ],
+                  ),
+                  const SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(
+                        "New User? ",
+                        style: TextStyle(fontFamily: "Poppins-Medium"),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   @override
