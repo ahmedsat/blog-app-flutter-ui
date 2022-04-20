@@ -1,6 +1,5 @@
-import 'package:elmhanes/views/pages/mainPage.dart';
+import 'package:elmhanes/views/pages/user/main_page.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
-import 'package:elmhanes/views/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {

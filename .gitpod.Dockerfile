@@ -2,7 +2,7 @@ FROM gitpod/workspace-full-vnc
 SHELL ["/bin/bash", "-c"]
 
 ENV ANDROID_HOME=/home/gitpod/androidsdk \
-    FLUTTER_VERSION=2.2.3-stable
+    FLUTTER_VERSION=2.10.5-stable
 
 # Install dart
 USER root
@@ -48,19 +48,19 @@ RUN echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n av
 # Install Google Chrome
 USER root
 RUN apt-get update \
-  && apt-get install -y apt-transport-https \
-  && curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
-  && echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list \
-  && apt-get update \
-  && sudo apt-get install -y google-chrome-stable
+    && apt-get install -y apt-transport-https \
+    && curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list \
+    && apt-get update \
+    && sudo apt-get install -y google-chrome-stable
 
 # misc deps
 RUN apt-get install -y \
-  libasound2-dev \
-  libgtk-3-dev \
-  libnss3-dev \
-  fonts-noto \
-  fonts-noto-cjk
+    libasound2-dev \
+    libgtk-3-dev \
+    libnss3-dev \
+    fonts-noto \
+    fonts-noto-cjk
 
 # For Qt WebEngine on docker
 ENV QTWEBENGINE_DISABLE_SANDBOX 1
