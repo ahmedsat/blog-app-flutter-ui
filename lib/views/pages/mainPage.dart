@@ -1,17 +1,13 @@
-import 'package:elmhanes/views/pages/login.dart';
-
 import 'package:elmhanes/views/widgets/customDrawer.dart';
-import 'package:elmhanes/views/widgets/extraSmallContentCardRic.dart';
 import 'package:elmhanes/views/widgets/extraSmallContentCardSquare.dart';
 import 'package:elmhanes/views/widgets/smallContentCard.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class MainPage extends StatefulWidget {
   static String id = 'MainPage';
-  MainPage({Key? key}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
