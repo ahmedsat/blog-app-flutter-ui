@@ -112,7 +112,7 @@ class _MainPageState extends State<MainPage> {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 childAspectRatio: 1,
-                crossAxisCount: 13,
+                crossAxisCount: 3,
               ),
               scrollDirection: Axis.vertical,
               itemCount: midList.length,
