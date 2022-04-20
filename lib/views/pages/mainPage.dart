@@ -85,7 +85,7 @@ class _MainPageState extends State<MainPage> {
           ),
           Container(
             margin: const EdgeInsets.all(10),
-            height: 200,
+            height: MediaQuery.of(context).size.width * 3 / 2,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 10,
