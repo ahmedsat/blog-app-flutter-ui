@@ -67,7 +67,7 @@ class _MyHeaderState extends State<MyHeader> {
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.rtl,
                           style: const TextStyle(
-                            backgroundColor: Color.fromARGB(150, 96, 125, 139),
+                            color: Colors.grey,
                             fontSize: 22,
                             fontWeight: FontWeight.w600,
                           ).copyWith(
@@ -93,8 +93,7 @@ class MyClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = Path();
     path.lineTo(0, size.height - 80);
-    path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 80);
+    path.quadraticBezierTo(size.width / 2, size.height, size.width, size.height - 80);
     path.lineTo(size.width, 0);
     path.close();
     return path;
