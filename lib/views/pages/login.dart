@@ -39,6 +39,7 @@ class _LoginState extends State<Login> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   loginCard(),
+                  const SizedBox(height: 40),
                   InkWell(
                     child: Container(
                       width: 330,
