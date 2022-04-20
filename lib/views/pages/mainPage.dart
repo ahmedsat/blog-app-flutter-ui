@@ -27,7 +27,7 @@ class _MainPageState extends State<MainPage> {
     ),
     SmallContentCard(
       title: 'الأجهزة',
-      icon: Icons.handyman,
+      icon: Icons.ad_units,
       startColor: Colors.green,
       endColor: Colors.lightGreen,
     ),
@@ -63,7 +63,7 @@ class _MainPageState extends State<MainPage> {
       icon: Icons.ac_unit,
     ),
     ExtraSmallContentCardSquare(
-      title: 'test',
+      title: 'test test',
       icon: Icons.ac_unit,
     ),
     ExtraSmallContentCardSquare(
