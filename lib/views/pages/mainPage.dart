@@ -1,4 +1,5 @@
 import 'package:elmhanes/views/pages/login.dart';
+
 import 'package:elmhanes/views/widgets/customDrawer.dart';
 import 'package:elmhanes/views/widgets/extraSmallContentCardRic.dart';
 import 'package:elmhanes/views/widgets/extraSmallContentCardSquare.dart';
@@ -195,14 +196,6 @@ class _MainPageState extends State<MainPage> {
       ),
       /**/
       drawer: CustomDrawer(),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 50,
-          width: 50,
-        ),
-        color: Colors.black,
-        elevation: 10,
-      ),
     );
   }
 }
