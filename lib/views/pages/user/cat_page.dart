@@ -1,11 +1,8 @@
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
 import 'package:elmhanes/views/widgets/custom_drawer.dart';
 import 'package:elmhanes/views/widgets/extra_small_content_card_ric.dart';
-import 'package:elmhanes/views/widgets/login_card.dart';
 import 'package:elmhanes/views/widgets/my_header.dart';
-import 'package:elmhanes/views/widgets/social_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CategoryPage extends StatefulWidget {
   static String id = 'CategoryPage';
@@ -169,7 +166,7 @@ class _CategoryPageState extends State<CategoryPage> {
             ),
             ExtraSmallContentCardRic(
               icon: Icons.topic,
-              title: 'test title',
+              title: 'last one',
             ),
             const SizedBox(
               height: 5,
