@@ -43,31 +43,6 @@ class _MainPageState extends State<MainPage> {
       startColor: Colors.orange,
       endColor: Colors.orangeAccent,
     ),
-    ///////////////////////////////
-    SmallContentCard(
-      title: 'الأدوات',
-      icon: Icons.handyman,
-      startColor: Colors.blue,
-      endColor: Colors.lightBlue,
-    ),
-    SmallContentCard(
-      title: 'الأجهزة',
-      icon: Icons.handyman,
-      startColor: Colors.green,
-      endColor: Colors.lightGreen,
-    ),
-    SmallContentCard(
-      title: 'المكونات المادية',
-      icon: Icons.handyman,
-      startColor: const Color(0xff45d6b5),
-      endColor: const Color(0xff63c6c1),
-    ),
-    SmallContentCard(
-      title: 'المكونات الالكترونية',
-      icon: Icons.handyman,
-      startColor: Colors.orange,
-      endColor: Colors.orangeAccent,
-    ),
   ];
 
   final List<Widget> midList = [
