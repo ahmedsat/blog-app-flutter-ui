@@ -86,14 +86,11 @@ class _LoginState extends State<Login> {
                   const SizedBox(
                     height: 40,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
+                  
                       horizontalLine(),
                       const Text("Social Login", style: TextStyle(fontSize: 16.0, fontFamily: "Poppins-Medium")),
                       horizontalLine()
-                    ],
-                  ),
+                 
                   const SizedBox(
                     height: 40,
                   ),
