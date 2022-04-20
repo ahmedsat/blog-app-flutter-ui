@@ -67,7 +67,7 @@ class _MyHeaderState extends State<MyHeader> {
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.rtl,
                           style: const TextStyle(
-                            color: Colors.grey,
+                            color: Colors.black,
                             fontSize: 22,
                             fontWeight: FontWeight.w600,
                           ).copyWith(
