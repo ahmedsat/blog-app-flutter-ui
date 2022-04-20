@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 class Login extends StatefulWidget {
   static String id = 'Login';
 
+  const Login({Key? key}) : super(key: key);
+
   @override
   State<Login> createState() => _LoginState();
 }
@@ -56,39 +58,24 @@ class _LoginState extends State<Login> {
                           const SizedBox(
                             width: 8.0,
                           ),
-                          const Text("Remember me",
-                              style: TextStyle(
-                                  fontSize: 12, fontFamily: "Poppins-Medium"))
+                          const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
                         ],
                       ),
                       InkWell(
                         child: Container(
                           width: 330,
                           height: 100,
-                          decoration: BoxDecoration(
-                              color: const Color(0xFF3382CC),
-                              borderRadius: BorderRadius.circular(6.0),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: const Color(0xFF4056C6)
-                                        .withOpacity(.15),
-                                    offset: const Offset(0.0, 8.0),
-                                    blurRadius: 8.0)
-                              ]),
+                          decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
+                            BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
+                          ]),
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
                               onTap: () {
-                                Navigator.pushNamedAndRemoveUntil(
-                                    context, MainPage.id, (route) => false);
+                                Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
                               },
                               child: const Center(
-                                child: Text("SIGNIN",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: "Poppins-Bold",
-                                        fontSize: 18,
-                                        letterSpacing: 1.0)),
+                                child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                               ),
                             ),
                           ),
@@ -103,9 +90,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       horizontalLine(),
-                      const Text("Social Login",
-                          style: TextStyle(
-                              fontSize: 16.0, fontFamily: "Poppins-Medium")),
+                      const Text("Social Login", style: TextStyle(fontSize: 16.0, fontFamily: "Poppins-Medium")),
                       horizontalLine()
                     ],
                   ),
@@ -117,14 +102,12 @@ class _LoginState extends State<Login> {
                     children: <Widget>[
                       SocialIcon(
                         color: const Color(0xFF102397),
-                        iconData:
-                            const IconData(0xe901, fontFamily: "CustomIcons"),
+                        iconData: const IconData(0xe901, fontFamily: "CustomIcons"),
                         onPressed: () {},
                       ),
                       SocialIcon(
                         color: const Color(0xFFff4f38),
-                        iconData:
-                            const IconData(0xe902, fontFamily: "CustomIcons"),
+                        iconData: const IconData(0xe902, fontFamily: "CustomIcons"),
                         onPressed: () {},
                       ),
                     ],
@@ -141,10 +124,7 @@ class _LoginState extends State<Login> {
                       ),
                       InkWell(
                         onTap: () {},
-                        child: const Text("SignUp",
-                            style: TextStyle(
-                                color: Color(0xFF5d74e3),
-                                fontFamily: "Poppins-Bold")),
+                        child: const Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
                       )
                     ],
                   )
@@ -190,15 +170,12 @@ class _LoginState extends State<Login> {
         width: 16.0,
         height: 16.0,
         padding: const EdgeInsets.all(2.0),
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(width: 2.0, color: Colors.black)),
+        decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(width: 2.0, color: Colors.black)),
         child: isSelected
             ? Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.black),
+                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
               )
             : Container(),
       );
