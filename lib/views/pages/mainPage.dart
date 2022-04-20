@@ -1,4 +1,5 @@
 import 'package:elmhanes/views/pages/login.dart';
+
 import 'package:elmhanes/views/widgets/customDrawer.dart';
 import 'package:elmhanes/views/widgets/extraSmallContentCardRic.dart';
 import 'package:elmhanes/views/widgets/extraSmallContentCardSquare.dart';
@@ -26,44 +27,19 @@ class _MainPageState extends State<MainPage> {
     ),
     SmallContentCard(
       title: 'الأجهزة',
-      icon: Icons.handyman,
+      icon: Icons.ad_units,
       startColor: Colors.green,
       endColor: Colors.lightGreen,
     ),
     SmallContentCard(
-      title: 'المكونات المادية',
-      icon: Icons.handyman,
-      startColor: Color(0xff45d6b5),
-      endColor: Color(0xff63c6c1),
+      title: 'المكونات ',
+      icon: Icons.drag_indicator,
+      startColor: const Color(0xff45d6b5),
+      endColor: const Color(0xff63c6c1),
     ),
     SmallContentCard(
-      title: 'المكونات الالكترونية',
-      icon: Icons.handyman,
-      startColor: Colors.orange,
-      endColor: Colors.orangeAccent,
-    ),
-    ///////////////////////////////
-    SmallContentCard(
-      title: 'الأدوات',
-      icon: Icons.handyman,
-      startColor: Colors.blue,
-      endColor: Colors.lightBlue,
-    ),
-    SmallContentCard(
-      title: 'الأجهزة',
-      icon: Icons.handyman,
-      startColor: Colors.green,
-      endColor: Colors.lightGreen,
-    ),
-    SmallContentCard(
-      title: 'المكونات المادية',
-      icon: Icons.handyman,
-      startColor: Color(0xff45d6b5),
-      endColor: Color(0xff63c6c1),
-    ),
-    SmallContentCard(
-      title: 'المكونات الالكترونية',
-      icon: Icons.handyman,
+      title: 'مشكلات',
+      icon: Icons.perm_device_information_sharp,
       startColor: Colors.orange,
       endColor: Colors.orangeAccent,
     ),
@@ -96,47 +72,20 @@ class _MainPageState extends State<MainPage> {
     ),
   ];
 
-  final List<Widget> lowList = [
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
 
       /** */
       body: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Container(
-            margin: EdgeInsets.all(10),
-            height: 300,
+            margin: const EdgeInsets.all(10),
+            height: MediaQuery.of(context).size.width * .65,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 10,
@@ -151,58 +100,31 @@ class _MainPageState extends State<MainPage> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Container(
-            margin: EdgeInsets.all(10),
-            height: 100,
+            margin: const EdgeInsets.all(10),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.width,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 childAspectRatio: 1,
-                crossAxisCount: 1,
+                crossAxisCount: 3,
               ),
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               itemCount: midList.length,
               itemBuilder: (BuildContext ctx, index) {
                 return midList[index];
               },
             ),
           ),
-          SizedBox(
-            height: 15,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            height: 200,
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 1 / 2,
-                crossAxisCount: 2,
-              ),
-              scrollDirection: Axis.horizontal,
-              itemCount: lowList.length,
-              itemBuilder: (BuildContext ctx, index) {
-                return lowList[index];
-              },
-            ),
-          ),
         ],
       ),
       /**/
-      drawer: CustomDrawer(),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 50,
-          width: 50,
-        ),
-        color: Colors.black,
-        elevation: 10,
-      ),
+      drawer: const CustomDrawer(),
     );
   }
 }
