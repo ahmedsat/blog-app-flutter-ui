@@ -27,7 +27,7 @@ class SmallContentCard extends StatelessWidget {
           ],
         ),
       ),
-      margin: const EdgeInsets.symmetric(vertical: 1, horizontal: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
