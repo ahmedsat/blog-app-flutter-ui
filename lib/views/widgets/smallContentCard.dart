@@ -4,9 +4,7 @@ class SmallContentCard extends StatelessWidget {
   String? title;
   IconData? icon;
   Color? startColor, endColor;
-  SmallContentCard(
-      {this.title, this.icon, this.startColor, this.endColor, Key? key})
-      : super(key: key);
+  SmallContentCard({this.title, this.icon, this.startColor, this.endColor, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +14,10 @@ class SmallContentCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         gradient: LinearGradient(
-          // stops: [
-          //   0.10,
-          //   0.90,
-          // ],
+          stops: const [
+            0.10,
+            0.90,
+          ],
           // extra
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
@@ -29,7 +27,7 @@ class SmallContentCard extends StatelessWidget {
           ],
         ),
       ),
-      margin: EdgeInsets.symmetric(vertical: 1, horizontal: 5),
+      margin: const EdgeInsets.symmetric(vertical: 1, horizontal: 5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -40,7 +38,7 @@ class SmallContentCard extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 5),
                 child: Text(
                   title!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24,
                     color: Colors.white,
                   ),
@@ -57,7 +55,7 @@ class SmallContentCard extends StatelessWidget {
                 child: Icon(
                   icon,
                   color: Colors.white,
-                  size: 50,
+                  size: 25,
                 ),
               ),
             ],
