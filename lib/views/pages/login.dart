@@ -77,6 +77,7 @@ class _LoginState extends State<Login> {
                       const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
                     ],
                   ),
+                  const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
