@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
     ),
     SmallContentCard(
       title: 'مشكلات',
-      icon: Icons.handyman,
+      icon: Icons.perm_device_information_sharp,
       startColor: Colors.orange,
       endColor: Colors.orangeAccent,
     ),
