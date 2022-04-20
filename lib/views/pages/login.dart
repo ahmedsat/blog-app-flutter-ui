@@ -1,5 +1,6 @@
+import 'dart:developer';
+
 import 'package:elmhanes/views/pages/user/main_page.dart';
-import 'package:elmhanes/views/widgets/custom_app_bar.dart';
 import 'package:elmhanes/views/widgets/login_card.dart';
 import 'package:elmhanes/views/widgets/my_header.dart';
 import 'package:elmhanes/views/widgets/social_icon.dart';
@@ -29,8 +30,8 @@ class _LoginState extends State<Login> {
           children: <Widget>[
             MyHeader(
               image: "assets/icons/barbecue.svg",
-              textTop: "Order and",
-              textBottom: "Get to door steps",
+              textTop: "El-Mohandes ",
+              textBottom: "الحل لكل مشاكلك",
               offset: offset,
             ),
             Padding(
@@ -77,7 +78,10 @@ class _LoginState extends State<Login> {
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, MainPage.id, (route) => false);
+                              },
                               child: const Center(
                                 child: Text("SIGNIN",
                                     style: TextStyle(

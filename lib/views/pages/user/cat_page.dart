@@ -166,7 +166,7 @@ class _CategoryPageState extends State<CategoryPage> {
             ),
             ExtraSmallContentCardRic(
               icon: Icons.topic,
-              title: 'test title',
+              title: 'last one',
             ),
             const SizedBox(
               height: 5,
