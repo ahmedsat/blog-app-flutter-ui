@@ -136,12 +136,12 @@ class _MainPageState extends State<MainPage> {
             height: 50,
           ),
           Container(
-            margin: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(5),
             height: 300,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
+                crossAxisSpacing: 5,
+                mainAxisSpacing: 5,
                 childAspectRatio: 2 / 3,
                 crossAxisCount: 2,
               ),
