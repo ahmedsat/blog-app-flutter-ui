@@ -90,7 +90,7 @@ class _MainPageState extends State<MainPage> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 5,
                 mainAxisSpacing: 5,
-                childAspectRatio: .9,
+                childAspectRatio: 1 / 2,
                 crossAxisCount: 2,
               ),
               scrollDirection: Axis.horizontal,
