@@ -32,13 +32,13 @@ class _MainPageState extends State<MainPage> {
       endColor: Colors.lightGreen,
     ),
     SmallContentCard(
-      title: 'المكونات المادية',
+      title: 'المكونات ',
       icon: Icons.handyman,
       startColor: const Color(0xff45d6b5),
       endColor: const Color(0xff63c6c1),
     ),
     SmallContentCard(
-      title: 'المكونات الالكترونية',
+      title: 'مشكلات',
       icon: Icons.handyman,
       startColor: Colors.orange,
       endColor: Colors.orangeAccent,
