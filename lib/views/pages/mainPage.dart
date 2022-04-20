@@ -72,33 +72,6 @@ class _MainPageState extends State<MainPage> {
     ),
   ];
 
-  final List<Widget> lowList = [
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardRic(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,7 +85,7 @@ class _MainPageState extends State<MainPage> {
           ),
           Container(
             margin: const EdgeInsets.all(5),
-            height: 300,
+            height: 200,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 5,
