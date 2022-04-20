@@ -24,65 +24,65 @@ class _MyHeaderState extends State<MyHeader> {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        padding: const EdgeInsets.only(left: 40, top: 50, right: 20),
-        height: 350,
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xFF3383CD),
-              Color(0xFF11249F),
-            ],
+          // padding: const EdgeInsets.only(left: 40, top: 50, right: 20),
+          // height: 350,
+          // width: double.infinity,
+          // decoration: const BoxDecoration(
+          //   gradient: LinearGradient(
+          //     begin: Alignment.topRight,
+          //     end: Alignment.bottomLeft,
+          //     colors: [
+          //       Color(0xFF3383CD),
+          //       Color(0xFF11249F),
+          //     ],
+          //   ),
+          //   image: DecorationImage(
+          //     image: AssetImage("assets/images/virus.png"),
+          //   ),
+          // ),
+          // child: Column(
+          //   crossAxisAlignment: CrossAxisAlignment.end,
+          //   children: <Widget>[
+          //     const SizedBox(height: 30),
+          //     Expanded(
+          //       child: Stack(
+          //         children: <Widget>[
+          //           Positioned(
+          //             top: (widget.offset < 0) ? 0 : widget.offset,
+          //             child: SvgPicture.asset(
+          //               widget.image,
+          //               width: 270,
+          //               fit: BoxFit.fitWidth,
+          //               alignment: Alignment.bottomLeft,
+          //             ),
+          //           ),
+          //           Positioned(
+          //             top: 20 - widget.offset / 2,
+          //             left: 0,
+          //             right: 0,
+          //             child: Center(
+          //               child: Flexible(
+          //                 child: Text(
+          //                   "${widget.textTop} \n\n${widget.textBottom}",
+          //                   textAlign: TextAlign.center,
+          //                   textDirection: TextDirection.rtl,
+          //                   style: const TextStyle(
+          //                     fontSize: 22,
+          //                     fontWeight: FontWeight.w600,
+          //                   ).copyWith(
+          //                     color: Colors.white,
+          //                   ),
+          //                 ),
+          //               ),
+          //             ),
+          //           ),
+          //           Container(), // I dont know why it can't work without container
+          //         ],
+          //       ),
+          //     ),
+          //   ],
+          // ),
           ),
-          image: DecorationImage(
-            image: AssetImage("assets/images/virus.png"),
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            const SizedBox(height: 30),
-            Expanded(
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                    top: (widget.offset < 0) ? 0 : widget.offset,
-                    child: SvgPicture.asset(
-                      widget.image,
-                      width: 270,
-                      fit: BoxFit.fitWidth,
-                      alignment: Alignment.bottomLeft,
-                    ),
-                  ),
-                  Positioned(
-                    top: 20 - widget.offset / 2,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                      child: Flexible(
-                        child: Text(
-                          "${widget.textTop} \n\n${widget.textBottom}",
-                          textAlign: TextAlign.center,
-                          textDirection: TextDirection.rtl,
-                          style: const TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
-                          ).copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(), // I dont know why it can't work without container
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
