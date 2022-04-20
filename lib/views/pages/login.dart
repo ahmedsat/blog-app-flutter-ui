@@ -1,11 +1,13 @@
+import 'dart:developer';
+
+import 'package:elmhanes/views/pages/user/main_page.dart';
 import 'package:elmhanes/views/widgets/login_card.dart';
 import 'package:elmhanes/views/widgets/my_header.dart';
+import 'package:elmhanes/views/widgets/social_icon.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
   static String id = 'Login';
-
-  const Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => _LoginState();
@@ -20,7 +22,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         controller: controller,
         child: Column(
@@ -33,66 +35,94 @@ class _LoginState extends State<Login> {
               offset: offset,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   loginCard(),
-                  SizedBox(height: 40),
-                  InkWell(
-                    child: Container(
-                      width: 330,
-                      height: 100,
-                      decoration: BoxDecoration(color: Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
-                        BoxShadow(color: Color(0xFF4056C6).withOpacity(.15), offset: Offset(0.0, 8.0), blurRadius: 8.0)
-                      ]),
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
-                          },
-                          child: Center(
-                            child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 40),
-                  Row(
-                    children: <Widget>[
-                      SizedBox(
-                        width: 12.0,
-                      ),
-                      GestureDetector(
-                        onTap: _radio,
-                        child: radioButton(_isSelected),
-                      ),
-                      SizedBox(
-                        width: 8.0,
-                      ),
-                      Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
-                    ],
-                  ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[],
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          const SizedBox(
+                            width: 12.0,
+                          ),
+                          GestureDetector(
+                            onTap: _radio,
+                            child: radioButton(_isSelected),
+                          ),
+                          const SizedBox(
+                            width: 8.0,
+                          ),
+                          const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
+                        ],
+                      ),
+                      InkWell(
+                        child: Container(
+                          width: 330,
+                          height: 100,
+                          decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
+                            BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
+                          ]),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
+                              },
+                              child: const Center(
+                                child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      horizontalLine(),
+                      const Text("Social Login", style: TextStyle(fontSize: 16.0, fontFamily: "Poppins-Medium")),
+                      horizontalLine()
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SocialIcon(
+                        color: const Color(0xFF102397),
+                        iconData: const IconData(0xe901, fontFamily: "CustomIcons"),
+                        onPressed: () {},
+                      ),
+                      SocialIcon(
+                        color: const Color(0xFFff4f38),
+                        iconData: const IconData(0xe902, fontFamily: "CustomIcons"),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         "New User? ",
                         style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
                       InkWell(
                         onTap: () {},
-                        child: Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
+                        child: const Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
                       )
                     ],
                   )
