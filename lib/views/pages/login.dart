@@ -1,6 +1,3 @@
-import 'package:elmhanes/views/pages/user/main_page.dart';
-import 'package:elmhanes/views/widgets/login_card.dart';
-import 'package:elmhanes/views/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -13,15 +10,16 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  String username = '', password = '';
+  // String username = '', password = '';
 
-  final controller = ScrollController();
-  double offset = 0;
-  bool _isSelected = false;
+  // final controller = ScrollController();
+  // double offset = 0;
+  // bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
+
         // body: SingleChildScrollView(
         //   controller: controller,
         //   child: Column(
@@ -122,36 +120,36 @@ class _LoginState extends State<Login> {
         ),
       );
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    controller.addListener(onScroll);
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   controller.addListener(onScroll);
+  // }
 
-  void onScroll() {
-    setState(() {
-      offset = (controller.hasClients) ? controller.offset : 0;
-    });
-  }
+  // void onScroll() {
+  //   setState(() {
+  //     offset = (controller.hasClients) ? controller.offset : 0;
+  //   });
+  // }
 
-  Widget radioButton(bool isSelected) => Container(
-        width: 16.0,
-        height: 16.0,
-        padding: const EdgeInsets.all(2.0),
-        decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(width: 2.0, color: Colors.black)),
-        child: isSelected
-            ? Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
-              )
-            : Container(),
-      );
+  // Widget radioButton(bool isSelected) => Container(
+  //       width: 16.0,
+  //       height: 16.0,
+  //       padding: const EdgeInsets.all(2.0),
+  //       decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(width: 2.0, color: Colors.black)),
+  //       child: isSelected
+  //           ? Container(
+  //               width: double.infinity,
+  //               height: double.infinity,
+  //               decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+  //             )
+  //           : Container(),
+  //     );
 
-  void _radio() {
-    setState(() {
-      _isSelected = !_isSelected;
-    });
-  }
+  // void _radio() {
+  //   setState(() {
+  //     _isSelected = !_isSelected;
+  //   });
+  // }
 }
