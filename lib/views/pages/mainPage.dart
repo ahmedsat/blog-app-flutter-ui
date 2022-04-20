@@ -34,8 +34,8 @@ class _MainPageState extends State<MainPage> {
     SmallContentCard(
       title: 'المكونات المادية',
       icon: Icons.handyman,
-      startColor: Color(0xff45d6b5),
-      endColor: Color(0xff63c6c1),
+      startColor: const Color(0xff45d6b5),
+      endColor: const Color(0xff63c6c1),
     ),
     SmallContentCard(
       title: 'المكونات الالكترونية',
@@ -59,8 +59,8 @@ class _MainPageState extends State<MainPage> {
     SmallContentCard(
       title: 'المكونات المادية',
       icon: Icons.handyman,
-      startColor: Color(0xff45d6b5),
-      endColor: Color(0xff63c6c1),
+      startColor: const Color(0xff45d6b5),
+      endColor: const Color(0xff63c6c1),
     ),
     SmallContentCard(
       title: 'المكونات الالكترونية',
@@ -127,22 +127,22 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
 
       /** */
       body: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             height: 300,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                childAspectRatio: 2 / 3,
+                childAspectRatio: 2 / 5,
                 crossAxisCount: 2,
               ),
               scrollDirection: Axis.horizontal,
@@ -152,11 +152,11 @@ class _MainPageState extends State<MainPage> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             height: 100,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -172,11 +172,11 @@ class _MainPageState extends State<MainPage> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             height: 200,
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -195,7 +195,7 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       /**/
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
     );
   }
 }
