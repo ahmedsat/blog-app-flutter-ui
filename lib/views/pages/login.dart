@@ -10,11 +10,11 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  // String username = '', password = '';
+  String username = '', password = '';
 
-  // final controller = ScrollController();
-  // double offset = 0;
-  // bool _isSelected = false;
+  final controller = ScrollController();
+  double offset = 0;
+  bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
