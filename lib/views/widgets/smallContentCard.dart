@@ -11,7 +11,7 @@ class SmallContentCard extends StatelessWidget {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Container(
-      height: 20,
+      width: MediaQuery.of(context).size.width / 3,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         gradient: LinearGradient(
