@@ -39,7 +39,7 @@ class SmallContentCard extends StatelessWidget {
                 child: Text(
                   title!,
                   style: const TextStyle(
-                    fontSize: 12,
+                    fontSize: 20,
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.right,
