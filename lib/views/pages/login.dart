@@ -104,21 +104,21 @@ class _LoginState extends State<Login> {
         );
   }
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    controller.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   controller.dispose();
+  //   super.dispose();
+  // }
 
-  Widget horizontalLine() => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Container(
-          width: 120,
-          height: 1.0,
-          color: Colors.black26.withOpacity(.2),
-        ),
-      );
+  // Widget horizontalLine() => Padding(
+  //       padding: const EdgeInsets.symmetric(horizontal: 16.0),
+  //       child: Container(
+  //         width: 120,
+  //         height: 1.0,
+  //         color: Colors.black26.withOpacity(.2),
+  //       ),
+  //     );
 
   // @override
   // void initState() {
