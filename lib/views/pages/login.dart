@@ -61,6 +61,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 40),
                   Row(
                     children: <Widget>[
                       const SizedBox(
@@ -75,38 +76,6 @@ class _LoginState extends State<Login> {
                       ),
                       const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
                     ],
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      horizontalLine(),
-                      const Text("Social Login", style: TextStyle(fontSize: 16.0, fontFamily: "Poppins-Medium")),
-                      horizontalLine()
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SocialIcon(
-                        color: const Color(0xFF102397),
-                        iconData: const IconData(0xe901, fontFamily: "CustomIcons"),
-                        onPressed: () {},
-                      ),
-                      SocialIcon(
-                        color: const Color(0xFFff4f38),
-                        iconData: const IconData(0xe902, fontFamily: "CustomIcons"),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
