@@ -63,7 +63,7 @@ class _MainPageState extends State<MainPage> {
       icon: Icons.ac_unit,
     ),
     ExtraSmallContentCardSquare(
-      title: 'test test',
+      title: 'test test test',
       icon: Icons.ac_unit,
     ),
     ExtraSmallContentCardSquare(
