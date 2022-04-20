@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
     ),
     SmallContentCard(
       title: 'المكونات ',
-      icon: Icons.handyman,
+      icon: Icons.drag_indicator,
       startColor: const Color(0xff45d6b5),
       endColor: const Color(0xff63c6c1),
     ),
