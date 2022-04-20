@@ -1,68 +1,207 @@
-import 'package:elmhanes/views/pages/mainPage.dart';
+import 'package:elmhanes/views/pages/user/main_page.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
-import 'package:elmhanes/views/widgets/logo.dart';
+import 'package:elmhanes/views/widgets/login_card.dart';
+import 'package:elmhanes/views/widgets/my_header.dart';
+import 'package:elmhanes/views/widgets/social_icon.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   static String id = 'Login';
 
   @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   String username = '', password = '';
+
+  final controller = ScrollController();
+  double offset = 0;
+  bool _isSelected = false;
+
   @override
   Widget build(BuildContext context) {
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      // CustomAppBar
-      appBar: CustomAppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Center(
-            child: Text(
-              'Welcome to our app ',
-              style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900,
-                  color: colorScheme.primary),
+      body: SingleChildScrollView(
+        controller: controller,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            MyHeader(
+              image: "assets/icons/barbecue.svg",
+              textTop: "Order and",
+              textBottom: "Get to door steps",
+              offset: offset,
             ),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 32),
-            child: Column(
-              children: [
-                TextField(
-                  decoration: InputDecoration(hintText: 'Username'),
-                  onChanged: (value) {},
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                TextField(
-                  decoration: InputDecoration(hintText: 'Password '),
-                  onChanged: (value) {},
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.popAndPushNamed(context, MainPage.id);
-                  },
-                  child: Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    color: colorScheme.primary,
-                    child: Icon(Icons.login),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  loginCard(),
+                  const SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          const SizedBox(
+                            width: 12.0,
+                          ),
+                          GestureDetector(
+                            onTap: _radio,
+                            child: radioButton(_isSelected),
+                          ),
+                          const SizedBox(
+                            width: 8.0,
+                          ),
+                          const Text("Remember me",
+                              style: TextStyle(
+                                  fontSize: 12, fontFamily: "Poppins-Medium"))
+                        ],
+                      ),
+                      InkWell(
+                        child: Container(
+                          width: 330,
+                          height: 100,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF3382CC),
+                              borderRadius: BorderRadius.circular(6.0),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: const Color(0xFF4056C6)
+                                        .withOpacity(.15),
+                                    offset: const Offset(0.0, 8.0),
+                                    blurRadius: 8.0)
+                              ]),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () {},
+                              child: const Center(
+                                child: Text("SIGNIN",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: "Poppins-Bold",
+                                        fontSize: 18,
+                                        letterSpacing: 1.0)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      horizontalLine(),
+                      const Text("Social Login",
+                          style: TextStyle(
+                              fontSize: 16.0, fontFamily: "Poppins-Medium")),
+                      horizontalLine()
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SocialIcon(
+                        color: const Color(0xFF102397),
+                        iconData:
+                            const IconData(0xe901, fontFamily: "CustomIcons"),
+                        onPressed: () {},
+                      ),
+                      SocialIcon(
+                        color: const Color(0xFFff4f38),
+                        iconData:
+                            const IconData(0xe902, fontFamily: "CustomIcons"),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(
+                        "New User? ",
+                        style: TextStyle(fontFamily: "Poppins-Medium"),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const Text("SignUp",
+                            style: TextStyle(
+                                color: Color(0xFF5d74e3),
+                                fontFamily: "Poppins-Bold")),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    controller.dispose();
+    super.dispose();
+  }
+
+  Widget horizontalLine() => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Container(
+          width: 120,
+          height: 1.0,
+          color: Colors.black26.withOpacity(.2),
+        ),
+      );
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller.addListener(onScroll);
+  }
+
+  void onScroll() {
+    setState(() {
+      offset = (controller.hasClients) ? controller.offset : 0;
+    });
+  }
+
+  Widget radioButton(bool isSelected) => Container(
+        width: 16.0,
+        height: 16.0,
+        padding: const EdgeInsets.all(2.0),
+        decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(width: 2.0, color: Colors.black)),
+        child: isSelected
+            ? Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.black),
+              )
+            : Container(),
+      );
+
+  void _radio() {
+    setState(() {
+      _isSelected = !_isSelected;
+    });
   }
 }

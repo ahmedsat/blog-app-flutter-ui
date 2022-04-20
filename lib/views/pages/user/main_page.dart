@@ -1,6 +1,6 @@
-import 'package:elmhanes/views/widgets/customDrawer.dart';
-import 'package:elmhanes/views/widgets/extraSmallContentCardSquare.dart';
-import 'package:elmhanes/views/widgets/smallContentCard.dart';
+import 'package:elmhanes/views/widgets/custom_drawer.dart';
+import 'package:elmhanes/views/widgets/extra_small_content_card_square.dart';
+import 'package:elmhanes/views/widgets/small_content_card.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
 
 import 'package:flutter/material.dart';
