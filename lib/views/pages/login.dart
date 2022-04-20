@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:elmhanes/views/pages/user/main_page.dart';
 import 'package:elmhanes/views/widgets/login_card.dart';
 import 'package:elmhanes/views/widgets/my_header.dart';
-import 'package:elmhanes/views/widgets/social_icon.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -42,21 +39,6 @@ class _LoginState extends State<Login> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   loginCard(),
-                  Row(
-                    children: <Widget>[
-                      const SizedBox(
-                        width: 12.0,
-                      ),
-                      GestureDetector(
-                        onTap: _radio,
-                        child: radioButton(_isSelected),
-                      ),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
-                      const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
-                    ],
-                  ),
                   InkWell(
                     child: Container(
                       width: 330,
@@ -76,6 +58,21 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      const SizedBox(
+                        width: 12.0,
+                      ),
+                      GestureDetector(
+                        onTap: _radio,
+                        child: radioButton(_isSelected),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
+                    ],
                   ),
                   const SizedBox(height: 40),
                   Row(
