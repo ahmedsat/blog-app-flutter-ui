@@ -1,9 +1,6 @@
 import 'package:elmhanes/views/widgets/accordion.dart';
 import 'package:elmhanes/views/widgets/custom_drawer.dart';
-import 'package:elmhanes/views/widgets/extra_small_content_card_square.dart';
-import 'package:elmhanes/views/widgets/small_content_card.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
-import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,8 +13,19 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<String> items = List<String>.generate(10, (index) => 'topic $index');
-  String aaaa = 'fgfdg';
+  List<String> categories = [
+    'الأدوات المطلوبة لصيانة المحمول',
+    'أجهزة قياس مكونات بوردة المحمول',
+    'الأجهزة المطلوبة في صيانة المحمول',
+    'فك وتركيب اي موبايل',
+    'المكونات المادية للمحمول',
+    'المكونات الألكترونية لبوردة المحمول',
+    'الدوائر الرئيسية في المحمول ',
+    'الدوائر الفرعية في المحول',
+    'كيفية ازالة وتركيب المكونات',
+    'اعطال وحلول',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +39,10 @@ class _MainPageState extends State<MainPage> {
           top: 20,
         ),
         child: ListView.builder(
-          itemCount: items.length,
+          itemCount: categories.length,
           itemBuilder: (context, i) {
             return Accordion(
-              title: items[i],
+              title: categories[i],
               child: const Text('data'),
             );
           },
