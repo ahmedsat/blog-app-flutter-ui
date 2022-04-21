@@ -14,7 +14,7 @@ class Accordion extends StatefulWidget {
 }
 
 class _AccordionState extends State<Accordion> {
-  bool _showContent = false;
+  bool _showContent = true;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -39,7 +39,7 @@ class _AccordionState extends State<Accordion> {
                     children: [
                       Text(widget.desc,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 24,
                           )),
                       SizedBox(
                         height: 10,
