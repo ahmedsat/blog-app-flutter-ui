@@ -3,6 +3,7 @@ import 'package:elmhanes/views/widgets/custom_drawer.dart';
 import 'package:elmhanes/views/widgets/extra_small_content_card_square.dart';
 import 'package:elmhanes/views/widgets/small_content_card.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,10 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
-        child: const Accordion(),
+        child: const Accordion(
+          title: 'sdfgsdf',
+          child: Container(),
+        ),
       ),
       drawer: const CustomDrawer(),
     );
