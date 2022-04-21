@@ -71,7 +71,7 @@ class RowCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(10),
+      // margin: EdgeInsets.all(10),
       child: Container(
         width: MediaQuery.of(context).size.width,
         child: Text(
