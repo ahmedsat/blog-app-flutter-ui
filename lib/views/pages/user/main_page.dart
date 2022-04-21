@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
         child: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, i) {
-            return const Accordion(
+            return Accordion(
               title: 'test ${aaaa}',
               child: Text('data'),
             );
