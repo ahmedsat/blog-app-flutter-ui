@@ -15,7 +15,7 @@ class _AccordionState extends State<Accordion> {
   bool _showContent = false;
   @override
   Widget build(BuildContext context) {
-    return const Card(
+    return Card(
       margin: EdgeInsets.all(10),
       child: Column(
         children: [
