@@ -71,6 +71,7 @@ class RowCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Color(0xffeffaff),
       ),
