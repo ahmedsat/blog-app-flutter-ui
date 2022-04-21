@@ -1,7 +1,10 @@
+import 'dart:ui';
+
+import 'package:elmhanes/modules/topic.dart';
+import 'package:elmhanes/views/widgets/accordion.dart';
 import 'package:elmhanes/views/widgets/custom_drawer.dart';
-import 'package:elmhanes/views/widgets/extra_small_content_card_square.dart';
-import 'package:elmhanes/views/widgets/small_content_card.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
@@ -14,113 +17,72 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final List<Widget> topList = [
-    SmallContentCard(
-      title: 'الأدوات',
-      icon: Icons.handyman,
-      startColor: Colors.blue,
-      endColor: Colors.lightBlue,
-    ),
-    SmallContentCard(
-      title: 'الأجهزة',
-      icon: Icons.ad_units,
-      startColor: Colors.green,
-      endColor: Colors.lightGreen,
-    ),
-    SmallContentCard(
-      title: 'المكونات ',
-      icon: Icons.drag_indicator,
-      startColor: const Color(0xff45d6b5),
-      endColor: const Color(0xff63c6c1),
-    ),
-    SmallContentCard(
-      title: 'مشكلات',
-      icon: Icons.perm_device_information_sharp,
-      startColor: Colors.orange,
-      endColor: Colors.orangeAccent,
-    ),
+  List<String> categories = [
+    'الأدوات المطلوبة لصيانة المحمول',
+    'أجهزة قياس مكونات بوردة المحمول',
+    'الأجهزة المطلوبة في صيانة المحمول',
+    'فك وتركيب اي موبايل',
+    'المكونات المادية للمحمول',
+    'المكونات الألكترونية لبوردة المحمول',
+    'الدوائر الرئيسية في المحمول ',
+    'الدوائر الفرعية في المحول',
+    'كيفية ازالة وتركيب المكونات',
+    'اعطال وحلول',
   ];
-
-  final List<Widget> midList = [
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
+  List<RowCard> rowCards = [
+    RowCard(),
+    RowCard(),
+    RowCard(),
+    RowCard(),
+    RowCard(),
+    RowCard(),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-
-      /** */
-      body: ListView(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          Container(
-            margin: const EdgeInsets.all(10),
-            height: MediaQuery.of(context).size.width * .65,
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 2 / 3,
-                crossAxisCount: 2,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        margin: const EdgeInsets.only(
+          left: 10,
+          right: 10,
+          top: 20,
+        ),
+        child: ListView.builder(
+          itemCount: categories.length,
+          itemBuilder: (context, i) {
+            return Accordion(
+              title: categories[i],
+              desc: 'وصف مختصر للقسم',
+              child: Column(
+                children: rowCards,
               ),
-              scrollDirection: Axis.horizontal,
-              itemCount: topList.length,
-              itemBuilder: (BuildContext ctx, index) {
-                return topList[index];
-              },
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Container(
-            margin: const EdgeInsets.all(10),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.width,
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 1,
-                crossAxisCount: 3,
-              ),
-              scrollDirection: Axis.vertical,
-              itemCount: midList.length,
-              itemBuilder: (BuildContext ctx, index) {
-                return midList[index];
-              },
-            ),
-          ),
-        ],
+            );
+          },
+        ),
       ),
-      /**/
       drawer: const CustomDrawer(),
+    );
+  }
+}
+
+class RowCard extends StatelessWidget {
+  const RowCard({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(vertical: 2),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Color(0xffeffaff),
+      ),
+      width: MediaQuery.of(context).size.width,
+      child: Text(
+        "عنوان الموضوع",
+        style: TextStyle(fontSize: 20),
+      ),
     );
   }
 }
