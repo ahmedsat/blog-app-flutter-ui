@@ -15,6 +15,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  List<String> items = List<String>.generate(10, (index) => 'topic $index');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,21 +23,19 @@ class _MainPageState extends State<MainPage> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: 10,
           right: 10,
           top: 20,
         ),
-        // child: ,
+        child: const GFAccordion(
+          title: 'GF Accordion',
+          content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
+          collapsedIcon: Icon(Icons.add),
+          expandedIcon: Icon(Icons.minimize),
+        ),
       ),
       drawer: const CustomDrawer(),
     );
   }
 }
-
-// GFAccordion(
-//               title: 'GF Accordion',
-//               content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
-//               collapsedIcon: Icon(Icons.add),
-//               expandedIcon: Icon(Icons.minimize),
-//             )
