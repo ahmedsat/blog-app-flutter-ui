@@ -2,6 +2,7 @@ import 'package:elmhanes/views/widgets/custom_drawer.dart';
 import 'package:elmhanes/views/widgets/extra_small_content_card_square.dart';
 import 'package:elmhanes/views/widgets/small_content_card.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
+import 'package:getwidget/getwidget.dart';
 
 import 'package:flutter/material.dart';
 
@@ -14,113 +15,54 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final List<Widget> topList = [
-    SmallContentCard(
-      title: 'الأدوات',
-      icon: Icons.handyman,
-      startColor: Colors.blue,
-      endColor: Colors.lightBlue,
-    ),
-    SmallContentCard(
-      title: 'الأجهزة',
-      icon: Icons.ad_units,
-      startColor: Colors.green,
-      endColor: Colors.lightGreen,
-    ),
-    SmallContentCard(
-      title: 'المكونات ',
-      icon: Icons.drag_indicator,
-      startColor: const Color(0xff45d6b5),
-      endColor: const Color(0xff63c6c1),
-    ),
-    SmallContentCard(
-      title: 'مشكلات',
-      icon: Icons.perm_device_information_sharp,
-      startColor: Colors.orange,
-      endColor: Colors.orangeAccent,
-    ),
-  ];
-
-  final List<Widget> midList = [
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-    ExtraSmallContentCardSquare(
-      title: 'test',
-      icon: Icons.ac_unit,
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
-
-      /** */
-      body: ListView(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          Container(
-            margin: const EdgeInsets.all(10),
-            height: MediaQuery.of(context).size.width * .65,
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 2 / 3,
-                crossAxisCount: 2,
-              ),
-              scrollDirection: Axis.horizontal,
-              itemCount: topList.length,
-              itemBuilder: (BuildContext ctx, index) {
-                return topList[index];
-              },
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Container(
-            margin: const EdgeInsets.all(10),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.width,
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 1,
-                crossAxisCount: 3,
-              ),
-              scrollDirection: Axis.vertical,
-              itemCount: midList.length,
-              itemBuilder: (BuildContext ctx, index) {
-                return midList[index];
-              },
-            ),
-          ),
-        ],
+      appBar: GFAppBar(
+        title: Text(
+          'Accordion',
+          style: TextStyle(fontSize: 18),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
       ),
-      /**/
-      drawer: const CustomDrawer(),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        margin: EdgeInsets.only(
+          left: 10,
+          right: 10,
+          top: 20,
+        ),
+        child: ListView(
+          shrinkWrap: true,
+          scrollDirection: Axis.vertical,
+          physics: ScrollPhysics(),
+          children: <Widget>[
+            GFTypography(
+              text: 'Basic Accordion',
+            ),
+            GFAccordion(
+              title: 'GF Accordion',
+              content: 'GetFlutter is an open source library that comes with pre-build 1000+ UI components.',
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            GFTypography(
+              text: 'Accordion with trailing icon',
+            ),
+            GFAccordion(title: 'GF Accordion', content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.', collapsedIcon: Icon(Icons.add), expandedIcon: Icon(Icons.minimize)),
+            SizedBox(
+              height: 40,
+            ),
+            GFTypography(
+              text: 'Accordion with trailing text',
+            ),
+            GFAccordion(title: 'GF Accordion', content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.', collapsedIcon: Text('Show'), expandedIcon: Text('Hide')),
+          ],
+        ),
+      ),
     );
   }
 }
