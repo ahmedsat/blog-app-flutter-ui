@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
           itemCount: items.length,
           itemBuilder: (context, i) {
             return const Accordion(
-              title: 'test',
+              title: items[1],
               child: Text('data'),
             );
           },
