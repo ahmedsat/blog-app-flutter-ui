@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Accordion extends StatefulWidget {
   final String title, desc;
@@ -36,7 +37,13 @@ class _AccordionState extends State<Accordion> {
                   padding: EdgeInsets.all(15),
                   child: Column(
                     children: [
-                      Text(widget.desc),
+                      Text(widget.desc,
+                          style: TextStyle(
+                            fontSize: 16,
+                          )),
+                      SizedBox(
+                        height: 10,
+                      ),
                       widget.child
                     ],
                   ),
