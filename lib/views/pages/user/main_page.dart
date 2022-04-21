@@ -54,7 +54,7 @@ class _MainPageState extends State<MainPage> {
           itemBuilder: (context, i) {
             return Accordion(
               title: categories[i],
-              desc: 'وصف مختصر للقسم',
+              // desc: 'وصف مختصر للقسم',
               child: Column(
                 children: rowCards,
               ),
