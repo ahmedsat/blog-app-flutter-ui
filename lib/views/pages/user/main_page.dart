@@ -68,6 +68,8 @@ class RowCard extends StatelessWidget {
   const RowCard({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Card(
+      child: Text('data'),
+    );
   }
 }
