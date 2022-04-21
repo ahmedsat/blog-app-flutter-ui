@@ -1,6 +1,8 @@
+import 'package:elmhanes/modules/topic.dart';
 import 'package:elmhanes/views/widgets/accordion.dart';
 import 'package:elmhanes/views/widgets/custom_drawer.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
@@ -25,7 +27,14 @@ class _MainPageState extends State<MainPage> {
     'كيفية ازالة وتركيب المكونات',
     'اعطال وحلول',
   ];
-
+  List<RowCard> rowCards = [
+    RowCard(),
+    RowCard(),
+    RowCard(),
+    RowCard(),
+    RowCard(),
+    RowCard(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +52,22 @@ class _MainPageState extends State<MainPage> {
           itemBuilder: (context, i) {
             return Accordion(
               title: categories[i],
-              child: const Text('data'),
+              child: Column(
+                children: rowCards,
+              ),
             );
           },
         ),
       ),
       drawer: const CustomDrawer(),
     );
+  }
+}
+
+class RowCard extends StatelessWidget {
+  const RowCard({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
