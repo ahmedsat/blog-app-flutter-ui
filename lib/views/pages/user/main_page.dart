@@ -28,9 +28,14 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
-        child: const GFAccordion(
+        child: GFAccordion(
           title: 'GF Accordion',
           content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
+          contentChild: ListView.builder(
+            itemBuilder: (context, i) {
+              return Container();
+            },
+          ),
           collapsedIcon: Icon(Icons.add),
           expandedIcon: Icon(Icons.minimize),
         ),
