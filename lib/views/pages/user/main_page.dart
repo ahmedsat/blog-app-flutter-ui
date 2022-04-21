@@ -1,3 +1,4 @@
+import 'package:elmhanes/views/widgets/accordion.dart';
 import 'package:elmhanes/views/widgets/custom_drawer.dart';
 import 'package:elmhanes/views/widgets/extra_small_content_card_square.dart';
 import 'package:elmhanes/views/widgets/small_content_card.dart';
@@ -27,6 +28,7 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
+        child: const Accordion(),
       ),
       drawer: const CustomDrawer(),
     );
