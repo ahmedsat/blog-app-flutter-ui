@@ -29,10 +29,6 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
-        child: Accordion(
-          title: 'sdfgsdf',
-          child: Text('data'),
-        ),
       ),
       drawer: const CustomDrawer(),
     );
