@@ -54,10 +54,10 @@ class _MyHeaderState extends State<MyHeader> {
                       width: 270,
                       fit: BoxFit.fitWidth,
                       alignment: Alignment.bottomLeft,
-                      theme: const SvgTheme(
-                        currentColor: Colors.transparent,
-                        fontSize: 14,
-                        xHeight: 7,
+                      // theme: const SvgTheme(
+                      //   currentColor: Colors.transparent,
+                      //   fontSize: 14,
+                      //   xHeight: 7,
                       ),
                     ),
                   ),
