@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:elmhanes/modules/topic.dart';
 import 'package:elmhanes/views/widgets/accordion.dart';
 import 'package:elmhanes/views/widgets/custom_drawer.dart';
@@ -71,6 +73,7 @@ class RowCard extends StatelessWidget {
     return Card(
       margin: EdgeInsets.all(10),
       child: Container(
+        width: BoxWidthStyle.max,
         child: Text('data'),
       ),
     );
