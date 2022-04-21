@@ -74,6 +74,7 @@ class RowCard extends StatelessWidget {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.symmetric(vertical: 2),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
         color: Color(0xffeffaff),
       ),
       width: MediaQuery.of(context).size.width,
