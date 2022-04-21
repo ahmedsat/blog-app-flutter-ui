@@ -29,6 +29,15 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, i) {
+            return const Accordion(
+              title: 'test',
+              child: Text('data'),
+            );
+          },
+        ),
       ),
       drawer: const CustomDrawer(),
     );
