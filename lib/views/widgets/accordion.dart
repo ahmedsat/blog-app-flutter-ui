@@ -22,7 +22,7 @@ class _AccordionState extends State<Accordion> {
           ListTile(
             title: Text(widget.title),
             trailing: IconButton(
-              icon: Icon(_showContent ? Icons.add : Icons.remove),
+              icon: Icon(_showContent ? Icons.remove : Icons.add),
               onPressed: () {
                 setState(() {
                   _showContent = !_showContent;
