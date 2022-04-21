@@ -44,42 +44,42 @@ class _MyHeaderState extends State<MyHeader> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             const SizedBox(height: 30),
-            // Expanded(
-            //   child: Stack(
-            //     children: <Widget>[
-            //       Positioned(
-            //         top: (widget.offset < 0) ? 0 : widget.offset,
-            //         child: SvgPicture.asset(
-            //           widget.image,
-            //           width: 270,
-            //           fit: BoxFit.fitWidth,
-            //           alignment: Alignment.bottomLeft,
-            //         ),
-            //       ),
-            //       Positioned(
-            //         top: 20 - widget.offset / 2,
-            //         left: 0,
-            //         right: 0,
-            //         child: Center(
-            //           child: Flexible(
-            //             child: Text(
-            //               "${widget.textTop} \n\n${widget.textBottom}",
-            //               textAlign: TextAlign.center,
-            //               textDirection: TextDirection.rtl,
-            //               style: const TextStyle(
-            //                 fontSize: 22,
-            //                 fontWeight: FontWeight.w600,
-            //               ).copyWith(
-            //                 color: Colors.white,
-            //               ),
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(), // I dont know why it can't work without container
-            //     ],
-            //   ),
-            // ),
+            Expanded(
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: (widget.offset < 0) ? 0 : widget.offset,
+                    child: SvgPicture.asset(
+                      widget.image,
+                      width: 270,
+                      fit: BoxFit.fitWidth,
+                      alignment: Alignment.bottomLeft,
+                    ),
+                  ),
+                  Positioned(
+                    top: 20 - widget.offset / 2,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                      child: Flexible(
+                        child: Text(
+                          "${widget.textTop} \n\n${widget.textBottom}",
+                          textAlign: TextAlign.center,
+                          textDirection: TextDirection.rtl,
+                          style: const TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w600,
+                          ).copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Container(), // I dont know why it can't work without container
+                ],
+              ),
+            ),
           ],
         ),
       ),
