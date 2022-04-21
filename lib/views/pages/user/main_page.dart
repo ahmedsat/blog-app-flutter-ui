@@ -73,7 +73,7 @@ class RowCard extends StatelessWidget {
     return Card(
       margin: EdgeInsets.all(10),
       child: Container(
-        width: BoxWidthStyle.max,
+        width: MediaQuery.of(context).size.width,
         child: Text('data'),
       ),
     );
