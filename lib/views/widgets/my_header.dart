@@ -47,37 +47,35 @@ class _MyHeaderState extends State<MyHeader> {
             Expanded(
               child: Stack(
                 children: <Widget>[
-                  Positioned(
-                    top: (widget.offset < 0) ? 0 : widget.offset,
-                    child: SvgPicture.asset(
-                      widget.image,
-                      width: 270,
-                      fit: BoxFit.fitWidth,
-                      alignment: Alignment.bottomLeft,
-                    ),
-                  ),
+                  // Positioned(
+                  //   top: (widget.offset < 0) ? 0 : widget.offset,
+                  //   child: SvgPicture.asset(
+                  //     widget.image,
+                  //     width: 270,
+                  //     fit: BoxFit.fitWidth,
+                  //     alignment: Alignment.bottomLeft,
+                  //   ),
+                  // ),
                   Positioned(
                     top: 20 - widget.offset / 2,
                     left: 0,
                     right: 0,
                     child: Center(
-                      child: Flexible(
-                        child: Text(
-                          "${widget.textTop} \n\n${widget.textBottom}",
-                          textAlign: TextAlign.center,
-                          textDirection: TextDirection.rtl,
-                          style: const TextStyle(
-                            backgroundColor: Color.fromARGB(150, 96, 125, 139),
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
-                          ).copyWith(
-                            color: Colors.white,
-                          ),
+                      //
+                      child: Text(
+                        "${widget.textTop} \n\n${widget.textBottom}",
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.rtl,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        ).copyWith(
+                          color: Colors.white,
                         ),
                       ),
                     ),
                   ),
-                  Container(), // I dont know why it can't work without container
+                  // Container(), // I dont know why it can't work without container
                 ],
               ),
             ),
@@ -93,8 +91,7 @@ class MyClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = Path();
     path.lineTo(0, size.height - 80);
-    path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 80);
+    path.quadraticBezierTo(size.width / 2, size.height, size.width, size.height - 80);
     path.lineTo(size.width, 0);
     path.close();
     return path;
