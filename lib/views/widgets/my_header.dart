@@ -62,16 +62,16 @@ class _MyHeaderState extends State<MyHeader> {
                     right: 0,
                     child: Center(
                       child: Flexible(
-                        child: Text(
-                          "${widget.textTop} \n\n${widget.textBottom}",
-                          textAlign: TextAlign.center,
-                          textDirection: TextDirection.rtl,
-                          style: const TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
-                          ).copyWith(
-                            color: Colors.white,
-                          ),
+                        // child: Text(
+                        //   "${widget.textTop} \n\n${widget.textBottom}",
+                        //   textAlign: TextAlign.center,
+                        //   textDirection: TextDirection.rtl,
+                        //   style: const TextStyle(
+                        //     fontSize: 22,
+                        //     fontWeight: FontWeight.w600,
+                        //   ).copyWith(
+                        //     color: Colors.white,
+                        //   ),
                         ),
                       ),
                     ),
