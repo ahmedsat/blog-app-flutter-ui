@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
-        child: const Accordion(
+        child: Accordion(
           title: 'sdfgsdf',
           child: Container(),
         ),
