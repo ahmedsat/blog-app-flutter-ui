@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
         ),
         child: Accordion(
           title: 'sdfgsdf',
-          child: Container(),
+          child: Text('data'),
         ),
       ),
       drawer: const CustomDrawer(),

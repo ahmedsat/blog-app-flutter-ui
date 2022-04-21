@@ -30,7 +30,12 @@ class _AccordionState extends State<Accordion> {
               },
             ),
           ),
-          _showContent ? Container() : Container(),
+          _showContent
+              ? Container(
+                  padding: EdgeInsets.all(15),
+                  child: widget.child,
+                )
+              : Container(),
         ],
       ),
     );
