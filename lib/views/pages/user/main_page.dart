@@ -70,15 +70,15 @@ class RowCard extends StatelessWidget {
   const RowCard({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Card(
-      // margin: EdgeInsets.all(10),
+    return 
+      
       child: Container(
         width: MediaQuery.of(context).size.width,
         child: Text(
           'data',
           style: TextStyle(fontSize: 20),
         ),
-      ),
+      
     );
   }
 }
