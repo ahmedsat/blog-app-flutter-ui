@@ -17,6 +17,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List<String> items = List<String>.generate(10, (index) => 'topic $index');
+  String aaaa = 'fgfdg';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,7 @@ class _MainPageState extends State<MainPage> {
           itemCount: items.length,
           itemBuilder: (context, i) {
             return const Accordion(
-              title: 'test ' + items[i],
+              title: 'test ${aaaa}',
               child: Text('data'),
             );
           },
