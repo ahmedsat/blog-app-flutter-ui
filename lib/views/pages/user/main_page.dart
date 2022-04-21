@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
           content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
           contentChild: ListView.builder(
             itemBuilder: (context, i) {
-              return Container();
+              return Text(items[i]);
             },
           ),
           collapsedIcon: Icon(Icons.add),
