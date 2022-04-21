@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Accordion extends StatefulWidget {
-  final String title, desc;
+  final String title;
+  String desc = '';
   final Widget child;
-  const Accordion({
+  Accordion({
     Key? key,
     required this.title,
     required this.child,
-    required this.desc,
+    this.desc,
   }) : super(key: key);
+  @override
   _AccordionState createState() => _AccordionState();
 }
 
 class _AccordionState extends State<Accordion> {
-  bool _showContent = true;
+  bool _showContent = false;
   @override
   Widget build(BuildContext context) {
     return Card(
