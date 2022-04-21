@@ -20,7 +20,7 @@ class _AccordionState extends State<Accordion> {
       child: Column(
         children: [
           ListTile(
-            title: Text(Widget.title),
+            title: Text(widget.title),
           )
         ],
       ),
