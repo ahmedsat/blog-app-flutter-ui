@@ -48,12 +48,17 @@ class _MyHeaderState extends State<MyHeader> {
               child: Stack(
                 children: <Widget>[
                   Positioned(
-                    top: 0,
+                    top: (widget.offset < 0) ? 0 : widget.offset,
                     child: SvgPicture.asset(
                       widget.image,
                       width: 270,
                       fit: BoxFit.fitWidth,
                       alignment: Alignment.bottomLeft,
+                      theme: const SvgTheme(
+                        currentColor: Colors.transparent,
+                        fontSize: 14,
+                        xHeight: 7,
+                      ),
                     ),
                   ),
                   // Positioned(
