@@ -30,7 +30,7 @@ class _MainPageState extends State<MainPage> {
         ),
         child: GFAccordion(
           title: 'GF Accordion',
-          // content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
+          content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
           contentChild: Container(
             color: Colors.green,
             width: 100,
