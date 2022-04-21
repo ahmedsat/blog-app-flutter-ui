@@ -21,7 +21,16 @@ class _AccordionState extends State<Accordion> {
         children: [
           ListTile(
             title: Text(widget.title),
-          )
+            trailing: IconButton(
+              icon: Icon(_showContent ? Icons.add : Icons.remove),
+              onPressed: () {
+                setState(() {
+                  _showContent = !_showContent;
+                });
+              },
+            ),
+          ),
+          _showContent ? Container() : Container(),
         ],
       ),
     );
