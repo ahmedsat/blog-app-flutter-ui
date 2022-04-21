@@ -71,7 +71,6 @@ class _MyHeaderState extends State<MyHeader> {
                           fontWeight: FontWeight.w600,
                         ).copyWith(
                           color: Colors.white,
-                          // backgroundColor: const Color(0x88b2b2b2),
                         ),
                       ),
                     ),
