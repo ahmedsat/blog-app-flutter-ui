@@ -40,6 +40,7 @@ class _MyHeaderState extends State<MyHeader> {
             image: AssetImage("assets/images/virus.png"),
           ),
         ),
+
         // child: Column(
         //   crossAxisAlignment: CrossAxisAlignment.end,
         //   children: <Widget>[
