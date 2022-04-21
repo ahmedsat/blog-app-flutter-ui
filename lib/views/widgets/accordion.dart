@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Accordion extends StatefulWidget {
-  final String title;
+  final String title, desc;
   final Widget child;
   const Accordion({
     Key? key,
     required this.title,
     required this.child,
+    required this.desc,
   }) : super(key: key);
   _AccordionState createState() => _AccordionState();
 }
@@ -33,7 +34,12 @@ class _AccordionState extends State<Accordion> {
           _showContent
               ? Container(
                   padding: EdgeInsets.all(15),
-                  child: widget.child,
+                  child: Column(
+                    children: [
+                      Text(widget.desc),
+                      widget.child
+                    ],
+                  ),
                 )
               : Container(),
         ],
