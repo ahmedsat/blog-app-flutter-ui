@@ -18,7 +18,7 @@ class _AccordionState extends State<Accordion> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Column(
         children: [
           ListTile(
@@ -34,14 +34,18 @@ class _AccordionState extends State<Accordion> {
           ),
           _showContent
               ? Container(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Column(
                     children: [
-                      Text(widget.desc,
-                          style: TextStyle(
-                            fontSize: 24,
-                          )),
-                      SizedBox(
+                      widget.desc != ''
+                          ? Text(
+                              widget.desc,
+                              style: const TextStyle(
+                                fontSize: 24,
+                              ),
+                            )
+                          : Container(),
+                      const SizedBox(
                         height: 10,
                       ),
                       widget.child
