@@ -79,7 +79,7 @@ class RowCard extends StatelessWidget {
       ),
       width: MediaQuery.of(context).size.width,
       child: Text(
-        "data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data ",
+        "عنوان الموضوع",
         style: TextStyle(fontSize: 20),
       ),
     );
