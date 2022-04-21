@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -62,7 +61,8 @@ class _MyHeaderState extends State<MyHeader> {
                     left: 0,
                     right: 0,
                     child: Center(
-                      child: Flexible(child: Container(),
+                      child: Flexible(
+                        child: Container(),
                         // child: Text(
                         //   "${widget.textTop} \n\n${widget.textBottom}",
                         //   textAlign: TextAlign.center,
@@ -73,7 +73,7 @@ class _MyHeaderState extends State<MyHeader> {
                         //   ).copyWith(
                         //     color: Colors.white,
                         //   ),
-                        ),
+                        // ),
                       ),
                     ),
                   ),
