@@ -61,21 +61,20 @@ class _MyHeaderState extends State<MyHeader> {
                     left: 0,
                     right: 0,
                     child: Center(
-                      child: Flexible(
-                        child: Container(),
-                        // child: Text(
-                        //   "${widget.textTop} \n\n${widget.textBottom}",
-                        //   textAlign: TextAlign.center,
-                        //   textDirection: TextDirection.rtl,
-                        //   style: const TextStyle(
-                        //     fontSize: 22,
-                        //     fontWeight: FontWeight.w600,
-                        //   ).copyWith(
-                        //     color: Colors.white,
+                        // child: Flexible(
+                        //   child: Text(
+                        //     "${widget.textTop} \n\n${widget.textBottom}",
+                        //     textAlign: TextAlign.center,
+                        //     textDirection: TextDirection.rtl,
+                        //     style: const TextStyle(
+                        //       fontSize: 22,
+                        //       fontWeight: FontWeight.w600,
+                        //     ).copyWith(
+                        //       color: Colors.white,
+                        //     ),
                         //   ),
                         // ),
-                      ),
-                    ),
+                        ),
                   ),
                   // Container(), // I dont know why it can't work without container
                 ],
