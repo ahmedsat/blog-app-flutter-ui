@@ -18,14 +18,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: GFAppBar(
-        title: Text(
-          'Accordion',
-          style: TextStyle(fontSize: 18),
-        ),
-        backgroundColor: Colors.green,
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -52,17 +45,28 @@ class _MainPageState extends State<MainPage> {
             GFTypography(
               text: 'Accordion with trailing icon',
             ),
-            GFAccordion(title: 'GF Accordion', content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.', collapsedIcon: Icon(Icons.add), expandedIcon: Icon(Icons.minimize)),
+            GFAccordion(
+              title: 'GF Accordion',
+              content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
+              collapsedIcon: Icon(Icons.add),
+              expandedIcon: Icon(Icons.minimize),
+            ),
             SizedBox(
               height: 40,
             ),
             GFTypography(
               text: 'Accordion with trailing text',
             ),
-            GFAccordion(title: 'GF Accordion', content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.', collapsedIcon: Text('Show'), expandedIcon: Text('Hide')),
+            GFAccordion(
+              title: 'GF Accordion',
+              content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
+              collapsedIcon: Text('Show'),
+              expandedIcon: Text('Hide'),
+            ),
           ],
         ),
       ),
+      drawer: const CustomDrawer(),
     );
   }
 }
