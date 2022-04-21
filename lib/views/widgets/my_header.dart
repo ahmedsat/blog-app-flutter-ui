@@ -47,15 +47,15 @@ class _MyHeaderState extends State<MyHeader> {
             Expanded(
               child: Stack(
                 children: <Widget>[
-                  // Positioned(
-                  //   top: (widget.offset < 0) ? 0 : widget.offset,
-                  //   child: SvgPicture.asset(
-                  //     widget.image,
-                  //     width: 270,
-                  //     fit: BoxFit.fitWidth,
-                  //     alignment: Alignment.bottomLeft,
-                  //   ),
-                  // ),
+                  Positioned(
+                    top: (widget.offset < 0) ? 0 : widget.offset,
+                    child: SvgPicture.asset(
+                      widget.image,
+                      width: 270,
+                      fit: BoxFit.fitWidth,
+                      alignment: Alignment.bottomLeft,
+                    ),
+                  ),
                   Positioned(
                     top: 20 - widget.offset / 2,
                     left: 0,
