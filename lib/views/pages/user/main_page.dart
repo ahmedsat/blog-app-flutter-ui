@@ -27,46 +27,16 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
-        child: ListView(
-          shrinkWrap: true,
-          scrollDirection: Axis.vertical,
-          physics: ScrollPhysics(),
-          children: <Widget>[
-            GFTypography(
-              text: 'Basic Accordion',
-            ),
-            GFAccordion(
-              title: 'GF Accordion',
-              content: 'GetFlutter is an open source library that comes with pre-build 1000+ UI components.',
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            GFTypography(
-              text: 'Accordion with trailing icon',
-            ),
-            GFAccordion(
-              title: 'GF Accordion',
-              content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
-              collapsedIcon: Icon(Icons.add),
-              expandedIcon: Icon(Icons.minimize),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            GFTypography(
-              text: 'Accordion with trailing text',
-            ),
-            GFAccordion(
-              title: 'GF Accordion',
-              content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
-              collapsedIcon: Text('Show'),
-              expandedIcon: Text('Hide'),
-            ),
-          ],
-        ),
+        // child: ,
       ),
       drawer: const CustomDrawer(),
     );
   }
 }
+
+// GFAccordion(
+//               title: 'GF Accordion',
+//               content: 'GetFlutter is an open source library that comes with  pre-build 1000+ UI components.',
+//               collapsedIcon: Icon(Icons.add),
+//               expandedIcon: Icon(Icons.minimize),
+//             )
