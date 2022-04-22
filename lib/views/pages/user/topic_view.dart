@@ -1,3 +1,5 @@
+import 'package:elmhanes/views/widgets/custom_scaffold.dart';
+
 import 'package:flutter/material.dart';
 
 class TopicView extends StatelessWidget {
@@ -11,7 +13,6 @@ class TopicView extends StatelessWidget {
   }
 }
 /*
-import 'package:elmhanes/views/widgets/custom_scaffold.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 
