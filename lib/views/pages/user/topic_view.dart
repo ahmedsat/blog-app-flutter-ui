@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TopicView extends StatelessWidget {
+  static String id = 'TopicView';
   const TopicView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,6 @@ import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 
 class TopicView extends StatefulWidget {
-  static String id = 'TopicView';
   const TopicView({Key? key}) : super(key: key);
 
   @override
