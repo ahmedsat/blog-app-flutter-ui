@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
 
       // initialRoute: Login.id,
-      initialRoute: MainPage.id,
+      initialRoute: TopicView.id,
 
       routes: {
         TopicView.id: (context) => const TopicView(),
