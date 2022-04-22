@@ -4,6 +4,7 @@ import 'package:elmhanes/views/pages/user/main_page.dart';
 import 'package:elmhanes/views/widgets/login_card.dart';
 import 'package:elmhanes/views/widgets/my_header.dart';
 import 'package:elmhanes/views/widgets/social_icon.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -51,9 +52,7 @@ class _LoginState extends State<Login> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: () {
-                            Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
-                          },
+                          onTap: login,
                           child: const Center(
                             child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                           ),
@@ -105,6 +104,10 @@ class _LoginState extends State<Login> {
     // TODO: implement dispose
     controller.dispose();
     super.dispose();
+  }
+
+  void login() {
+    Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
   }
 
   Widget horizontalLine() => Padding(
