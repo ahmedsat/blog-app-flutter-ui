@@ -26,7 +26,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.symmetric(
-              vertical: 5,
+              vertical: 2,
             ),
             decoration: BoxDecoration(
               // borderRadius: BorderRadius.circular(25),
@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.symmetric(
-              vertical: 5,
+              vertical: 2,
             ),
             decoration: BoxDecoration(
               // borderRadius: BorderRadius.circular(25),
