@@ -1,5 +1,5 @@
-import 'package:elmhanes/views/widgets/custom_scaffold.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+// import 'package:elmhanes/views/widgets/custom_scaffold.dart';
+// import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 import 'package:flutter/material.dart';
 
@@ -303,17 +303,19 @@ class _TopicViewState extends State<TopicView> {
 </ul>
 <p><br></p>
 """;
+
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
-      body: ListView(
-        shrinkWrap: true,
-        children: <Widget>[
-          HtmlWidget(
-            kHtml,
-          ),
-        ],
-      ),
-    );
+    return Container();
+    // return CustomScaffold(
+    //   body: ListView(
+    //     shrinkWrap: true,
+    //     children: <Widget>[
+    //       HtmlWidget(
+    //         kHtml,
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 }
