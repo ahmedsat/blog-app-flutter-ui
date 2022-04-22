@@ -4,6 +4,7 @@ import 'package:elmhanes/views/pages/user/main_page.dart';
 import 'package:elmhanes/views/widgets/login_card.dart';
 import 'package:elmhanes/views/widgets/my_header.dart';
 import 'package:elmhanes/views/widgets/social_icon.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -15,7 +16,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   String username = '', password = '';
-
+  UserCredential? userCredential;
   final controller = ScrollController();
   double offset = 0;
   bool _isSelected = false;
@@ -28,12 +29,12 @@ class _LoginState extends State<Login> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            MyHeader(
-              image: "assets/icons/barbecue.svg",
-              textTop: "El-Mohandes ",
-              textBottom: "الحل لكل مشاكلك",
-              offset: offset,
-            ),
+            // MyHeader(
+            //   image: "assets/icons/barbecue.svg",
+            //   textTop: "El-Mohandes ",
+            //   textBottom: "الحل لكل مشاكلك",
+            //   offset: offset,
+            // ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -51,9 +52,7 @@ class _LoginState extends State<Login> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: () {
-                            Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
-                          },
+                          onTap: login,
                           child: const Center(
                             child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                           ),
@@ -105,6 +104,17 @@ class _LoginState extends State<Login> {
     // TODO: implement dispose
     controller.dispose();
     super.dispose();
+  }
+
+  void login() async {
+    try {
+      userCredential = await FirebaseAuth.instance.signInAnonymously();
+      print(userCredential);
+      Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
+    } on Exception catch (e) {
+      // TODO
+      print(e);
+    }
   }
 
   Widget horizontalLine() => Padding(
