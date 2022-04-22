@@ -33,21 +33,11 @@ class MyApp extends StatelessWidget {
       // initialRoute: TopicView.id,
       home: Login(),
       getPages: [
-        GetPage(name: '/', page: () => const HomePage()),
         GetPage(name: '/login', page: () => Login()),
         GetPage(name: '/topic', page: () => const TopicView()),
         GetPage(name: '/main', page: () => const MainPage()),
         GetPage(name: '/category', page: () => CategoryPage()),
       ],
     );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    Get.offAllNamed('/login');
-    return Container();
   }
 }
