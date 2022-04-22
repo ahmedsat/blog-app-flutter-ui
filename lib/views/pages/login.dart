@@ -16,7 +16,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   String username = '', password = '';
-
+  UserCredential? userCredential;
   final controller = ScrollController();
   double offset = 0;
   bool _isSelected = false;
@@ -108,13 +108,13 @@ class _LoginState extends State<Login> {
 
   void login() async {
     try {
-      var cred = await FirebaseAuth.instance.signInAnonymously();
-      print(cred);
+      userCredential = await FirebaseAuth.instance.signInAnonymously();
+      print(userCredential);
+      Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
     } on Exception catch (e) {
       // TODO
       print(e);
     }
-    // Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
   }
 
   Widget horizontalLine() => Padding(
