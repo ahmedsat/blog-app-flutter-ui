@@ -1,3 +1,6 @@
+// ignore: unused_import
+import 'dart:html';
+
 import 'package:elmhanes/views/widgets/custom_scaffold.dart';
 
 import 'package:flutter/material.dart';
