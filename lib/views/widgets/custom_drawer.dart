@@ -25,6 +25,28 @@ class CustomDrawer extends StatelessWidget {
             height: 20,
           ),
           Container(
+            padding: EdgeInsets.symmetric(
+              vertical: 5,
+            ),
+            decoration: BoxDecoration(
+              // borderRadius: BorderRadius.circular(25),
+              color: Colors.lightBlue,
+            ),
+            child: ListTile(
+              title: const Text('home'),
+              trailing: Icon(Icons.home),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Get.offAllNamed('/main');
+              },
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(
+              vertical: 5,
+            ),
             decoration: BoxDecoration(
               // borderRadius: BorderRadius.circular(25),
               color: Colors.lightBlue,
