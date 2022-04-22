@@ -1,4 +1,4 @@
-import 'package:elmhanes/views/widgets/login_card.dart';
+import 'package:elmhandes/views/widgets/login_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

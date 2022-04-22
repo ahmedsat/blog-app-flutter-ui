@@ -1,7 +1,7 @@
-import 'package:elmhanes/views/pages/login.dart';
-import 'package:elmhanes/views/pages/user/topic_view.dart';
+import 'package:elmhandes/views/pages/login.dart';
+import 'package:elmhandes/views/pages/user/topic_view.dart';
 import 'package:flutter/material.dart';
-import 'package:elmhanes/views/pages/user/main_page.dart';
+import 'package:elmhandes/views/pages/user/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 
