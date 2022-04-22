@@ -12,22 +12,10 @@
 @import audio_session;
 #endif
 
-#if __has_include(<file_picker/FilePickerPlugin.h>)
-#import <file_picker/FilePickerPlugin.h>
+#if __has_include(<firebase_core/FLTFirebaseCorePlugin.h>)
+#import <firebase_core/FLTFirebaseCorePlugin.h>
 #else
-@import file_picker;
-#endif
-
-#if __has_include(<flutter_inappwebview/InAppWebViewFlutterPlugin.h>)
-#import <flutter_inappwebview/InAppWebViewFlutterPlugin.h>
-#else
-@import flutter_inappwebview;
-#endif
-
-#if __has_include(<flutter_keyboard_visibility/FlutterKeyboardVisibilityPlugin.h>)
-#import <flutter_keyboard_visibility/FlutterKeyboardVisibilityPlugin.h>
-#else
-@import flutter_keyboard_visibility;
+@import firebase_core;
 #endif
 
 #if __has_include(<just_audio/JustAudioPlugin.h>)
@@ -76,9 +64,7 @@
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
   [AudioSessionPlugin registerWithRegistrar:[registry registrarForPlugin:@"AudioSessionPlugin"]];
-  [FilePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FilePickerPlugin"]];
-  [InAppWebViewFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"InAppWebViewFlutterPlugin"]];
-  [FlutterKeyboardVisibilityPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterKeyboardVisibilityPlugin"]];
+  [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [JustAudioPlugin registerWithRegistrar:[registry registrarForPlugin:@"JustAudioPlugin"]];
   [FLTPathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTPathProviderPlugin"]];
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];

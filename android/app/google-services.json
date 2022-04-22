@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "485207194340",
-    "project_id": "blog-app-8f8a4",
-    "storage_bucket": "blog-app-8f8a4.appspot.com"
+    "project_number": "394595384286",
+    "project_id": "elmhanes",
+    "storage_bucket": "elmhanes.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:485207194340:android:4874ebcf27147548c24af1",
+        "mobilesdk_app_id": "1:394595384286:android:6a56643f611c2610d9fb4f",
         "android_client_info": {
-          "package_name": "com.ahmedsat.blog"
+          "package_name": "com.ahmedsat303.elmhanes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "485207194340-nndvqmdvnt9g3iuiir526s7fa6dhjlk0.apps.googleusercontent.com",
+          "client_id": "394595384286-c8ol1sq6iaefi5ijhr29klrf9s7i6733.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBdJZVs3uTn4vWS1cTLIEZ6p3jZbWtUqHI"
+          "current_key": "AIzaSyAVtbfcDk1NmWdgiQgZvJaoYAJft-j8fbQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "485207194340-nndvqmdvnt9g3iuiir526s7fa6dhjlk0.apps.googleusercontent.com",
+              "client_id": "394595384286-c8ol1sq6iaefi5ijhr29klrf9s7i6733.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
