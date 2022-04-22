@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: 10,
+              vertical: 25,
             ),
             decoration: BoxDecoration(
               // borderRadius: BorderRadius.circular(25),
