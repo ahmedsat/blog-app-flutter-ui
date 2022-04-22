@@ -107,7 +107,8 @@ class _LoginState extends State<Login> {
   }
 
   void login() {
-    Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
+    print('object');
+    // Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
   }
 
   Widget horizontalLine() => Padding(
