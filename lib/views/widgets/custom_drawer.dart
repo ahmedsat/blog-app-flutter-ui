@@ -25,7 +25,7 @@ class CustomDrawer extends StatelessWidget {
             height: 20,
           ),
           Container(
-            padding: EdgeInsets.symmetric(
+            margin: EdgeInsets.symmetric(
               vertical: 5,
             ),
             decoration: BoxDecoration(
@@ -33,7 +33,7 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.lightBlue,
             ),
             child: ListTile(
-              title: const Text('home'),
+              title: const Text('Home'),
               trailing: Icon(Icons.home),
               onTap: () {
                 // Update the state of the app
@@ -44,12 +44,15 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
+            margin: EdgeInsets.symmetric(
+              vertical: 5,
+            ),
             decoration: BoxDecoration(
               // borderRadius: BorderRadius.circular(25),
               color: Colors.lightBlue,
             ),
             child: ListTile(
-              title: const Text('home'),
+              title: const Text('Home'),
               trailing: Icon(Icons.home),
               onTap: () {
                 // Update the state of the app
