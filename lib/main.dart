@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
 
       initialRoute: Login.id,
       // initialRoute: TopicView.id,
-      home: Login(),
+      home: const Login(),
       getPages: [
-        GetPage(name: '/login', page: () => Login()),
+        GetPage(name: '/login', page: () => const Login()),
         GetPage(name: '/topic', page: () => const TopicView()),
         GetPage(name: '/main', page: () => const MainPage()),
       ],

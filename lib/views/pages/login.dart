@@ -1,15 +1,12 @@
-import 'dart:developer';
-
-import 'package:elmhanes/views/pages/user/main_page.dart';
 import 'package:elmhanes/views/widgets/login_card.dart';
-import 'package:elmhanes/views/widgets/my_header.dart';
-import 'package:elmhanes/views/widgets/social_icon.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Login extends StatefulWidget {
   static String id = 'Login';
+
+  const Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => _LoginState();
@@ -41,7 +38,7 @@ class _LoginState extends State<Login> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  loginCard(),
+                  LoginCard(),
                   const SizedBox(height: 40),
                   InkWell(
                     child: Container(
@@ -102,7 +99,6 @@ class _LoginState extends State<Login> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     controller.dispose();
     super.dispose();
   }
@@ -113,7 +109,6 @@ class _LoginState extends State<Login> {
 
       Get.offNamed("/main");
     } on Exception catch (e) {
-      // TODO
       print(e);
     }
   }
@@ -129,7 +124,6 @@ class _LoginState extends State<Login> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller.addListener(onScroll);
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -21,20 +20,20 @@ class CustomDrawer extends StatelessWidget {
           //   ),
           //   child: Text('Drawer Header'),
           // ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
-            margin: EdgeInsets.symmetric(
+            margin: const EdgeInsets.symmetric(
               vertical: 2,
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               // borderRadius: BorderRadius.circular(25),
               color: Colors.lightBlue,
             ),
             child: ListTile(
               title: const Text('Home'),
-              trailing: Icon(Icons.home),
+              trailing: const Icon(Icons.home),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -44,16 +43,16 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(
+            margin: const EdgeInsets.symmetric(
               vertical: 2,
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               // borderRadius: BorderRadius.circular(25),
               color: Colors.lightBlue,
             ),
             child: ListTile(
               title: const Text('Home'),
-              trailing: Icon(Icons.home),
+              trailing: const Icon(Icons.home),
               onTap: () {
                 // Update the state of the app
                 // ...

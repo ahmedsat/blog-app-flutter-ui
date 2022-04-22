@@ -1,6 +1,4 @@
 import 'package:elmhanes/views/widgets/accordion.dart';
-import 'package:elmhanes/views/widgets/custom_drawer.dart';
-import 'package:elmhanes/views/widgets/custom_app_bar.dart';
 import 'package:elmhanes/views/widgets/custom_scaffold.dart';
 import 'package:elmhanes/views/widgets/row_car.dart';
 
