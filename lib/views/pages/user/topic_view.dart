@@ -5,7 +5,9 @@ class TopicView extends StatelessWidget {
   const TopicView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      body: Container(),
+    );
   }
 }
 /*
