@@ -23,6 +23,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    var cred;
     return Scaffold(
       body: SingleChildScrollView(
         controller: controller,
@@ -106,7 +107,7 @@ class _LoginState extends State<Login> {
     super.dispose();
   }
 
-  void login() {
+  void login() async {
     print('object');
     // Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
   }
