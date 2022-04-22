@@ -1,3 +1,4 @@
+import 'package:elmhanes/views/pages/user/topic_view.dart';
 import 'package:flutter/material.dart';
 
 class RowCard extends StatelessWidget {
@@ -6,7 +7,7 @@ class RowCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.pushNamed(context, TopicView.id);
+        Navigator.pushNamed(context, TopicView.id);
       },
       child: Container(
         padding: const EdgeInsets.all(10),
