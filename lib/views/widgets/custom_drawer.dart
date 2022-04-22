@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -23,15 +24,21 @@ class CustomDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ListTile(
-            title: const Text('home'),
-            trailing: Icon(Icons.home),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Get.offAllNamed('/main');
-            },
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              color: Colors.lightBlue,
+            ),
+            child: ListTile(
+              title: const Text('home'),
+              trailing: Icon(Icons.home),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Get.offAllNamed('/main');
+              },
+            ),
           ),
         ],
       ),
