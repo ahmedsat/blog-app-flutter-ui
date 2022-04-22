@@ -1,4 +1,4 @@
-import 'package:elmhanes/views/widgets/logo.dart';
+import 'package:elmhandes/views/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
