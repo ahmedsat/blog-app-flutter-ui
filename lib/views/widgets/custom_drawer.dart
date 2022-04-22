@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -20,13 +21,13 @@ class CustomDrawer extends StatelessWidget {
           //   child: Text('Drawer Header'),
           // ),
           ListTile(
-            title: const Text('Item 1'),
+            title: const Text('home'),
             trailing: Icon(Icons.home),
             onTap: () {
               // Update the state of the app
               // ...
               // Then close the drawer
-              Navigator.pop(context);
+              Get.offAllNamed('/main');
             },
           ),
         ],
