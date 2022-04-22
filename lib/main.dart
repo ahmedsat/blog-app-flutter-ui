@@ -28,9 +28,10 @@ class MyApp extends StatelessWidget {
       // you want
       theme: ThemeData.light(),
 
-      initialRoute: Login.id,
-      // initialRoute: TopicView.id,
+      // initialRoute: Login.id,
+      // // initialRoute: TopicView.id,
       home: const Login(),
+
       getPages: [
         GetPage(name: '/login', page: () => const Login()),
         GetPage(name: '/topic', page: () => const TopicView()),
