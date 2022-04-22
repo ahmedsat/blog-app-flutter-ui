@@ -1,6 +1,7 @@
 import 'package:elmhanes/views/pages/admin/create_blog.dart';
 import 'package:elmhanes/views/pages/login.dart';
 import 'package:elmhanes/views/pages/user/cat_page.dart';
+import 'package:elmhanes/views/pages/user/topic_view.dart';
 import 'package:flutter/material.dart';
 import 'package:elmhanes/views/pages/user/main_page.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       initialRoute: MainPage.id,
 
       routes: {
+        TopicView.id: (context) => const TopicView(),
         Login.id: (context) => Login(),
         MainPage.id: (context) => const MainPage(),
         CreateBlog.id: (context) => CreateBlog(),

@@ -1,10 +1,7 @@
-import 'dart:ui';
-
-import 'package:elmhanes/modules/topic.dart';
 import 'package:elmhanes/views/widgets/accordion.dart';
 import 'package:elmhanes/views/widgets/custom_drawer.dart';
 import 'package:elmhanes/views/widgets/custom_app_bar.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:elmhanes/views/widgets/row_car.dart';
 
 import 'package:flutter/material.dart';
 
@@ -30,12 +27,12 @@ class _MainPageState extends State<MainPage> {
     'اعطال وحلول',
   ];
   List<RowCard> rowCards = [
-    RowCard(),
-    RowCard(),
-    RowCard(),
-    RowCard(),
-    RowCard(),
-    RowCard(),
+    const RowCard(),
+    const RowCard(),
+    const RowCard(),
+    const RowCard(),
+    const RowCard(),
+    const RowCard(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -63,26 +60,6 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       drawer: const CustomDrawer(),
-    );
-  }
-}
-
-class RowCard extends StatelessWidget {
-  const RowCard({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(vertical: 2),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: Color(0xffeffaff),
-      ),
-      width: MediaQuery.of(context).size.width,
-      child: Text(
-        "عنوان الموضوع",
-        style: TextStyle(fontSize: 20),
-      ),
     );
   }
 }
