@@ -6,6 +6,7 @@ import 'package:elmhanes/views/widgets/my_header.dart';
 import 'package:elmhanes/views/widgets/social_icon.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Login extends StatefulWidget {
   static String id = 'Login';
@@ -110,7 +111,7 @@ class _LoginState extends State<Login> {
     try {
       // userCredential = await FirebaseAuth.instance.signInAnonymously();
 
-      Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
+      Get.offNamed("/main");
     } on Exception catch (e) {
       // TODO
       print(e);
