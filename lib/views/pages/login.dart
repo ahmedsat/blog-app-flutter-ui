@@ -107,8 +107,13 @@ class _LoginState extends State<Login> {
   }
 
   void login() async {
-    var cred = await FirebaseAuth.instance.signInAnonymously();
-    print(cred);
+    try {
+      var cred = await FirebaseAuth.instance.signInAnonymously();
+      print(cred);
+    } on Exception catch (e) {
+      // TODO
+      print(e);
+    }
     // Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
   }
 
