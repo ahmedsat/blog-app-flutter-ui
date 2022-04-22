@@ -1,7 +1,16 @@
-// import 'package:elmhanes/views/widgets/custom_scaffold.dart';
-// import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-
 import 'package:flutter/material.dart';
+
+class TopicView extends StatelessWidget {
+  const TopicView({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+/*
+import 'package:elmhanes/views/widgets/custom_scaffold.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+
 
 class TopicView extends StatefulWidget {
   static String id = 'TopicView';
@@ -319,3 +328,4 @@ class _TopicViewState extends State<TopicView> {
     // );
   }
 }
+*/
