@@ -26,7 +26,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
+              // borderRadius: BorderRadius.circular(25),
               color: Colors.lightBlue,
             ),
             child: ListTile(
