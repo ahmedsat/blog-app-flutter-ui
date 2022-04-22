@@ -1,22 +1,10 @@
 import 'package:elmhanes/views/widgets/custom_scaffold.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 import 'package:flutter/material.dart';
 
-class TopicView extends StatelessWidget {
-  static String id = 'TopicView';
-  const TopicView({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(),
-    );
-  }
-}
-/*
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-
-
 class TopicView extends StatefulWidget {
+  static String id = 'TopicView';
   const TopicView({Key? key}) : super(key: key);
 
   @override
@@ -315,20 +303,17 @@ class _TopicViewState extends State<TopicView> {
 </ul>
 <p><br></p>
 """;
-
   @override
   Widget build(BuildContext context) {
-    return Container();
-    // return CustomScaffold(
-    //   body: ListView(
-    //     shrinkWrap: true,
-    //     children: <Widget>[
-    //       HtmlWidget(
-    //         kHtml,
-    //       ),
-    //     ],
-    //   ),
-    // );
+    return CustomScaffold(
+      body: ListView(
+        shrinkWrap: true,
+        children: <Widget>[
+          HtmlWidget(
+            kHtml,
+          ),
+        ],
+      ),
+    );
   }
 }
-*/
