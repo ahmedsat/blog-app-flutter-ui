@@ -110,7 +110,8 @@ class _SignUpState extends State<SignUp> {
   }
 
   void SignUp() {
-    AuthController.instance.createUser(email, password);
+    print(emailController.text);
+    // AuthController.instance.createUser(email, password);
   }
 
   Widget horizontalLine() => Padding(
