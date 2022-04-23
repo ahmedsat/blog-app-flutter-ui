@@ -1,5 +1,6 @@
 import 'package:elmhandes/controllers/auth_controller.dart';
 import 'package:elmhandes/views/widgets/login_card.dart';
+import 'package:elmhandes/views/widgets/my_header.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,12 +30,12 @@ class _LoginState extends State<Login> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // MyHeader(
-            //   image: "assets/icons/barbecue.svg",
-            //   textTop: "El-Mohandes ",
-            //   textBottom: "الحل لكل مشاكلك",
-            //   offset: offset,
-            // ),
+            MyHeader(
+              image: "assets/icons/barbecue.svg",
+              textTop: "El-Mohandes ",
+              textBottom: "الحل لكل مشاكلك",
+              offset: offset,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(

@@ -1,4 +1,5 @@
 import 'package:elmhandes/controllers/auth_controller.dart';
+import 'package:elmhandes/views/widgets/my_header.dart';
 import 'package:elmhandes/views/widgets/signup_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,12 +29,12 @@ class _SignUpState extends State<SignUp> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // MyHeader(
-            //   image: "assets/icons/barbecue.svg",
-            //   textTop: "El-Mohandes ",
-            //   textBottom: "الحل لكل مشاكلك",
-            //   offset: offset,
-            // ),
+            MyHeader(
+              image: "assets/icons/barbecue.svg",
+              textTop: "El-Mohandes ",
+              textBottom: "الحل لكل مشاكلك",
+              offset: offset,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
