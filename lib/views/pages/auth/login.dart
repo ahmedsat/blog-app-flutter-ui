@@ -52,32 +52,30 @@ class _LoginState extends State<Login> {
                     decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
                       BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
                     ]),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: login,
-                        child: const Center(
-                          child: Text("تسجيل الدخول ", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
-                        ),
+                    child: InkWell(
+                      onTap: login,
+                      child: const Center(
+                        child: Text("تسجيل الدخول ", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 40),
-                  Row(
-                    children: <Widget>[
-                      const SizedBox(
-                        width: 12.0,
-                      ),
-                      GestureDetector(
-                        onTap: _radio,
-                        child: radioButton(_isSelected),
-                      ),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
-                      // const Text("تذكرني", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
-                    ],
-                  ),
+
+                  const SizedBox(height: 25),
+                  // Row(
+                  //   children: <Widget>[
+                  //     const SizedBox(
+                  //       width: 12.0,
+                  //     ),
+                  //     GestureDetector(
+                  //       onTap: _radio,
+                  //       child: radioButton(_isSelected),
+                  //     ),
+                  //     const SizedBox(
+                  //       width: 8.0,
+                  //     ),
+                  //     const Text("تذكرني", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
+                  //   ],
+                  // ),
                   const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
