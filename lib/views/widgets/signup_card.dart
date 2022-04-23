@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SignUpCard extends StatelessWidget {
   bool passwordInvisible = true;
-  TextEditingController? emailController;
+  final TextEditingController? emailController;
   TextEditingController? passwordController;
 
   SignUpCard({
