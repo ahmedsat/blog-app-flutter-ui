@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SignUpCard extends StatelessWidget {
@@ -19,3 +18,42 @@ class SignUpCard extends StatelessWidget {
           BoxShadow(color: Colors.black12, offset: Offset(0.0, -10.0), blurRadius: 10.0),
         ],
       ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Text("Login", style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text("Username", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            const TextField(
+              decoration: InputDecoration(hintText: "eg: chromicle", hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text("PassWord", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      passwordInvisible ? Icons.visibility_off : Icons.visibility,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {},
+                  ),
+                  hintText: "**********",
+                  hintStyle: const TextStyle(color: Colors.grey, fontSize: 12.0)),
+            ),
+            const SizedBox(
+              height: 35,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
