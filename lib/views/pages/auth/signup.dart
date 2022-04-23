@@ -1,6 +1,6 @@
-import 'package:elmhandes/controllers/auth_controller.dart';
-import 'package:elmhandes/views/widgets/my_header.dart';
-import 'package:elmhandes/views/widgets/signup_card.dart';
+import 'package:elmohandes/controllers/auth_controller.dart';
+import 'package:elmohandes/views/widgets/my_header.dart';
+import 'package:elmohandes/views/widgets/signup_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

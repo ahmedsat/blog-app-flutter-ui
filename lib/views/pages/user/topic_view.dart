@@ -1,4 +1,4 @@
-import 'package:elmhandes/views/widgets/custom_scaffold.dart';
+import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 import 'package:flutter/material.dart';
