@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
                     decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
                       BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
                     ]),
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: login,
                       child: const Center(
                         child: Text("تسجيل الدخول ", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
