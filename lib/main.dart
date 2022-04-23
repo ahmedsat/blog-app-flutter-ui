@@ -9,7 +9,13 @@ import 'package:get/get.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp().then((value) => Get.put(AuthController));
+  await Firebase.initializeApp().then(
+    (value) {
+      print(value);
+      Get.put(AuthController);
+    },
+    onError: (e) => print(e),
+  );
   runApp(const MyApp());
 }
 
