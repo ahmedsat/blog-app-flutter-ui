@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
@@ -19,6 +20,21 @@ class AuthController extends GetxController {
     } else {
       Get.offAllNamed('/main');
     }
+  }
 
-  
+  void createUser(String email, password) {
+    try {
+      auth.createUserWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      Get.snackbar(
+        'title',
+        'message',
+        snackPosition: SnackPosition.BOTTOM,
+        titleText: Text('data'),
+        messageText: Text(
+          e.toString(),
+        ),
+      );
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:elmhandes/controllers/auth_controller.dart';
 import 'package:elmhandes/views/pages/auth/login.dart';
 import 'package:elmhandes/views/pages/auth/signup.dart';
 import 'package:elmhandes/views/pages/user/topic_view.dart';
@@ -6,11 +7,9 @@ import 'package:elmhandes/views/pages/user/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      // options: DefaultFirebaseOptions.currentPlatform,
-      );
+  await Firebase.initializeApp().then((value) => Get.put(AuthController));
   runApp(const MyApp());
 }
 

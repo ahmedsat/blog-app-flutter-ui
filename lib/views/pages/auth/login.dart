@@ -106,13 +106,7 @@ class _LoginState extends State<Login> {
   }
 
   void login() async {
-    try {
-      // userCredential = await FirebaseAuth.instance.signInAnonymously();
-
-      Get.offNamed("/main");
-    } on Exception catch (e) {
-      print(e);
-    }
+    Get.offNamed("/main");
   }
 
   Widget horizontalLine() => Padding(
