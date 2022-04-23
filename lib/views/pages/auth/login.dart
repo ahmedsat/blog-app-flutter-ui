@@ -58,7 +58,7 @@ class _LoginState extends State<Login> {
                         child: InkWell(
                           onTap: login,
                           child: const Center(
-                            child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
+                            child: Text("تسجيل الدخول ", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                           ),
                         ),
                       ),
@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
                       const SizedBox(
                         width: 8.0,
                       ),
-                      const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
+                      const Text("تذكرني", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
                     ],
                   ),
                   const SizedBox(height: 40),
