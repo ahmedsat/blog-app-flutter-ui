@@ -58,7 +58,11 @@ class CustomDrawer extends StatelessWidget {
                 try {
                   AuthController.instance.logout();
                 } on Exception catch (e) {
-                  // TODO
+                  CustomSnackbar(
+                    message: 'حدث خطأ ما',
+                    title: e.toString(),
+                    icon: Icons.error,
+                  );
                 }
               },
             ),
