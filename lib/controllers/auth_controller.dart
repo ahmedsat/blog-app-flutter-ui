@@ -9,5 +9,16 @@ class AuthController extends GetxController {
   void onReady() {
     super.onReady();
     _user = Rx<User?>(auth.currentUser);
+    _user.bindStream(auth.userChanges());
+    ever(_user, _initialScreen);
   }
+
+  _initialScreen(User? user) {
+    if (user == null) {
+      Get.offAllNamed('/login');
+    } else {
+      Get.offAllNamed('/main');
+    }
+
+  
 }
