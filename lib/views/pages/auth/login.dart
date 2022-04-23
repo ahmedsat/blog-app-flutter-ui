@@ -13,8 +13,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  String username = '', password = '';
-  UserCredential? userCredential;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   final controller = ScrollController();
   double offset = 0;
   bool _isSelected = false;
