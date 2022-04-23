@@ -35,7 +35,7 @@ class SignUpCard extends StatelessWidget {
             ),
             const Text("E-Mail", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
             const TextField(
-              controller: emailController!,
+              controller: emailController,
               decoration: InputDecoration(
                 hintText: "Example@site.domin",
                 hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0),
