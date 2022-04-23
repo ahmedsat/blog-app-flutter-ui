@@ -46,25 +46,29 @@ class _LoginState extends State<Login> {
                     passwordController: passwordController,
                   ),
                   const SizedBox(height: 40),
-                  Container(
-                    width: 330,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF3382CC),
-                      borderRadius: BorderRadius.circular(6.0),
-                      // boxShadow: [
-                      //   BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0),
-                      // ],
-                    ),
-                    child: GestureDetector(
-                      onTap: login,
-                      child: const Center(
-                        child: Text("تسجيل الدخول ", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
+                  InkWell(
+                    child: Container(
+                      width: 330,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF3382CC),
+                        borderRadius: BorderRadius.circular(6.0),
+                        // boxShadow: [
+                        //   BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
+                        // ],
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: login,
+                          child: const Center(
+                            child: Text("تسجيل الدخول ", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
+                          ),
+                        ),
                       ),
                     ),
                   ),
-
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 40),
                   // Row(
                   //   children: <Widget>[
                   //     const SizedBox(
