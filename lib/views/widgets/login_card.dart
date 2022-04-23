@@ -27,9 +27,9 @@ class LoginCard extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Text("Username", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            const Text("E-Mail", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
             const TextField(
-              decoration: InputDecoration(hintText: "eg: chromicle", hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+              decoration: InputDecoration(hintText: "Example@site.domin", hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
             ),
             const SizedBox(
               height: 30,

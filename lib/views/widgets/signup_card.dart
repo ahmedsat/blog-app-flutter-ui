@@ -23,13 +23,13 @@ class SignUpCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text("Login", style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
+            const Text("SignUp", style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
             const SizedBox(
               height: 30,
             ),
-            const Text("Username", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            const Text("E-Mail", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
             const TextField(
-              decoration: InputDecoration(hintText: "eg: chromicle", hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+              decoration: InputDecoration(hintText: "Example@site.domin", hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
             ),
             const SizedBox(
               height: 30,
