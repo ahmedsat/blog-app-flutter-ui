@@ -56,15 +56,15 @@ class CustomDrawer extends StatelessWidget {
               title: const Text('LogOut'),
               trailing: const Icon(Icons.logout),
               onTap: () {
-                try {
-                  AuthController.instance.logout();
-                } on Exception catch (e) {
-                  CustomSnackbar(
-                    message: 'حدث خطأ ما',
-                    title: e.toString(),
-                    icon: Icons.error,
-                  );
-                }
+                AuthController.instance.logout();
+                // try {
+                // } on Exception catch (e) {
+                //   CustomSnackbar(
+                //     message: 'حدث خطأ ما',
+                //     title: e.toString(),
+                //     icon: Icons.error,
+                //   );
+                // }
               },
             ),
           ),
