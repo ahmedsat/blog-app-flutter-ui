@@ -1,4 +1,5 @@
 import 'package:elmhandes/views/pages/auth/login.dart';
+import 'package:elmhandes/views/pages/auth/signup.dart';
 import 'package:elmhandes/views/pages/user/topic_view.dart';
 import 'package:flutter/material.dart';
 import 'package:elmhandes/views/pages/user/main_page.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
 
       getPages: [
         GetPage(name: '/login', page: () => const Login()),
+        GetPage(name: '/signup', page: () => const SignUp()),
         GetPage(name: '/topic', page: () => const TopicView()),
         GetPage(name: '/main', page: () => const MainPage()),
       ],
