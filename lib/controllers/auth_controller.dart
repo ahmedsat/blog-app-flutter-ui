@@ -39,6 +39,21 @@ class AuthController extends GetxController {
     }
   }
 
+  void Login(String email, password) {
+    try {
+      auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } catch (e) {
+      CustomSnackbar(
+        message: 'فشل تسجيل الدخول',
+        title: e.toString(),
+        icon: Icons.error,
+      );
+    }
+  }
+
   void logout() {
     auth.signOut();
     CustomSnackbar(
