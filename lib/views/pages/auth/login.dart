@@ -83,7 +83,9 @@ class _LoginState extends State<Login> {
                         style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.offAllNamed('/signup');
+                        },
                         child: const Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
                       )
                     ],
