@@ -1,3 +1,4 @@
+import 'package:elmhandes/views/services/custom_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -54,13 +55,10 @@ class CustomDrawer extends StatelessWidget {
               title: const Text('LogOut'),
               trailing: const Icon(Icons.logout),
               onTap: () {
-                Get.snackbar(
-                  'title',
-                  'message',
-                  snackPosition: SnackPosition.BOTTOM,
-                  backgroundColor: Colors.blue,
+                CustomSnackbar(
+                  title: 'Log Out',
+                  message: 'Done',
                 );
-                Get.offAllNamed('/main');
               },
             ),
           ),
