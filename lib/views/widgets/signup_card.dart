@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 
 class SignUpCard extends StatelessWidget {
   bool passwordInvisible = true;
+  TextEditingController? emailController;
+  TextEditingController? passwordController;
 
-  SignUpCard({Key? key}) : super(key: key);
+  SignUpCard({
+    this.emailController,
+    this.passwordController,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +35,11 @@ class SignUpCard extends StatelessWidget {
             ),
             const Text("E-Mail", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
             const TextField(
-              decoration: InputDecoration(hintText: "Example@site.domin", hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+              controller: emailController!,
+              decoration: InputDecoration(
+                hintText: "Example@site.domin",
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0),
+              ),
             ),
             const SizedBox(
               height: 30,
