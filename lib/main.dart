@@ -11,7 +11,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp().then(
     (value) {
-      print(value);
       Get.put(AuthController);
     },
     onError: (e) => print(e),
