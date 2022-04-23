@@ -1,18 +1,16 @@
-import 'package:elmhanes/views/pages/admin/create_blog.dart';
-import 'package:elmhanes/views/pages/login.dart';
-import 'package:elmhanes/views/pages/user/cat_page.dart';
-import 'package:elmhanes/views/pages/user/topic_view.dart';
+import 'package:elmhandes/views/pages/login.dart';
+import 'package:elmhandes/views/pages/user/topic_view.dart';
 import 'package:flutter/material.dart';
-import 'package:elmhanes/views/pages/user/main_page.dart';
+import 'package:elmhandes/views/pages/user/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'generated_plugin_registrant.dart';
+import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       // options: DefaultFirebaseOptions.currentPlatform,
       );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
 
       // Application name
@@ -30,16 +28,15 @@ class MyApp extends StatelessWidget {
       // you want
       theme: ThemeData.light(),
 
-      initialRoute: Login.id,
-      // initialRoute: TopicView.id,
+      // initialRoute: Login.id,
+      // // initialRoute: TopicView.id,
+      home: const Login(),
 
-      routes: {
-        TopicView.id: (context) => const TopicView(),
-        Login.id: (context) => Login(),
-        MainPage.id: (context) => const MainPage(),
-        CreateBlog.id: (context) => CreateBlog(),
-        CategoryPage.id: (context) => CategoryPage(),
-      },
+      getPages: [
+        GetPage(name: '/login', page: () => const Login()),
+        GetPage(name: '/topic', page: () => const TopicView()),
+        GetPage(name: '/main', page: () => const MainPage()),
+      ],
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -13,29 +14,52 @@ class CustomDrawer extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
+          // const DrawerHeader(
+          //   decoration: BoxDecoration(
+          //     color: Colors.blue,
+          //   ),
+          //   child: Text('Drawer Header'),
+          // ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(
+              vertical: 2,
             ),
-            child: Text('Drawer Header'),
+            decoration: const BoxDecoration(
+              // borderRadius: BorderRadius.circular(25),
+              color: Colors.lightBlue,
+            ),
+            child: ListTile(
+              title: const Text('Home'),
+              trailing: const Icon(Icons.home),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Get.offAllNamed('/main');
+              },
+            ),
           ),
-          ListTile(
-            title: const Text('Item 1'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: const Text('Item 2'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
-            },
+          Container(
+            margin: const EdgeInsets.symmetric(
+              vertical: 2,
+            ),
+            decoration: const BoxDecoration(
+              // borderRadius: BorderRadius.circular(25),
+              color: Colors.lightBlue,
+            ),
+            child: ListTile(
+              title: const Text('Home'),
+              trailing: const Icon(Icons.home),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Get.offAllNamed('/main');
+              },
+            ),
           ),
         ],
       ),

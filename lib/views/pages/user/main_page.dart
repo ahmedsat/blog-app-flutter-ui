@@ -1,7 +1,6 @@
-import 'package:elmhanes/views/widgets/accordion.dart';
-import 'package:elmhanes/views/widgets/custom_drawer.dart';
-import 'package:elmhanes/views/widgets/custom_app_bar.dart';
-import 'package:elmhanes/views/widgets/row_car.dart';
+import 'package:elmhandes/views/widgets/accordion.dart';
+import 'package:elmhandes/views/widgets/custom_scaffold.dart';
+import 'package:elmhandes/views/widgets/row_car.dart';
 
 import 'package:flutter/material.dart';
 
@@ -36,8 +35,7 @@ class _MainPageState extends State<MainPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(),
+    return CustomScaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -59,7 +57,6 @@ class _MainPageState extends State<MainPage> {
           },
         ),
       ),
-      drawer: const CustomDrawer(),
     );
   }
 }

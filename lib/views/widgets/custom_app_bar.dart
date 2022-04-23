@@ -1,4 +1,4 @@
-import 'package:elmhanes/views/widgets/logo.dart';
+import 'package:elmhandes/views/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -18,7 +18,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
     return AppBar(
-      title: Logo(),
+      title: const Logo(),
       backgroundColor: Colors.transparent,
       elevation: 0,
       iconTheme: IconThemeData(color: colorScheme.primary),
