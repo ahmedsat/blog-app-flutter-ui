@@ -1,3 +1,4 @@
+import 'package:elmhandes/controllers/auth_controller.dart';
 import 'package:elmhandes/views/services/custom_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
@@ -55,11 +56,11 @@ class CustomDrawer extends StatelessWidget {
               title: const Text('LogOut'),
               trailing: const Icon(Icons.logout),
               onTap: () {
-                CustomSnackbar(
-                  title: 'Log Out',
-                  message: 'Done',
-                  icon: Icons.logout,
-                );
+                try {
+                  AuthController.instance.logout();
+                } on Exception catch (e) {
+                  print(e.toString());
+                }
               },
             ),
           ),
