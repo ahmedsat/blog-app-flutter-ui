@@ -31,11 +31,6 @@ class AuthController extends GetxController {
       Get.snackbar(
         'title',
         'message',
-        snackPosition: SnackPosition.BOTTOM,
-        titleText: Text('data'),
-        messageText: Text(
-          e.toString(),
-        ),
       );
     }
   }
