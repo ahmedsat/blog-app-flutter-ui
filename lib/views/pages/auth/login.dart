@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
                       const SizedBox(
                         width: 8.0,
                       ),
-                      const Text("تذكرني", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
+                      // const Text("تذكرني", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
                     ],
                   ),
                   const SizedBox(height: 40),
