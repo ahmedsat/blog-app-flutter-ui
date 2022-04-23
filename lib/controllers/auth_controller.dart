@@ -26,15 +26,16 @@ class AuthController extends GetxController {
     try {
       auth.createUserWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      Get.snackbar(
-        'title',
-        'message',
-        snackPosition: SnackPosition.BOTTOM,
-        titleText: Text('data'),
-        messageText: Text(
-          e.toString(),
-        ),
-      );
+      print(e);
+      // Get.snackbar(
+      //   'title',
+      //   'message',
+      //   snackPosition: SnackPosition.BOTTOM,
+      //   titleText: Text('data'),
+      //   messageText: Text(
+      //     e.toString(),
+      //   ),
+      // );
     }
   }
 }
