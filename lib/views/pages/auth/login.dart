@@ -39,7 +39,10 @@ class _LoginState extends State<Login> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  LoginCard(),
+                  LoginCard(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                  ),
                   const SizedBox(height: 40),
                   InkWell(
                     child: Container(

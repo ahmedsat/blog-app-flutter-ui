@@ -24,9 +24,9 @@ class AuthController extends GetxController {
     }
   }
 
-  void createUser(String email, password) {
+  void createUser(String email, password) async {
     try {
-      auth.createUserWithEmailAndPassword(
+      await auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -39,9 +39,9 @@ class AuthController extends GetxController {
     }
   }
 
-  void Login(String email, password) {
+  Future<void> Login(String email, password) async {
     try {
-      auth.signInWithEmailAndPassword(
+      await auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -54,8 +54,8 @@ class AuthController extends GetxController {
     }
   }
 
-  void logout() {
-    auth.signOut();
+  Future<void> logout() async {
+    await auth.signOut();
     CustomSnackbar(
       title: 'Log Out',
       message: 'Done',
