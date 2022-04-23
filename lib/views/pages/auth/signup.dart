@@ -12,7 +12,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   String username = '', password = '';
-  UserCredential? userCredential;
+
   final controller = ScrollController();
   double offset = 0;
   bool _isSelected = false;
