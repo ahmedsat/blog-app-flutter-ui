@@ -49,9 +49,9 @@ class _LoginState extends State<Login> {
                   Container(
                     width: 330,
                     height: 100,
-                    decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
-                      BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
-                    ]),
+                    // decoration: BoxDecoration(color: const Color(0xFF3382CC), borderRadius: BorderRadius.circular(6.0), boxShadow: [
+                    //   BoxShadow(color: const Color(0xFF4056C6).withOpacity(.15), offset: const Offset(0.0, 8.0), blurRadius: 8.0)
+                    // ]),
                     child: GestureDetector(
                       onTap: login,
                       child: const Center(
