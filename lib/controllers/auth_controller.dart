@@ -18,12 +18,13 @@ class AuthController extends GetxController {
     if (user == null) {
       Get.offAllNamed('/login');
     } else {
+      print('user');
+      print(user);
       Get.offAllNamed('/main');
     }
   }
 
   void createUser(String email, password) {
-    print('createUser');
     try {
       auth.createUserWithEmailAndPassword(
         email: email,
