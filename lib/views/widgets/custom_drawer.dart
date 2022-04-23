@@ -51,12 +51,15 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.lightBlue,
             ),
             child: ListTile(
-              title: const Text('Home'),
-              trailing: const Icon(Icons.home),
+              title: const Text('LogOut'),
+              trailing: const Icon(Icons.logout),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
+                Get.snackbar(
+                  'title',
+                  'message',
+                  snackPosition: SnackPosition.BOTTOM,
+                  backgroundColor: Colors.blue,
+                );
                 Get.offAllNamed('/main');
               },
             ),
