@@ -34,7 +34,7 @@ class SignUpCard extends StatelessWidget {
               height: 30,
             ),
             const Text("E-Mail", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
-            const TextField(
+            TextField(
               controller: emailController,
               decoration: InputDecoration(
                 hintText: "Example@site.domin",
@@ -44,8 +44,9 @@ class SignUpCard extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Text("PassWord", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
-            TextFormField(
+            Text("PassWord", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            TextField(
+              controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
                   suffixIcon: IconButton(
