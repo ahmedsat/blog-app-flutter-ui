@@ -13,7 +13,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  String email = '', password = '';
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   final controller = ScrollController();
   double offset = 0;
@@ -38,7 +39,10 @@ class _SignUpState extends State<SignUp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SignUpCard(),
+                  SignUpCard(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                  ),
                   const SizedBox(height: 40),
                   InkWell(
                     child: Container(
