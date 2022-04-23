@@ -1,3 +1,4 @@
+import 'package:elmhandes/controllers/auth_controller.dart';
 import 'package:elmhandes/views/widgets/signup_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +13,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  String username = '', password = '';
+  String email = '', password = '';
 
   final controller = ScrollController();
   double offset = 0;
@@ -104,14 +105,8 @@ class _SignUpState extends State<SignUp> {
     super.dispose();
   }
 
-  void SignUp() async {
-    try {
-      // userCredential = await FirebaseAuth.instance.signInAnonymously();
-
-      Get.offAllNamed("/main");
-    } on Exception catch (e) {
-      print(e);
-    }
+  void SignUp() {
+    AuthController.instance.createUser(email, password);
   }
 
   Widget horizontalLine() => Padding(
