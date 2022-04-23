@@ -82,8 +82,10 @@ class _SignUpState extends State<SignUp> {
                         style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
                       InkWell(
-                        onTap: () {},
-                        child: const Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
+                        onTap: () {
+                          Get.offAllNamed('/login');
+                        },
+                        child: const Text("LogIn", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
                       )
                     ],
                   )
@@ -106,7 +108,7 @@ class _SignUpState extends State<SignUp> {
     try {
       // userCredential = await FirebaseAuth.instance.signInAnonymously();
 
-      Get.offNamed("/main");
+      Get.offAllNamed("/main");
     } on Exception catch (e) {
       print(e);
     }
