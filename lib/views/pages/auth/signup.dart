@@ -110,7 +110,6 @@ class _SignUpState extends State<SignUp> {
   }
 
   void SignUp() {
-    // print(emailController.text);
     AuthController.instance.createUser(
       emailController.text.trim(),
       passwordController.text.trim(),

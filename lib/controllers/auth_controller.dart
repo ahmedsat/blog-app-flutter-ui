@@ -1,3 +1,4 @@
+import 'package:elmhandes/views/services/custom_snackbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,13 +31,19 @@ class AuthController extends GetxController {
         password: password,
       );
     } catch (e) {
-      print(e);
-      Get.snackbar(
-        'title',
-        'message',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.blue,
+      CustomSnackbar(
+        message: 'فشل انشاء حساب',
+        title: e.toString(),
+        icon: Icons.error,
       );
     }
+  }
+
+  void logout() {
+    CustomSnackbar(
+      title: 'Log Out',
+      message: 'Done',
+      icon: Icons.logout,
+    );
   }
 }

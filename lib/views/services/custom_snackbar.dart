@@ -26,7 +26,7 @@ class CustomSnackbar {
       borderRadius: 25,
       margin: EdgeInsets.all(15),
       duration: Duration(
-        seconds: 5,
+        seconds: 3,
       ),
       isDismissible: true,
       dismissDirection: DismissDirection.horizontal,
