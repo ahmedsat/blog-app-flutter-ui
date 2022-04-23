@@ -22,6 +22,7 @@ class CustomSnackbar {
         color: Colors.white,
       ),
       backgroundColor: Colors.blue,
+      colorText: Colors.white,
       borderRadius: 25,
       margin: EdgeInsets.all(15),
       duration: Duration(

@@ -58,6 +58,7 @@ class CustomDrawer extends StatelessWidget {
                 CustomSnackbar(
                   title: 'Log Out',
                   message: 'Done',
+                  icon: Icons.logout,
                 );
               },
             ),
