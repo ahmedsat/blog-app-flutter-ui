@@ -58,7 +58,7 @@ class CustomDrawer extends StatelessWidget {
                   'title',
                   'message',
                   snackPosition: SnackPosition.BOTTOM,
-                  backgroundColor: Colors.blue,
+                  // backgroundColor: Colors.blue,
                 );
                 Get.offAllNamed('/main');
               },
