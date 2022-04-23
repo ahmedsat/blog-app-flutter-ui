@@ -40,7 +40,7 @@ class AuthController extends GetxController {
   }
 
   void logout() {
-    auth.signOut();
+    // auth.signOut();
     CustomSnackbar(
       title: 'Log Out',
       message: 'Done',
