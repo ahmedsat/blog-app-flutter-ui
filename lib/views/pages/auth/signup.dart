@@ -1,5 +1,6 @@
 import 'package:elmhandes/views/widgets/signup_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignUp extends StatefulWidget {
   static String id = 'SignUp';
