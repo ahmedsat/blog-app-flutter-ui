@@ -40,11 +40,11 @@ class AuthController extends GetxController {
   }
 
   void logout() {
-    // print('auth.signOut();');
-    // CustomSnackbar(
-    //   title: 'Log Out',
-    //   message: 'Done',
-    //   icon: Icons.logout,
-    // );
+    auth.signOut();
+    CustomSnackbar(
+      title: 'Log Out',
+      message: 'Done',
+      icon: Icons.logout,
+    );
   }
 }
