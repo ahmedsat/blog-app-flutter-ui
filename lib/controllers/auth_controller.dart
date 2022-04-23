@@ -25,7 +25,10 @@ class AuthController extends GetxController {
   void createUser(String email, password) {
     print('createUser');
     try {
-      auth.createUserWithEmailAndPassword(email: email, password: password);
+      auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
     } catch (e) {
       print(e);
       Get.snackbar(
