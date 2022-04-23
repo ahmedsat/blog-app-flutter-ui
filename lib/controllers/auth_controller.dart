@@ -24,19 +24,19 @@ class AuthController extends GetxController {
 
   void createUser(String email, password) {
     print('createUser');
-    // try {
-    //   auth.createUserWithEmailAndPassword(email: email, password: password);
-    // } catch (e) {
-    //   print(e);
-    //   // Get.snackbar(
-    //   //   'title',
-    //   //   'message',
-    //   //   snackPosition: SnackPosition.BOTTOM,
-    //   //   titleText: Text('data'),
-    //   //   messageText: Text(
-    //   //     e.toString(),
-    //   //   ),
-    //   // );
-    // }
+    try {
+      auth.createUserWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      print(e);
+      Get.snackbar(
+        'title',
+        'message',
+        snackPosition: SnackPosition.BOTTOM,
+        titleText: Text('data'),
+        messageText: Text(
+          e.toString(),
+        ),
+      );
+    }
   }
 }
