@@ -25,11 +25,14 @@ class CustomDrawer extends StatelessWidget {
                 text: 'مرحبا بك يا :',
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: 20,
                 ),
                 children: [
                   TextSpan(
                     text: email,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
                   ),
                 ],
               ),
