@@ -15,6 +15,7 @@ class AuthController extends GetxController {
     _user = Rx<User>(auth.currentUser);
     _user.bindStream(auth.userChanges());
     ever(_user, _initialScreen);
+    print(_user);
   }
 
   _initialScreen(User user) {
