@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
 
-  String get membership => '-1';
+  String get membership => membershipMap[-1];
 
   var membershipMap = {
     -1: 'غير مشترك',
