@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:elmohandes/models/user_model.dart';
+import 'package:elmohandes/views/core/constants.dart';
 import 'package:elmohandes/views/services/custom_snackbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
   static AuthController instance = Get.find();
 
   String get membership => membershipMap[-1];
@@ -46,6 +48,10 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
+      await _firestore.collection(usersCollection).add({
+        'id': auth.currentUser.uid,
+        'membership': -1,
+      });
     } catch (e) {
       CustomSnackbar(
         message: 'فشل انشاء حساب',
