@@ -10,7 +10,9 @@ class AuthController extends GetxController {
 
   static AuthController instance = Get.find();
 
-  String get membership => membershipMap[-1];
+  int _membership = -1;
+
+  String get membership => membershipMap[_membership];
 
   var membershipMap = {
     -1: 'غير مشترك',
@@ -32,6 +34,7 @@ class AuthController extends GetxController {
     _user = Rx<User>(auth.currentUser);
     _user.bindStream(auth.userChanges());
     ever(_user, _initialScreen);
+    ever(_user, _setMembership);
   }
 
   _initialScreen(User user) {
@@ -40,6 +43,10 @@ class AuthController extends GetxController {
     } else {
       Get.offAllNamed('/main');
     }
+  }
+
+  _setMembership(User user) async {
+    _membership = 0;
   }
 
   void createUser(String email, password) async {
