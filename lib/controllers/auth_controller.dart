@@ -46,9 +46,7 @@ class AuthController extends GetxController {
   }
 
   _setMembership(User user) async {
-    await _firestore.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get().then((QuerySnapshot value) {
-      print(value.docs.membership);
-    });
+    await _firestore.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get().toString();
     _membership = 0;
   }
 
