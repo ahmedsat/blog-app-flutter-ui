@@ -46,10 +46,10 @@ class AuthController extends GetxController {
   }
 
   _setMembership(User user) async {
-    var data = await _firestore.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get().then((QuerySnapshot documentSnapshot) {
-      print(documentSnapshot);
+    await _firestore.collection(usersCollection).snapshots().where((event) {
+      print(event);
     });
-    print(data);
+
     _membership = 0;
   }
 
@@ -95,4 +95,9 @@ class AuthController extends GetxController {
       icon: Icons.logout,
     );
   }
+}
+
+class UserDocumentSnapshot {
+  String id;
+  int membership;
 }
