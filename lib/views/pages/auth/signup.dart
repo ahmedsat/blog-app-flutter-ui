@@ -58,7 +58,7 @@ class _SignUpState extends State<SignUp> {
                         child: InkWell(
                           onTap: SignUp,
                           child: const Center(
-                            child: Text("SIGNUP", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
+                            child: Text("انشاء حساب", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                           ),
                         ),
                       ),
