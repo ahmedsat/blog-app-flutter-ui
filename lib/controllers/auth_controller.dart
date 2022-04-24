@@ -31,7 +31,7 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
-      print(_user);
+      print(auth.currentUser);
     } catch (e) {
       CustomSnackbar(
         message: 'فشل انشاء حساب',
