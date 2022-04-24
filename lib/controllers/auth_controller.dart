@@ -19,7 +19,7 @@ class AuthController extends GetxController {
     _user = Rx<User>(auth.currentUser);
     _user.bindStream(auth.userChanges());
     ever(_user, _initialScreen);
-    _email = User(_user).email;
+    _email = (_user as User).email;
   }
 
   _initialScreen(User user) {
