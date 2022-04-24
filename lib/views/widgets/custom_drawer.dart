@@ -20,7 +20,10 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.blue,
             ),
             child: RichText(
-              text: TextSpan(text: 'مرحبا بك يا :'),
+              text: TextSpan(
+                text: 'مرحبا بك يا :',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
             ),
           ),
           const SizedBox(
