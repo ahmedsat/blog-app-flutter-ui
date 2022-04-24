@@ -36,6 +36,7 @@ class CustomDrawer extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
+                  const TextSpan(text: '\n'),
                   TextSpan(
                     text: 'نوع العضوية : $rank',
                     style: const TextStyle(
