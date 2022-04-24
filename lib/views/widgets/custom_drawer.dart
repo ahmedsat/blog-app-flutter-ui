@@ -26,7 +26,7 @@ class CustomDrawer extends StatelessWidget {
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
-                  height: 1,
+                  height: 2,
                 ),
                 children: [
                   TextSpan(
