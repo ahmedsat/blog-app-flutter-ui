@@ -6,6 +6,10 @@ import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
+  String _email;
+
+  String get email => _email;
+
   Rx<User> _user;
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -15,6 +19,7 @@ class AuthController extends GetxController {
     _user = Rx<User>(auth.currentUser);
     _user.bindStream(auth.userChanges());
     ever(_user, _initialScreen);
+    _email = _user as String;
   }
 
   _initialScreen(User user) {
@@ -31,7 +36,6 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
-      print(auth.currentUser);
     } catch (e) {
       CustomSnackbar(
         message: 'فشل انشاء حساب',

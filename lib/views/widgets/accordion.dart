@@ -21,16 +21,16 @@ class _AccordionState extends State<Accordion> {
       margin: const EdgeInsets.all(10),
       child: Column(
         children: [
-          ListTile(
-            title: Text(widget.title),
-            trailing: IconButton(
-              icon: Icon(_showContent ? Icons.remove : Icons.add),
-              onPressed: () {
-                setState(() {
-                  _showContent = !_showContent;
-                });
-              },
+          GestureDetector(
+            child: ListTile(
+              title: Text(widget.title),
+              trailing: Icon(_showContent ? Icons.remove : Icons.add),
             ),
+            onTap: () {
+              setState(() {
+                _showContent = !_showContent;
+              });
+            },
           ),
           _showContent
               ? Container(
