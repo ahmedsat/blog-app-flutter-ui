@@ -7,7 +7,7 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var email = AuthController.instance.auth.currentUser.email;
+    String email = AuthController.instance.auth.currentUser.email;
     return Drawer(
       // Add a ListView to the drawer. This ensures the user can scroll
       // through the options in the drawer if there isn't enough vertical
@@ -23,19 +23,13 @@ class CustomDrawer extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                 text: 'مرحبا بك يا :',
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                 ),
                 children: [
                   TextSpan(
-                    text: '\n',
-                  ),
-                  TextSpan(
-                    text: '   ddd   ',
-                  ),
-                  TextSpan(
-                    text: '   ddd   ',
+                    text: email,
                   ),
                 ],
               ),
