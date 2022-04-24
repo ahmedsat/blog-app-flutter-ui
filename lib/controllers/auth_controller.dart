@@ -46,7 +46,7 @@ class AuthController extends GetxController {
   }
 
   _setMembership(User user) async {
-    Stream<DocumentSnapshot> data = (await _firestore.collection(usersCollection).snapshots()) as Stream<DocumentSnapshot<UserDocumentSnapshot>>;
+    var data = await _firestore.collection(usersCollection).snapshots();
     print(data);
     _membership = 0;
   }
