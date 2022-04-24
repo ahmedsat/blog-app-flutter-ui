@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elmohandes/views/services/custom_snackbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ class AuthController extends GetxController {
   static AuthController instance = Get.find();
   Rx<User> _user;
   FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   @override
   void onReady() {
     super.onReady();
@@ -40,10 +42,14 @@ class AuthController extends GetxController {
 
   Future<void> login(String email, password) async {
     try {
-      await auth.signInWithEmailAndPassword(
+      await auth
+          .signInWithEmailAndPassword(
         email: email,
         password: password,
-      );
+      )
+          .then((value) {
+        print(_user);
+      });
     } catch (e) {
       CustomSnackbar(
         message: 'فشل تسجيل الدخول',
