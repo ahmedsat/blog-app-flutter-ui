@@ -49,6 +49,7 @@ class AuthController extends GetxController {
     await _firestore.collection(usersCollection).snapshots().where((event) {
       print('event');
       print(event);
+      return false;
     });
 
     _membership = 0;
