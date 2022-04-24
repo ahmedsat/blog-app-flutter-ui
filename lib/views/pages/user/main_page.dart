@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    // print(AuthController.instance.auth.currentUser.uid);
+    print(AuthController.instance.auth.currentUser.uid);
     return CustomScaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
