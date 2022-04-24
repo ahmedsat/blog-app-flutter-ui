@@ -43,14 +43,10 @@ class AuthController extends GetxController {
 
   Future<void> login(String email, password) async {
     try {
-      await auth
-          .signInWithEmailAndPassword(
+      await auth.signInWithEmailAndPassword(
         email: email,
         password: password,
-      )
-          .then((value) {
-        print(auth.currentUser);
-      });
+      );
     } catch (e) {
       CustomSnackbar(
         message: 'فشل تسجيل الدخول',
