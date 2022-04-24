@@ -1,4 +1,3 @@
-import 'package:elmohandes/controllers/auth_controller.dart';
 import 'package:elmohandes/views/widgets/accordion.dart';
 import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:elmohandes/views/widgets/row_car.dart';
@@ -36,7 +35,6 @@ class _MainPageState extends State<MainPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    print(AuthController.instance.auth.currentUser.email);
     return CustomScaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
