@@ -48,7 +48,7 @@ class AuthController extends GetxController {
         password: password,
       )
           .then((value) {
-        print(_user);
+        print(auth.currentUser);
       });
     } catch (e) {
       CustomSnackbar(
