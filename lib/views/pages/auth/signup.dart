@@ -1,6 +1,6 @@
 import 'package:elmohandes/controllers/auth_controller.dart';
+import 'package:elmohandes/views/widgets/login_card.dart';
 import 'package:elmohandes/views/widgets/my_header.dart';
-import 'package:elmohandes/views/widgets/signup_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,9 +40,10 @@ class _SignUpState extends State<SignUp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SignUpCard(
+                  LoginCard(
                     emailController: emailController,
                     passwordController: passwordController,
+                    title: 'انشاء حساب',
                   ),
                   const SizedBox(height: 40),
                   InkWell(
@@ -84,15 +85,16 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const Text(
-                        "Have Account? ",
+                        "لديك حساب بالفعل ؟ ",
                         style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
                       InkWell(
                         onTap: () {
                           Get.offAllNamed('/login');
                         },
-                        child: const Text("LogIn", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
-                      )
+                        child: const Text("تسجيل الدخول", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
+                      ),
+                      const SizedBox(height: 40),
                     ],
                   )
                 ],
