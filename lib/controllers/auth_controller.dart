@@ -47,6 +47,7 @@ class AuthController extends GetxController {
 
   _setMembership(User user) async {
     await _firestore.collection(usersCollection).snapshots().where((event) {
+      print('event');
       print(event);
     });
 
