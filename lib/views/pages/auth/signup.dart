@@ -66,22 +66,6 @@ class _SignUpState extends State<SignUp> {
                   ),
                   const SizedBox(height: 40),
                   Row(
-                    children: <Widget>[
-                      const SizedBox(
-                        width: 12.0,
-                      ),
-                      GestureDetector(
-                        onTap: _radio,
-                        child: radioButton(_isSelected),
-                      ),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
-                      const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
-                    ],
-                  ),
-                  const SizedBox(height: 40),
-                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const Text(
