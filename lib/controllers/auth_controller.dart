@@ -60,7 +60,7 @@ class AuthController extends GetxController {
       await _firestore.collection(usersCollection).add({
         'id': auth.currentUser.uid,
         'membership': -1,
-          'email':currentUser.email,
+          'email':auth.currentUser.email,
       });
     } catch (e) {
       CustomSnackbar(
