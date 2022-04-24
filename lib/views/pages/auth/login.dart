@@ -44,6 +44,7 @@ class _LoginState extends State<Login> {
                   LoginCard(
                     emailController: emailController,
                     passwordController: passwordController,
+                    title: 'تسجيل الدخول',
                   ),
                   const SizedBox(height: 40),
                   InkWell(
