@@ -6,11 +6,11 @@ class CustomSnackbar {
 
   String title;
 
-  IconData? icon;
+  IconData icon;
 
   CustomSnackbar({
-    required this.message,
-    required this.title,
+    this.message,
+    this.title,
     this.icon,
   }) {
     Get.snackbar(
@@ -24,8 +24,8 @@ class CustomSnackbar {
       backgroundColor: Colors.blue,
       colorText: Colors.white,
       borderRadius: 25,
-      margin: EdgeInsets.all(15),
-      duration: Duration(
+      margin: const EdgeInsets.all(15),
+      duration: const Duration(
         seconds: 3,
       ),
       isDismissible: true,

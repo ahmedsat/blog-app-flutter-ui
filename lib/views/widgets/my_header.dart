@@ -6,11 +6,11 @@ class MyHeader extends StatefulWidget {
   final String textBottom;
   final double offset;
   const MyHeader({
-    Key? key,
-    required this.image,
-    required this.textTop,
-    required this.textBottom,
-    required this.offset,
+    Key key,
+    this.image,
+    this.textTop,
+    this.textBottom,
+    this.offset,
   }) : super(key: key);
 
   @override

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class TopicView extends StatefulWidget {
   static String id = 'TopicView';
-  const TopicView({Key? key}) : super(key: key);
+  const TopicView({Key key}) : super(key: key);
 
   @override
   State<TopicView> createState() => _TopicViewState();

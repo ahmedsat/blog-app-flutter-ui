@@ -1,14 +1,13 @@
 import 'package:elmohandes/controllers/auth_controller.dart';
 import 'package:elmohandes/views/widgets/login_card.dart';
 import 'package:elmohandes/views/widgets/my_header.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Login extends StatefulWidget {
   static String id = 'Login';
 
-  const Login({Key? key}) : super(key: key);
+  const Login({Key key}) : super(key: key);
 
   @override
   State<Login> createState() => _LoginState();
@@ -20,7 +19,6 @@ class _LoginState extends State<Login> {
 
   final controller = ScrollController();
   double offset = 0;
-  bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +119,7 @@ class _LoginState extends State<Login> {
   }
 
   void login() async {
-    AuthController.instance.Login(
+    AuthController.instance.login(
       emailController.text.trim(),
       passwordController.text.trim(),
     );
@@ -161,10 +159,4 @@ class _LoginState extends State<Login> {
               )
             : Container(),
       );
-
-  void _radio() {
-    setState(() {
-      _isSelected = !_isSelected;
-    });
-  }
 }

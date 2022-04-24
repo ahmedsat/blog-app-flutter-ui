@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class Accordion extends StatefulWidget {
   final String title, desc;
   final Widget child;
-  Accordion({
-    Key? key,
-    required this.title,
-    required this.child,
+  const Accordion({
+    Key key,
+    this.title,
+    this.child,
     this.desc = '',
   }) : super(key: key);
   @override

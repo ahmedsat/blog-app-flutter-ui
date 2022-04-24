@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LoginCard extends StatelessWidget {
-  bool passwordInvisible = true;
-  TextEditingController? emailController;
-  TextEditingController? passwordController;
-  String? title;
+  final bool passwordInvisible = true;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final String title;
 
-  LoginCard({
+  const LoginCard({
     this.emailController,
     this.passwordController,
     this.title,
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class LoginCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(title!, style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
+            Text(title, style: const TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
             const SizedBox(
               height: 30,
             ),

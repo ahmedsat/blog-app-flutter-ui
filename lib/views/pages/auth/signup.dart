@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class SignUp extends StatefulWidget {
   static String id = 'SignUp';
 
-  const SignUp({Key? key}) : super(key: key);
+  const SignUp({Key key}) : super(key: key);
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -19,7 +19,6 @@ class _SignUpState extends State<SignUp> {
 
   final controller = ScrollController();
   double offset = 0;
-  bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +55,7 @@ class _SignUpState extends State<SignUp> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: SignUp,
+                          onTap: signUp,
                           child: const Center(
                             child: Text("انشاء حساب", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                           ),
@@ -96,7 +95,7 @@ class _SignUpState extends State<SignUp> {
     super.dispose();
   }
 
-  void SignUp() {
+  void signUp() {
     AuthController.instance.createUser(
       emailController.text.trim(),
       passwordController.text.trim(),
@@ -137,10 +136,4 @@ class _SignUpState extends State<SignUp> {
               )
             : Container(),
       );
-
-  void _radio() {
-    setState(() {
-      _isSelected = !_isSelected;
-    });
-  }
 }

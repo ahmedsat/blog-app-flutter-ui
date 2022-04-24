@@ -3,8 +3,8 @@ import 'package:elmohandes/views/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 class CustomScaffold extends StatelessWidget {
-  var body;
-  CustomScaffold({this.body, Key? key}) : super(key: key);
+  final Widget body;
+  const CustomScaffold({this.body, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
