@@ -96,7 +96,10 @@ class _LoginState extends State<Login> {
                         onTap: () {
                           Get.offAllNamed('/signup');
                         },
-                        child: const Text("انشاء حساب", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
+                        child: const Text(
+                          "انشاء حساب",
+                          style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold"),
+                        ),
                       )
                     ],
                   )

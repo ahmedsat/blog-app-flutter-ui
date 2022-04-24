@@ -29,14 +29,14 @@ class SignUpCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text("SignUp", style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
+            const Text("انشاء حساب", style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
             const SizedBox(
               height: 30,
             ),
-            const Text("E-Mail", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            const Text("البريد الالكتروني", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
             TextField(
               controller: emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "Example@site.domin",
                 hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0),
               ),
@@ -44,7 +44,7 @@ class SignUpCard extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Text("PassWord", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            const Text("كلمة المرور", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
             TextField(
               controller: passwordController,
               obscureText: true,
