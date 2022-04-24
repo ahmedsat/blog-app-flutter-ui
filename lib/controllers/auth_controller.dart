@@ -15,7 +15,6 @@ class AuthController extends GetxController {
     _user = Rx<User>(auth.currentUser);
     _user.bindStream(auth.userChanges());
     ever(_user, _initialScreen);
-    // print(_user);
   }
 
   _initialScreen(User user) {
@@ -32,6 +31,7 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
+      print(_user);
     } catch (e) {
       CustomSnackbar(
         message: 'فشل انشاء حساب',
