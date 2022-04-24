@@ -22,7 +22,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             child: RichText(
               text: TextSpan(
-                text: 'مرحبا بك يh : ',
+                text: 'مرحبا بك يا : ',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
