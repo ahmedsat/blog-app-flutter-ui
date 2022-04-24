@@ -49,8 +49,7 @@ class AuthController extends GetxController {
     var usersRef = FirebaseFirestore.instance.collection(usersCollection);
     var snapshot = await usersRef.where('id', isEqualTo: auth.currentUser.uid).get();
     var data = snapshot.docs.first.data();
-    print(data['membership']);
-    _membership = 0;
+    _membership = data['membership'];
   }
 
   void createUser(String email, password) async {
