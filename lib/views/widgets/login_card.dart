@@ -4,9 +4,12 @@ class LoginCard extends StatelessWidget {
   bool passwordInvisible = true;
   TextEditingController? emailController;
   TextEditingController? passwordController;
+  String? title;
+
   LoginCard({
     this.emailController,
     this.passwordController,
+    this.title,
     Key? key,
   }) : super(key: key);
   @override
@@ -27,7 +30,7 @@ class LoginCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text("تسجيل الدخول", style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
+            Text(title!, style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
             const SizedBox(
               height: 30,
             ),
