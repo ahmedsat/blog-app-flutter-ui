@@ -15,11 +15,13 @@ class CustomDrawer extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: Colors.blue,
             ),
-            child: Text('Drawer Header'),
+            child: RichText(
+              text: TextSpan(text: 'مرحبا بك يا :'),
+            ),
           ),
           const SizedBox(
             height: 20,
