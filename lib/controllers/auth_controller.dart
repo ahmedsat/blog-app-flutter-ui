@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:elmohandes/models/user_model.dart';
 import 'package:elmohandes/views/services/custom_snackbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,18 @@ import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
-  String _email;
 
-  String get email => _email;
+  int _membership = -1;
+  var membershipMap = {
+    -1: 'غير مشترك',
+    0: 'اداري',
+    1: 'شامل',
+    2: 'بلاتنيوم',
+    3: 'ماسي',
+    4: 'ذهبي',
+    5: 'فضي',
+    6: 'برونزي',
+  };
 
   Rx<User> _user;
   FirebaseAuth auth = FirebaseAuth.instance;
