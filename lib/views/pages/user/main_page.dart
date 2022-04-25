@@ -15,7 +15,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   List<String> categories = [
     'الأدوات المطلوبة لصيانة المحمول',
-    'أجهزة قياس مكونات بوردة المحمول',
+    'الأجهزة قياس مكونات بوردة المحمول',
     'الأجهزة المطلوبة في صيانة المحمول',
     'فك وتركيب اي موبايل',
     'المكونات المادية للمحمول',

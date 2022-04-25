@@ -1,13 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:elmohandes/views/core/constants.dart';
-import 'package:elmohandes/views/services/custom_snackbar.dart';
+import 'package:elmohandes/controllers/user_controller.dart';
+import 'package:elmohandes/core/constants.dart';
+import 'package:elmohandes/core/services/custom_snackbar.dart';
+import 'package:elmohandes/models/user_model.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
+  final UserController _userController = UserController();
   static AuthController instance = Get.find();
 
   int _membership = -1;
@@ -57,6 +60,8 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
+      UserModle modle = UserModle();
+      _userController.createUser(modle);
       await _firestore.collection(usersCollection).add({
         'id': auth.currentUser.uid,
         'membership': -1,

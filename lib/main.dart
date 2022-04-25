@@ -1,8 +1,8 @@
 import 'package:elmohandes/controllers/auth_controller.dart';
+import 'package:elmohandes/core/services/custom_snackbar.dart';
 import 'package:elmohandes/views/pages/auth/login.dart';
 import 'package:elmohandes/views/pages/auth/signup.dart';
 import 'package:elmohandes/views/pages/user/topic_view.dart';
-import 'package:elmohandes/views/services/custom_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:elmohandes/views/pages/user/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
