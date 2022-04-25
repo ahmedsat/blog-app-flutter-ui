@@ -80,7 +80,7 @@ class AuthController extends GetxController {
     } catch (e) {
       CustomSnackbar(
         message: 'فشل تسجيل الدخول',
-        title: e.messeage,
+        title: e.message,
         icon: Icons.error,
       );
     }
