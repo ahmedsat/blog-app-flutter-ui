@@ -62,19 +62,19 @@ class _MainPageState extends State<MainPage> {
                     'desc': doc['test']
                   });
                 }
-
-                return ListView.builder(
-                  itemCount: categories.length,
-                  itemBuilder: (context, i) {
-                    return Accordion(
-                      title: 'categories[i]',
-                      desc: 'وصف مختصر للقسم',
-                      child: Column(
-                        children: rowCards,
-                      ),
-                    );
-                  },
-                );
+                print(categories);
+                // return ListView.builder(
+                //   itemCount: categories.length,
+                //   itemBuilder: (context, i) {
+                //     return Accordion(
+                //       title: 'categories[i]',
+                //       desc: 'وصف مختصر للقسم',
+                //       child: Column(
+                //         children: rowCards,
+                //       ),
+                //     );
+                //   },
+                // );
               } else {
                 return Center(
                   child: Text('انتظر ...'),
