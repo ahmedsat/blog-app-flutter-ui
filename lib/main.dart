@@ -1,4 +1,5 @@
 import 'package:elmohandes/controllers/auth_controller.dart';
+import 'package:elmohandes/controllers/topic_controller.dart';
 import 'package:elmohandes/controllers/user_controller.dart';
 import 'package:elmohandes/core/services/custom_snackbar.dart';
 import 'package:elmohandes/views/pages/auth/login.dart';
@@ -15,6 +16,7 @@ Future<void> main() async {
     (value) {
       Get.put(AuthController());
       Get.put(UserController());
+      Get.put(TopicController());
     },
     onError: (e) => CustomSnackbar(
       message: 'Firebase initial error',
