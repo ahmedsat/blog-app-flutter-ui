@@ -50,10 +50,10 @@ class _MainPageState extends State<MainPage> {
               if (snapshot.hasData) {
                 List categories = [];
                 for (var doc in snapshot.data.data()) {
-                  categories.add({
-                    'name': snapshot.data.id,
-                    'desc': doc['test']
-                  });
+                  // categories.add({
+                  //   'name': snapshot.data.id,
+                  //   'desc': doc['test']
+                  // });
                 }
                 print(categories);
                 return Text('data');
