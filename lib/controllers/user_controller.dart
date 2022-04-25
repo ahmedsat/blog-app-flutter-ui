@@ -30,7 +30,7 @@ class UserController extends GetxController {
   Rx<int> _membership;
 
   String get membership {
-    return membershipMap[4];
+    return membershipMap[_membership];
   }
 
   set user(UserModle value) => _userModel.value = value;
