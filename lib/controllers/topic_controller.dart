@@ -5,23 +5,21 @@ import 'package:get/get.dart';
 class TopicController extends GetxController {
   static TopicController instance = Get.find();
   final CollectionReference<Map<String, dynamic>> _collection = FirebaseFirestore.instance.collection(categoryCollection);
-  Rx<List<String>> _categoryList;
+  Rx<List<String>> categoryList;
 
-  List<String> get categorys => _categoryList.value;
+  List<String> get categorys => categoryList.value;
 
   @override
   void onInit() {
     super.onInit();
-    // _categoryList.bindStream(categoryStream());
   }
 
-  Stream<List<String>> categoryStream() {
-    return _collection.snapshots().map((QuerySnapshot query) {
-      List<String> retVal = List();
-      query.docs.forEach((element) {
-        retVal.add(element.id);
-      });
-      return retVal;
-    });
+  Stream<DocumentSnapshot> categoryStream() {
+    return _collection.doc().snapshots();
   }
 }
+
+/*
+
+
+*/
