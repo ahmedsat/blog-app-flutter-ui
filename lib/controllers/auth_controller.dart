@@ -21,6 +21,7 @@ class AuthController extends GetxController {
     _user = Rx<User>(auth.currentUser);
     _user.bindStream(auth.userChanges());
     ever(_user, _initialScreen);
+    ever(_user, _setMembership);
   }
 
   _initialScreen(User user) {
@@ -29,6 +30,26 @@ class AuthController extends GetxController {
     } else {
       Get.offAllNamed('/main');
     }
+  }
+
+  int _membership = -1;
+
+  String get membership => membershipMap[_membership];
+
+  var membershipMap = {
+    -1: 'غير مشترك',
+    0: 'اداري',
+    1: 'شامل',
+    2: 'بلاتنيوم',
+    3: 'ماسي',
+    4: 'ذهبي',
+    5: 'فضي',
+    6: 'برونزي',
+  };
+  _setMembership(User user) async {
+    var snapshot = await FirebaseFirestore.instance.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get();
+
+    _membership = snapshot.docs.first.data()['membership'];
   }
 
   void createUser(String email, password) async {
