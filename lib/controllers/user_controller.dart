@@ -18,6 +18,7 @@ class UserController extends GetxController {
 
   void createUser(UserModle userModle) async {
     try {
+      print('object');
       await _firestore.collection(usersCollection).doc(userModle.email).set({
         'membership': userModle.membership,
       });
