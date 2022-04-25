@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final UserController _userController = UserController();
   static AuthController instance = Get.find();
 
