@@ -49,35 +49,34 @@ class UserController extends GetxController {
     ever(_membership, (val) {
       print(val);
     });
-    // }
+  }
 
-    void createUser(UserModle userModle) async {
-      try {
-        print(userModle.email);
-        await _firestore.collection(usersCollection).doc(userModle.email).set({
-          'membership': userModle.membership,
-        });
-      } catch (e) {
-        CustomSnackbar(
-          icon: Icons.error,
-          title: 'فشل انشاء حساب',
-          message: e.message,
-        );
-      }
+  void createUser(UserModle userModle) async {
+    try {
+      print(userModle.email);
+      await _firestore.collection(usersCollection).doc(userModle.email).set({
+        'membership': userModle.membership,
+      });
+    } catch (e) {
+      CustomSnackbar(
+        icon: Icons.error,
+        title: 'فشل انشاء حساب',
+        message: e.message,
+      );
     }
+  }
 
-    Future<UserModle> getUser(String email) async {
-      try {
-        DocumentSnapshot snapshot = await _firestore.collection(usersCollection).doc(email).get();
-        return UserModle.fromDocumentSnapshot(snapshot);
-      } catch (e) {
-        CustomSnackbar(
-          icon: Icons.error,
-          title: 'حدث خطأ ما',
-          message: e.message,
-        );
-        rethrow;
-      }
+  Future<UserModle> getUser(String email) async {
+    try {
+      DocumentSnapshot snapshot = await _firestore.collection(usersCollection).doc(email).get();
+      return UserModle.fromDocumentSnapshot(snapshot);
+    } catch (e) {
+      CustomSnackbar(
+        icon: Icons.error,
+        title: 'حدث خطأ ما',
+        message: e.message,
+      );
+      rethrow;
     }
   }
 }
