@@ -43,8 +43,8 @@ class UserController extends GetxController {
 
     var snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
     _membership = Rx<int>(snapshot['membership']);
-    // _membership.bindStream(snapshot['membership']);
-    // ever(_membership, _print);
+    _membership.bindStream(snapshot['membership'] as Stream);
+    ever(_membership, _print);
   }
 
   _print(int n) {
