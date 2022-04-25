@@ -54,10 +54,8 @@ class _MainPageState extends State<MainPage> {
               BuildContext context,
               AsyncSnapshot<DocumentSnapshot> snapshot,
             ) {
-              if (snapshot.hasData) {
-                return Center(
-                  child: Text('انتظر ...'),
-                );
+              
+                return Text('');
               } else {
                 return Center(
                   child: Text('انتظر ...'),
