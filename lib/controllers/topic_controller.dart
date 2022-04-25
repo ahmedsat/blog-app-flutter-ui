@@ -12,7 +12,7 @@ class TopicController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _categoryList.bindStream(categoryStream());
+    // _categoryList.bindStream(categoryStream());
   }
 
   Stream<List<String>> categoryStream() {
