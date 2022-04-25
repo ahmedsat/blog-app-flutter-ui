@@ -41,8 +41,9 @@ class UserController extends GetxController {
   void onReady() async {
     super.onReady();
     var snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
+    var snapshots = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).snapshots();
     _membership = Rx<int>(snapshot['membership']);
-    _membership.bindStream(snapshot.get('membership').obs);
+    _membership.bindStream(snapshot['membership']);
     ever(_membership, _print);
   }
 
