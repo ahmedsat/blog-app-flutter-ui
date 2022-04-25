@@ -54,12 +54,7 @@ class _MainPageState extends State<MainPage> {
                 child: ListView.builder(
                   itemCount: topicController.categorys.length,
                   itemBuilder: (_, index) {
-                    return Accordion(
-                      title: topicController.categorys[index],
-                      child: Column(
-                        children: rowCards,
-                      ),
-                    );
+                    return Text('test');
                   },
                 ),
               );
