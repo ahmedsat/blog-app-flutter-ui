@@ -60,7 +60,7 @@ class AuthController extends GetxController {
         password: password,
       );
       UserModle modle = UserModle(
-        email: 'auth.currentUser.email',
+        email: auth.currentUser.email,
       );
       _userController.createUser(modle);
       // await _firestore.collection(usersCollection).add({
