@@ -46,12 +46,9 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
-        child: StreamBuilder<DocumentSnapshot>(
+        child: StreamBuilder(
             stream: TopicController.instance.categoryStream(),
-            builder: (
-              BuildContext context,
-              AsyncSnapshot<DocumentSnapshot> snapshot,
-            ) {
+            builder: (context, snapshot) {
               if (snapshot.hasData) {
                 List categories = [];
                 for (var doc in snapshot.data.data()) {
@@ -61,6 +58,7 @@ class _MainPageState extends State<MainPage> {
                   });
                 }
                 print(categories);
+                return Text('data');
                 // return ListView.builder(
                 //   itemCount: categories.length,
                 //   itemBuilder: (context, i) {
