@@ -30,7 +30,7 @@ class UserController extends GetxController {
   Rx<int> _membership;
 
   String get membership {
-    return membershipMap[_membership];
+    return membershipMap[_membership.value];
   }
 
   set user(UserModle value) => _userModel.value = value;
@@ -40,8 +40,8 @@ class UserController extends GetxController {
   @override
   void onReady() async {
     super.onReady();
+
     var snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
-    var snapshots = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).snapshots();
     _membership = Rx<int>(snapshot['membership']);
     // _membership.bindStream(snapshot['membership']);
     // ever(_membership, _print);
