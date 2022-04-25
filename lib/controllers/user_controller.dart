@@ -16,12 +16,6 @@ class UserController extends GetxController {
 
   UserModle get user => _userModel.value;
 
-  Rx<int> _membership;
-
-  String get membership {
-    return membershipMap[4];
-  }
-
   var membershipMap = {
     -1: 'غير مشترك',
     0: 'اداري',
@@ -32,11 +26,12 @@ class UserController extends GetxController {
     5: 'فضي',
     6: 'برونزي',
   };
-  // _setMembership(User user) async {
-  //   var snapshot = await FirebaseFirestore.instance.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get();
 
-  //   _membership = snapshot.docs.first.data()['membership'];
-  // }
+  Rx<int> _membership;
+
+  String get membership {
+    return membershipMap[4];
+  }
 
   set user(UserModle value) => _userModel.value = value;
 
@@ -48,9 +43,12 @@ class UserController extends GetxController {
     var snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
     _membership = Rx<int>(snapshot['membership']);
     _membership.bindStream(snapshot.get('membership').obs);
-    ever(_membership, (val) {
-      print(val);
-    });
+    ever(_membership, _print);
+  }
+
+  _print(int n) {
+    print('object');
+    print(n);
   }
 
   void createUser(UserModle userModle) async {
