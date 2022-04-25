@@ -1,8 +1,10 @@
+import 'package:elmohandes/controllers/topic_controller.dart';
 import 'package:elmohandes/views/widgets/accordion.dart';
 import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:elmohandes/views/widgets/row_car.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MainPage extends StatefulWidget {
   static String id = 'MainPage';
@@ -44,18 +46,24 @@ class _MainPageState extends State<MainPage> {
           right: 10,
           top: 20,
         ),
-        child: ListView.builder(
-          itemCount: categories.length,
-          itemBuilder: (context, i) {
-            return Accordion(
-              title: categories[i],
-              desc: 'وصف مختصر للقسم',
-              child: Column(
-                children: rowCards,
-              ),
-            );
+        child: GetX<TopicController>(
+          init: Get.put<TopicController>(TopicController()),
+          builder: (TopicController topicController) {
+            if (topicController != null && topicController.categorys != null) {
+              return Expanded(
+                child: ListView.builder(
+                  itemCount: topicController.categorys.length,
+                  itemBuilder: (_, index) {
+                    return Text(topicController.categorys[index]);
+                  },
+                ),
+              );
+            } else {
+              return Text("loading...");
+            }
           },
         ),
+        //
       ),
     );
   }
