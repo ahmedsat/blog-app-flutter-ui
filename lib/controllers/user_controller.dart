@@ -4,7 +4,9 @@ import 'package:elmohandes/core/constants.dart';
 import 'package:elmohandes/core/services/custom_snackbar.dart';
 import 'package:elmohandes/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class UserController extends GetxController {
@@ -41,9 +43,11 @@ class UserController extends GetxController {
   @override
   void onReady() async {
     super.onReady();
-    DocumentSnapshot snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
+    var snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
     _membership = Rx<int>(snapshot['membership']);
-  }
+    _membership.bindStream(snapshot.get('membership').obs);
+    ever(_membership,(val){print(val);} );
+  // }
 
   void createUser(UserModle userModle) async {
     try {
