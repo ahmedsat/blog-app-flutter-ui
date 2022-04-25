@@ -19,7 +19,7 @@ class UserController extends GetxController {
   Rx<int> _membership;
 
   String get membership {
-    return membershipMap[6];
+    return membershipMap[4];
   }
 
   var membershipMap = {
