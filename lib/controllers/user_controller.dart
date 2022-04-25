@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:elmohandes/controllers/auth_controller.dart';
 import 'package:elmohandes/core/constants.dart';
 import 'package:elmohandes/core/services/custom_snackbar.dart';
 import 'package:elmohandes/models/user_model.dart';
@@ -13,7 +14,7 @@ class UserController extends GetxController {
 
   UserModle get user => _userModel.value;
 
-  int _membership = -1;
+  Rx<int> _membership;
 
   String get membership => membershipMap[_membership];
 
@@ -36,6 +37,13 @@ class UserController extends GetxController {
   set user(UserModle value) => _userModel.value = value;
 
   void clear() => _userModel.value = UserModle();
+
+  @override
+  void onReady() async {
+    super.onReady();
+    DocumentSnapshot snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
+    _membership = Rx<int>(snapshot['membership']);
+  }
 
   void createUser(UserModle userModle) async {
     try {
