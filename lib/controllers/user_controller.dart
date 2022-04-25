@@ -39,8 +39,8 @@ class UserController extends GetxController {
     super.onReady();
 
     var snapshot = await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).get();
-    // Stream<DocumentSnapshot<UserModle>> snapshots = (await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).snapshots()) as Stream<DocumentSnapshot<UserModle>>;
     _membership = Rx<int>(snapshot['membership']);
+    Stream<DocumentSnapshot<UserModle>> snapshots = (await _firestore.collection(usersCollection).doc(AuthController.instance.auth.currentUser.email).snapshots()) as Stream<DocumentSnapshot<UserModle>>;
   }
 
   void createUser(UserModle userModle) async {
