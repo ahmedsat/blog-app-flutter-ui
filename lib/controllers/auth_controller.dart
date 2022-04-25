@@ -64,8 +64,8 @@ class AuthController extends GetxController {
       });
     } catch (e) {
       CustomSnackbar(
-        message: 'فشل انشاء حساب',
-        title: e.toString(),
+        title: 'فشل انشاء حساب',
+        message: e.toString(),
         icon: Icons.error,
       );
     }
@@ -79,8 +79,8 @@ class AuthController extends GetxController {
       );
     } catch (e) {
       CustomSnackbar(
-        message: 'فشل تسجيل الدخول',
-        title: e.message,
+        title: 'فشل تسجيل الدخول',
+        message: e.message,
         icon: Icons.error,
       );
     }
