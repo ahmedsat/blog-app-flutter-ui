@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elmohandes/core/constants.dart';
 import 'package:elmohandes/core/services/custom_snackbar.dart';
 import 'package:elmohandes/models/user_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,26 @@ class UserController extends GetxController {
   final Rx<UserModle> _userModel = UserModle().obs;
 
   UserModle get user => _userModel.value;
+
+  int _membership = -1;
+
+  String get membership => membershipMap[_membership];
+
+  var membershipMap = {
+    -1: 'غير مشترك',
+    0: 'اداري',
+    1: 'شامل',
+    2: 'بلاتنيوم',
+    3: 'ماسي',
+    4: 'ذهبي',
+    5: 'فضي',
+    6: 'برونزي',
+  };
+  _setMembership(User user) async {
+    var snapshot = await FirebaseFirestore.instance.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get();
+
+    _membership = snapshot.docs.first.data()['membership'];
+  }
 
   set user(UserModle value) => _userModel.value = value;
 

@@ -1,4 +1,5 @@
 import 'package:elmohandes/controllers/auth_controller.dart';
+import 'package:elmohandes/controllers/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,7 +9,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String email = AuthController.instance.auth.currentUser.email;
-    String membership = AuthController.instance.membership;
+    String membership = UserController.instance.membership;
     return Drawer(
       // Add a ListView to the drawer. This ensures the user can scroll
       // through the options in the drawer if there isn't enough vertical
