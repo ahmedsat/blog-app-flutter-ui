@@ -3,7 +3,7 @@ import 'package:elmohandes/core/constants.dart';
 import 'package:get/get.dart';
 
 class TopicController extends GetxController {
-  TopicController instance = Get.find();
+  static TopicController instance = Get.find();
   final CollectionReference<Map<String, dynamic>> _collection = FirebaseFirestore.instance.collection(categoryCollection);
   Rx<List<String>> _categoryList;
 
