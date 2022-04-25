@@ -16,7 +16,7 @@ class UserController extends GetxController {
 
   Rx<int> _membership;
 
-  String get membership => membershipMap[_membership];
+  String get membership => membershipMap[5];
 
   var membershipMap = {
     -1: 'غير مشترك',
