@@ -55,13 +55,13 @@ class AuthController extends GetxController {
 
   void createUser(String email, password) async {
     try {
-      await auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      // await auth.createUserWithEmailAndPassword(
+      //   email: email,
+      //   password: password,
+      // );
       UserModle modle = UserModle(
-        email: auth.currentUser.email,
-        // membership: -1,
+        email: 'auth.currentUser.email',
+        membership: -1,
       );
       _userController.createUser(modle);
       // await _firestore.collection(usersCollection).add({
