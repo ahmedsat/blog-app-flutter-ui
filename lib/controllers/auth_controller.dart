@@ -61,7 +61,7 @@ class AuthController extends GetxController {
       // );
       UserModle modle = UserModle(
         email: 'auth.currentUser.email',
-        membership: -1,
+        // membership: -1,
       );
       _userController.createUser(modle);
       // await _firestore.collection(usersCollection).add({
