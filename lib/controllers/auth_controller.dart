@@ -65,7 +65,7 @@ class AuthController extends GetxController {
     } catch (e) {
       CustomSnackbar(
         title: 'فشل انشاء حساب',
-        message: e.toString(),
+        message: e.message,
         icon: Icons.error,
       );
     }
