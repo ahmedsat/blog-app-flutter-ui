@@ -41,7 +41,7 @@ class AuthController extends GetxController {
 
   _initialScreen(User user) {
     if (user == null) {
-      Get.offAllNamed('/signup');
+      Get.offAllNamed('/login');
     } else {
       Get.offAllNamed('/main');
     }
