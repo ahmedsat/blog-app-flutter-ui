@@ -28,11 +28,11 @@ class UserController extends GetxController {
     5: 'فضي',
     6: 'برونزي',
   };
-  _setMembership(User user) async {
-    var snapshot = await FirebaseFirestore.instance.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get();
+  // _setMembership(User user) async {
+  //   var snapshot = await FirebaseFirestore.instance.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get();
 
-    _membership = snapshot.docs.first.data()['membership'];
-  }
+  //   _membership = snapshot.docs.first.data()['membership'];
+  // }
 
   set user(UserModle value) => _userModel.value = value;
 
