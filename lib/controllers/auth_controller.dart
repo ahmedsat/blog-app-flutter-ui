@@ -12,26 +12,6 @@ class AuthController extends GetxController {
   final UserController _userController = UserController();
   static AuthController instance = Get.find();
 
-  Rx<User> _user;
-  FirebaseAuth auth = FirebaseAuth.instance;
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
-  @override
-  void onReady() {
-    super.onReady();
-    _user = Rx<User>(auth.currentUser);
-    _user.bindStream(auth.userChanges());
-    ever(_user, _initialScreen);
-    ever(_user, _setMembership);
-  }
-
-  _initialScreen(User user) {
-    if (user == null) {
-      Get.offAllNamed('/login');
-    } else {
-      Get.offAllNamed('/main');
-    }
-  }
-
   int _membership = -1;
 
   String get membership => membershipMap[_membership];
@@ -46,6 +26,27 @@ class AuthController extends GetxController {
     5: 'فضي',
     6: 'برونزي',
   };
+
+  Rx<User> _user;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  @override
+  void onReady() {
+    super.onReady();
+    _user = Rx<User>(auth.currentUser);
+    _user.bindStream(auth.userChanges());
+    ever(_user, _initialScreen);
+    ever(_user, _setMembership);
+  }
+
+  _initialScreen(User user) {
+    if (user == null) {
+      Get.offAllNamed('/signup');
+    } else {
+      Get.offAllNamed('/main');
+    }
+  }
+
   _setMembership(User user) async {
     var snapshot = await FirebaseFirestore.instance.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get();
 
@@ -59,9 +60,14 @@ class AuthController extends GetxController {
         password: password,
       );
       UserModle modle = UserModle(
-        email: auth.currentUser.email,
+        email: 'auth.currentUser.email',
       );
       _userController.createUser(modle);
+      // await _firestore.collection(usersCollection).add({
+      //   'id': auth.currentUser.uid,
+      //   'membership': -1,
+      //   'email': auth.currentUser.email,
+      // });
     } catch (e) {
       CustomSnackbar(
         title: 'فشل انشاء حساب',
