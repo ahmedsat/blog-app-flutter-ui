@@ -67,7 +67,7 @@ class _MainPageState extends State<MainPage> {
                   itemCount: categories.length,
                   itemBuilder: (context, i) {
                     return Accordion(
-                      title: categories[i]['name'],
+                      title: 'categories[i]',
                       desc: 'وصف مختصر للقسم',
                       child: Column(
                         children: rowCards,
