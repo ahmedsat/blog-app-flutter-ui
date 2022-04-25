@@ -55,7 +55,26 @@ class _MainPageState extends State<MainPage> {
               AsyncSnapshot<DocumentSnapshot> snapshot,
             ) {
               if (snapshot.hasData) {
-                return Text('test');
+                List categories = [];
+                for (var doc in snapshot.data.data()) {
+                  categories.add({
+                    'name': snapshot.data.id,
+                    'desc': doc['test']
+                  });
+                }
+
+                return ListView.builder(
+                  itemCount: categories.length,
+                  itemBuilder: (context, i) {
+                    return Accordion(
+                      title: categories[i],
+                      desc: 'وصف مختصر للقسم',
+                      child: Column(
+                        children: rowCards,
+                      ),
+                    );
+                  },
+                );
               } else {
                 return Center(
                   child: Text('انتظر ...'),
