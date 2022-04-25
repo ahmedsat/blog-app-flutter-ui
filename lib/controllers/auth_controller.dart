@@ -55,20 +55,14 @@ class AuthController extends GetxController {
 
   void createUser(String email, password) async {
     try {
-      // await auth.createUserWithEmailAndPassword(
-      //   email: email,
-      //   password: password,
-      // );
+      await auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       UserModle modle = UserModle(
-        email: 'auth.currentUser.email',
-        // membership: -1,
+        email: auth.currentUser.email,
       );
       _userController.createUser(modle);
-      // await _firestore.collection(usersCollection).add({
-      //   'id': auth.currentUser.uid,
-      //   'membership': -1,
-      //   'email': auth.currentUser.email,
-      // });
     } catch (e) {
       CustomSnackbar(
         title: 'فشل انشاء حساب',
