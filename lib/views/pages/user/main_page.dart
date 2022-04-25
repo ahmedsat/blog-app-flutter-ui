@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elmohandes/controllers/topic_controller.dart';
 import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:elmohandes/views/widgets/row_car.dart';
@@ -7,7 +6,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
-  static String id = 'MainPage';
   const MainPage({Key key}) : super(key: key);
 
   @override
