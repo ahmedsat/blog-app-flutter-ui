@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elmohandes/views/core/constants.dart';
-import 'package:elmohandes/views/services/custom_snackbar.dart'; 
+import 'package:elmohandes/views/services/custom_snackbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -60,7 +60,7 @@ class AuthController extends GetxController {
       await _firestore.collection(usersCollection).add({
         'id': auth.currentUser.uid,
         'membership': -1,
-          'email':auth.currentUser.email,
+        'email': auth.currentUser.email,
       });
     } catch (e) {
       CustomSnackbar(
@@ -80,7 +80,7 @@ class AuthController extends GetxController {
     } catch (e) {
       CustomSnackbar(
         message: 'فشل تسجيل الدخول',
-        title: e.toString(),
+        title: e.messeage,
         icon: Icons.error,
       );
     }
