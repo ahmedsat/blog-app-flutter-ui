@@ -12,11 +12,8 @@ class TopicController extends GetxController {
 
   @override
   void onInit() {
-    print('start initialize');
     super.onInit();
-    print('super done');
     categoryList.bindStream(categoryStream());
-    print('end');
   }
 
   // Stream<DocumentSnapshot> categoryStream() {
@@ -27,6 +24,7 @@ class TopicController extends GetxController {
     return _collection.snapshots().map((QuerySnapshot query) {
       List<CategoryModele> retVal = List();
       query.docs.forEach((element) {
+        print('step');
         retVal.add(CategoryModele.fromDocumentSnapshot(element));
       });
       return retVal;
