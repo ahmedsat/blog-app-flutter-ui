@@ -48,7 +48,7 @@ class _MainPageState extends State<MainPage> {
           child: GetX<TopicController>(
             init: Get.put<TopicController>(TopicController()),
             builder: (TopicController topicController) {
-              if (topicController != null && topicController.categoryList != null) {
+              if (topicController != null && topicController.categoryList.value != null) {
                 print('object');
                 // return Expanded(
                 //   child: ListView.builder(
