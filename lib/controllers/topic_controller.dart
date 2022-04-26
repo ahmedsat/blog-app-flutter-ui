@@ -13,14 +13,6 @@ class TopicController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    var categoryStream = await _collection.snapshots().map((QuerySnapshot query) {
-      List<CategoryModele> retVal = List();
-      query.docs.forEach((element) {
-        retVal.add(CategoryModele.fromDocumentSnapshot(element));
-      });
-      return retVal;
-    });
-    categoryList.bindStream(categoryStream);
   }
 
   Stream<QuerySnapshot> categoryStream() {
