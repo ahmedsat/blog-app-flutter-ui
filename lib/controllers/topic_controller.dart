@@ -16,7 +16,7 @@ class TopicController extends GetxController {
   }
 
   Stream<QuerySnapshot> categoryStream() {
-    return _collection.snapshots();
+    return _collection.get().asStream();
   }
 
   // Stream<List<CategoryModele>> categoryStream() {
