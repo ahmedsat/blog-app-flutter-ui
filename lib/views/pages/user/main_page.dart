@@ -46,26 +46,10 @@ class _MainPageState extends State<MainPage> {
             right: 10,
             top: 20,
           ),
-          child: GetX(
-            // init: Get.put<TopicController>(TopicController()),
-            builder: (TopicController topicController) {
-              if (topicController != null && topicController.categorys != null) {
-                return Text("loading...");
-                // return Expanded(
-                //   child: ListView.builder(
-                //     itemCount: topicController.categorys.length,
-                //     itemBuilder: (_, index) {
-                //       return Text(topicController.categorys[index].title);
-                //       // return TodoCard(
-                //       //   uid: controller.user.uid,
-                //       //   todo: todoController.todos[index],
-                //       // );
-                //     },
-                //   ),
-                // );
-              } else {
-                return Text("loading...");
-              }
+          child: StreamBuilder(
+            stream: TopicController.instance.categoryStream(),
+            builder: (context, snapshot) {
+              return Text('fghgfh');
             },
           ),
         ),

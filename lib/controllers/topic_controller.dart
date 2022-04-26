@@ -23,9 +23,9 @@ class TopicController extends GetxController {
     categoryList.bindStream(categoryStream);
   }
 
-  // Stream<DocumentSnapshot> categoryStream() {
-  //   return _collection.doc().snapshots();
-  // }
+  Stream<QuerySnapshot> categoryStream() {
+    return _collection.snapshots();
+  }
 
   // Stream<List<CategoryModele>> categoryStream() {
   //   return _collection.snapshots().map((QuerySnapshot query) {
