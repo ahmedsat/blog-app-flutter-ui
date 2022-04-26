@@ -16,6 +16,7 @@ Future<void> main() async {
     (value) {
       Get.put(AuthController());
       Get.put(UserController());
+      print('-----');
       Get.put(TopicController());
     },
     onError: (e) => CustomSnackbar(
