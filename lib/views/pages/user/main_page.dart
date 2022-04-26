@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elmohandes/controllers/topic_controller.dart';
 import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:elmohandes/views/widgets/row_car.dart';
@@ -49,6 +50,8 @@ class _MainPageState extends State<MainPage> {
           child: StreamBuilder(
             stream: TopicController.instance.categoryStream(),
             builder: (context, snapshot) {
+              var aaaaaaa = snapshot.data.DocumentSnapshot()[1];
+              print(aaaaaaa);
               if (snapshot.hasData) {
                 return Text('fghgfh');
               } else {
