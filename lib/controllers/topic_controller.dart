@@ -11,23 +11,24 @@ class TopicController extends GetxController {
   List<CategoryModele> get categorys => categoryList.value;
 
   @override
-  void onInit() async {
+  void onInit() {
     super.onInit();
+    categoryList.bindStream(categoryStream());
   }
 
-  Future<QuerySnapshot<Object>> categoryStream() async {
-    return await _collection.get();
-  }
-
-  // Stream<List<CategoryModele>> categoryStream() {
-  //   return _collection.snapshots().map((QuerySnapshot query) {
-  //     List<CategoryModele> retVal = List();
-  //     query.docs.forEach((element) {
-  //       retVal.add(CategoryModele.fromDocumentSnapshot(element));
-  //     });
-  //     return retVal;
-  //   });
+  // Stream<DocumentSnapshot> categoryStream() {
+  //   return _collection.doc().snapshots();
   // }
+
+  Stream<List<CategoryModele>> categoryStream() {
+    return _collection.snapshots().map((QuerySnapshot query) {
+      List<CategoryModele> retVal = List();
+      query.docs.forEach((element) {
+        retVal.add(CategoryModele.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
 }
 
 /*

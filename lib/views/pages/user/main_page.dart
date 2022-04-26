@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elmohandes/controllers/topic_controller.dart';
 import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:elmohandes/views/widgets/row_car.dart';
@@ -37,9 +36,8 @@ class _MainPageState extends State<MainPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    try {
-      return CustomScaffold(
-        body: Container(
+    return CustomScaffold(
+      body: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           margin: const EdgeInsets.only(
@@ -47,28 +45,24 @@ class _MainPageState extends State<MainPage> {
             right: 10,
             top: 20,
           ),
-          child: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context, i) {
-              return Text('data $i');
+          child: GetX<TopicController>(
+            // init: Get.put<TodoController>(TodoController()),
+            builder: (TopicController topicController) {
+              if (topicController != null && topicController.categorys != null) {
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: topicController.categorys.length,
+                    itemBuilder: (_, index) {
+                      return Text(topicController.categorys[index].title);
+                    },
+                  ),
+                );
+              } else {
+                return Text("loading...");
+              }
             },
-          ),
-        ),
-      );
-    } catch (e) {
-      return CustomScaffold(
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          margin: const EdgeInsets.only(
-            left: 10,
-            right: 10,
-            top: 20,
-          ),
-          child: Text(e.message),
-        ),
-      );
-    }
+          )),
+    );
   }
 }
 
@@ -86,26 +80,8 @@ ListView.builder(
           },
         ),
 */
-// child: GetX<TopicController>(
-//   init: Get.put<TopicController>(TopicController()),
-//   builder: (TopicController topicController) {
-//     if (topicController != null && topicController.categorys != null) {
-//       print('object');
-//       // return Expanded(
-//       //   child: ListView.builder(
-//       //     itemCount: topicController.categorys.length,
-//       //     itemBuilder: (_, index) {
-//       //       return Text(topicController.categorys[index].title);
-//       //       // return TodoCard(
-//       //       //   uid: controller.user.uid,
-//       //       //   todo: todoController.todos[index],
-//       //       // );
-//       //     },
-//       //   ),
-//       // );
-//     } else {
-//       return Text("loading...");
-//     }
-//     return Text("done...");
-//   },
-// ),
+
+// return TodoCard(
+//   uid: controller.user.uid,
+//   todo: todoController.todos[index],
+// );
