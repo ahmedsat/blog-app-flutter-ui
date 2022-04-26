@@ -12,8 +12,11 @@ class TopicController extends GetxController {
 
   @override
   void onInit() {
+    print('start initialize');
     super.onInit();
+    print('super done');
     categoryList.bindStream(categoryStream());
+    print('end');
   }
 
   // Stream<DocumentSnapshot> categoryStream() {
