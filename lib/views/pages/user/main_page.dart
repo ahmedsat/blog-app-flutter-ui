@@ -50,8 +50,6 @@ class _MainPageState extends State<MainPage> {
           child: StreamBuilder(
             stream: TopicController.instance.categoryStream(),
             builder: (context, snapshot) {
-              var aaaaaaa = snapshot.data.DocumentSnapshot()[1];
-              print(aaaaaaa);
               if (snapshot.hasData) {
                 return Text('fghgfh');
               } else {
