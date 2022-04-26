@@ -50,7 +50,7 @@ class _MainPageState extends State<MainPage> {
             init: Get.put<TopicController>(TopicController()),
             builder: (TopicController topicController) {
               if (topicController != null && topicController.categorys != null) {
-                print('object');
+                return Text("loading...");
                 // return Expanded(
                 //   child: ListView.builder(
                 //     itemCount: topicController.categorys.length,
@@ -66,7 +66,6 @@ class _MainPageState extends State<MainPage> {
               } else {
                 return Text("loading...");
               }
-              return Text("done...");
             },
           ),
         ),
