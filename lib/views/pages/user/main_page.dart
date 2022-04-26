@@ -46,7 +46,7 @@ class _MainPageState extends State<MainPage> {
             right: 10,
             top: 20,
           ),
-          child: GetX<TopicController>(
+          child: GetX(
             // init: Get.put<TopicController>(TopicController()),
             builder: (TopicController topicController) {
               if (topicController != null && topicController.categorys != null) {
