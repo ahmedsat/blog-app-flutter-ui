@@ -20,8 +20,7 @@ class TopicController extends GetxController {
   //   return _collection.doc().snapshots();
   // }
 
-  Stream<List<CategoryModele>> categoryStream() {
-    print('step');
+  Future<Stream<List<CategoryModele>>> categoryStream() async {
     return _collection.snapshots().map((QuerySnapshot query) {
       List<CategoryModele> retVal = List();
       query.docs.forEach((element) {
