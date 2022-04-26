@@ -40,25 +40,16 @@ class _MainPageState extends State<MainPage> {
     try {
       return CustomScaffold(
         body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          margin: const EdgeInsets.only(
-            left: 10,
-            right: 10,
-            top: 20,
-          ),
-          child: StreamBuilder(
-            stream: TopicController.instance.categoryStream(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                print(snapshot.toString());
-                return Text('fghgfh');
-              } else {
-                return Text('fghgfh');
-              }
-            },
-          ),
-        ),
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            margin: const EdgeInsets.only(
+              left: 10,
+              right: 10,
+              top: 20,
+            ),
+            child: ListView.builder(itemBuilder: (context, i) {
+              return Text('data $i');
+            })),
       );
     } catch (e) {
       return CustomScaffold(

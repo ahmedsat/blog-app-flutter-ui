@@ -15,8 +15,8 @@ class TopicController extends GetxController {
     super.onInit();
   }
 
-  Stream<QuerySnapshot> categoryStream() {
-    return _collection.snapshots();
+  Future<QuerySnapshot<Object>> categoryStream() async {
+    return await _collection.get();
   }
 
   // Stream<List<CategoryModele>> categoryStream() {
