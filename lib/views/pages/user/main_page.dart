@@ -51,6 +51,9 @@ class _MainPageState extends State<MainPage> {
             stream: TopicController.instance.categoryStream(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
+                for (var doc in snapshot.data) {
+                  print(doc);
+                }
                 return Text('fghgfh');
               } else {
                 return Text('fghgfh');
