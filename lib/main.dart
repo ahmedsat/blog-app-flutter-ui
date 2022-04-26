@@ -14,9 +14,14 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp().then(
     (value) {
+      print('start initialize');
       Get.put(AuthController());
+      print('AuthControlle initialized');
       Get.put(UserController());
+      print('UserControlle initialized');
       Get.put(TopicController());
+      print('TopicController initialized');
+      print('all initialized');
     },
     onError: (e) => CustomSnackbar(
       message: 'Firebase initial error',
