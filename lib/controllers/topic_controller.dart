@@ -21,8 +21,8 @@ class TopicController extends GetxController {
   // }
 
   Stream<List<CategoryModele>> categoryStream() {
+    print('step');
     return _collection.snapshots().map((QuerySnapshot query) {
-      print('step');
       List<CategoryModele> retVal = List();
       query.docs.forEach((element) {
         retVal.add(CategoryModele.fromDocumentSnapshot(element));
