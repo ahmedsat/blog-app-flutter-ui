@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class TopicController extends GetxController {
   static TopicController instance = Get.find();
   final CollectionReference<Map<String, dynamic>> _collection = FirebaseFirestore.instance.collection(categoryCollection);
-  Rx<List<CategoryModele>> categoryList = [] as Rx<List<CategoryModele>>;
+  Rx<List<CategoryModele>> categoryList;
 
   List<CategoryModele> get categorys => categoryList.value;
 
