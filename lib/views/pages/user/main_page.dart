@@ -49,21 +49,23 @@ class _MainPageState extends State<MainPage> {
             init: Get.put<TopicController>(TopicController()),
             builder: (TopicController topicController) {
               if (topicController != null && topicController.categorys != null) {
-                return Expanded(
-                  child: ListView.builder(
-                    itemCount: topicController.categorys.length,
-                    itemBuilder: (_, index) {
-                      return Text(topicController.categorys[index].title);
-                      // return TodoCard(
-                      //   uid: controller.user.uid,
-                      //   todo: todoController.todos[index],
-                      // );
-                    },
-                  ),
-                );
+                print('object');
+                // return Expanded(
+                //   child: ListView.builder(
+                //     itemCount: topicController.categorys.length,
+                //     itemBuilder: (_, index) {
+                //       return Text(topicController.categorys[index].title);
+                //       // return TodoCard(
+                //       //   uid: controller.user.uid,
+                //       //   todo: todoController.todos[index],
+                //       // );
+                //     },
+                //   ),
+                // );
               } else {
                 return Text("loading...");
               }
+              return Text("done...");
             },
           )),
     );
