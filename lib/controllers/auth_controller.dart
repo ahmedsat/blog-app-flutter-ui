@@ -40,12 +40,11 @@ class AuthController extends GetxController {
   }
 
   _initialScreen(User user) {
-    Get.offAllNamed('/main');
-    // if (user == null) {
-    //   Get.offAllNamed('/login');
-    // } else {
-    //   Get.offAllNamed('/main');
-    // }
+    if (user == null) {
+      Get.offAllNamed('/login');
+    } else {
+      Get.offAllNamed('/main');
+    }
   }
 
   _setMembership(User user) async {
