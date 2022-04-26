@@ -12,6 +12,7 @@ class TopicController extends GetxController {
 
   @override
   void onInit() async {
+    print('-----');
     super.onInit();
     var categoryStream = await _collection.snapshots().map((QuerySnapshot query) {
       List<CategoryModele> retVal = List();
