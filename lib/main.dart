@@ -17,7 +17,6 @@ Future<void> main() async {
       Get.put(AuthController());
       Get.put(UserController());
       Get.put(TopicController());
-      print('---TopicController---');
     },
     onError: (e) => CustomSnackbar(
       message: 'Firebase initial error',
