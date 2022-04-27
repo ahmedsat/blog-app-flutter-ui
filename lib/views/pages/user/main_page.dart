@@ -1,11 +1,12 @@
-import 'package:elmohandes/views/widgets/accordion.dart';
+import 'package:elmohandes/controllers/topic_controller.dart';
 import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:elmohandes/views/widgets/row_car.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MainPage extends StatefulWidget {
-  static String id = 'MainPage';
   const MainPage({Key key}) : super(key: key);
 
   @override
@@ -15,7 +16,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   List<String> categories = [
     'الأدوات المطلوبة لصيانة المحمول',
-    'أجهزة قياس مكونات بوردة المحمول',
+    'الأجهزة قياس مكونات بوردة المحمول',
     'الأجهزة المطلوبة في صيانة المحمول',
     'فك وتركيب اي موبايل',
     'المكونات المادية للمحمول',
@@ -37,14 +38,36 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        margin: const EdgeInsets.only(
-          left: 10,
-          right: 10,
-          top: 20,
-        ),
-        child: ListView.builder(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          margin: const EdgeInsets.only(
+            left: 10,
+            right: 10,
+            top: 20,
+          ),
+          child: GetX<TopicController>(
+            // init: Get.put<TodoController>(TodoController()),
+            builder: (TopicController topicController) {
+              if (topicController != null && topicController.categorys != null) {
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: topicController.categorys.length,
+                    itemBuilder: (_, index) {
+                      return Text(topicController.categorys[index].title);
+                    },
+                  ),
+                );
+              } else {
+                return Text("loading...");
+              }
+            },
+          )),
+    );
+  }
+}
+
+/*
+ListView.builder(
           itemCount: categories.length,
           itemBuilder: (context, i) {
             return Accordion(
@@ -56,7 +79,9 @@ class _MainPageState extends State<MainPage> {
             );
           },
         ),
-      ),
-    );
-  }
-}
+*/
+
+// return TodoCard(
+//   uid: controller.user.uid,
+//   todo: todoController.todos[index],
+// );

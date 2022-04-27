@@ -1,13 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:elmohandes/views/core/constants.dart';
-import 'package:elmohandes/views/services/custom_snackbar.dart';
+import 'package:elmohandes/controllers/user_controller.dart';
+import 'package:elmohandes/core/constants.dart';
+import 'package:elmohandes/core/services/custom_snackbar.dart';
+import 'package:elmohandes/models/user_model.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
+  final UserController _userController = UserController();
   static AuthController instance = Get.find();
 
   int _membership = -1;
@@ -57,14 +59,19 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
-      await _firestore.collection(usersCollection).add({
-        'id': auth.currentUser.uid,
-        'membership': -1,
-      });
+      UserModle modle = UserModle(
+        email: auth.currentUser.email,
+      );
+      _userController.createUser(modle);
+      // await _firestore.collection(usersCollection).add({
+      //   'id': auth.currentUser.uid,
+      //   'membership': -1,
+      //   'email': auth.currentUser.email,
+      // });
     } catch (e) {
       CustomSnackbar(
-        message: 'فشل انشاء حساب',
-        title: e.toString(),
+        title: 'فشل انشاء حساب',
+        message: e.message,
         icon: Icons.error,
       );
     }
@@ -78,8 +85,8 @@ class AuthController extends GetxController {
       );
     } catch (e) {
       CustomSnackbar(
-        message: 'فشل تسجيل الدخول',
-        title: e.toString(),
+        title: 'فشل تسجيل الدخول',
+        message: e.message,
         icon: Icons.error,
       );
     }
