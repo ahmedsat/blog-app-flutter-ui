@@ -2,6 +2,7 @@ import 'package:elmohandes/views/widgets/custom_scaffold.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TopicView extends StatefulWidget {
   static String id = 'TopicView';
@@ -303,6 +304,7 @@ class _TopicViewState extends State<TopicView> {
 </ul>
 <p><br></p>
 """;
+  var data = Get.arguments;
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
@@ -310,7 +312,7 @@ class _TopicViewState extends State<TopicView> {
         shrinkWrap: true,
         children: <Widget>[
           HtmlWidget(
-            kHtml,
+            data,
           ),
         ],
       ),

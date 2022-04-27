@@ -44,13 +44,6 @@ class _TopicListState extends State<TopicList> {
                   title: document.id,
                   data: document['data'],
                 );
-                // return Accordion(
-                //   title: document.id,
-                //   desc: document['description'],
-                //   child: TopicList(
-                //     category: document.id,
-                //   ),
-                // );
               },
             ).toList(),
           );
@@ -67,7 +60,7 @@ class RowCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed('/topic');
+        Get.toNamed('/topic', arguments: data);
       },
       child: Container(
         padding: const EdgeInsets.all(10),
