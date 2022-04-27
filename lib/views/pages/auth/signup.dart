@@ -1,23 +1,24 @@
-import 'package:elmhandes/views/widgets/login_card.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:elmohandes/controllers/auth_controller.dart';
+import 'package:elmohandes/views/widgets/login_card.dart';
+import 'package:elmohandes/views/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Login extends StatefulWidget {
-  static String id = 'Login';
+class SignUp extends StatefulWidget {
+  static String id = 'SignUp';
 
-  const Login({Key? key}) : super(key: key);
+  const SignUp({Key key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
-  String username = '', password = '';
-  UserCredential? userCredential;
+class _SignUpState extends State<SignUp> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   final controller = ScrollController();
   double offset = 0;
-  bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +28,22 @@ class _LoginState extends State<Login> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // MyHeader(
-            //   image: "assets/icons/barbecue.svg",
-            //   textTop: "El-Mohandes ",
-            //   textBottom: "الحل لكل مشاكلك",
-            //   offset: offset,
-            // ),
+            MyHeader(
+              image: "assets/icons/barbecue.svg",
+              textTop: "El-Mohandes ",
+              textBottom: "الحل لكل مشاكلك",
+              offset: offset,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  LoginCard(),
+                  LoginCard(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                    title: 'انشاء حساب',
+                  ),
                   const SizedBox(height: 40),
                   InkWell(
                     child: Container(
@@ -50,9 +55,9 @@ class _LoginState extends State<Login> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: login,
+                          onTap: signUp,
                           child: const Center(
-                            child: Text("SIGNIN", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
+                            child: Text("انشاء حساب", style: TextStyle(color: Colors.white, fontFamily: "Poppins-Bold", fontSize: 18, letterSpacing: 1.0)),
                           ),
                         ),
                       ),
@@ -60,32 +65,19 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 40),
                   Row(
-                    children: <Widget>[
-                      const SizedBox(
-                        width: 12.0,
-                      ),
-                      GestureDetector(
-                        onTap: _radio,
-                        child: radioButton(_isSelected),
-                      ),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
-                      const Text("Remember me", style: TextStyle(fontSize: 12, fontFamily: "Poppins-Medium"))
-                    ],
-                  ),
-                  const SizedBox(height: 40),
-                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const Text(
-                        "New User? ",
+                        "لديك حساب بالفعل ؟ ",
                         style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
                       InkWell(
-                        onTap: () {},
-                        child: const Text("SignUp", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
-                      )
+                        onTap: () {
+                          Get.offAllNamed('/login');
+                        },
+                        child: const Text("تسجيل الدخول", style: TextStyle(color: Color(0xFF5d74e3), fontFamily: "Poppins-Bold")),
+                      ),
+                      const SizedBox(height: 40),
                     ],
                   )
                 ],
@@ -103,14 +95,11 @@ class _LoginState extends State<Login> {
     super.dispose();
   }
 
-  void login() async {
-    try {
-      // userCredential = await FirebaseAuth.instance.signInAnonymously();
-
-      Get.offNamed("/main");
-    } on Exception catch (e) {
-      print(e);
-    }
+  void signUp() {
+    AuthController.instance.createUser(
+      emailController.text.trim(),
+      passwordController.text.trim(),
+    );
   }
 
   Widget horizontalLine() => Padding(
@@ -147,10 +136,4 @@ class _LoginState extends State<Login> {
               )
             : Container(),
       );
-
-  void _radio() {
-    setState(() {
-      _isSelected = !_isSelected;
-    });
-  }
 }

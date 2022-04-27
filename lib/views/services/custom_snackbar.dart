@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+
+class CustomSnackbar {
+  String message;
+
+  String title;
+
+  IconData icon;
+
+  CustomSnackbar({
+    this.message,
+    this.title,
+    this.icon,
+  }) {
+    Get.snackbar(
+      title,
+      message,
+      snackPosition: SnackPosition.BOTTOM,
+      icon: Icon(
+        icon,
+        color: Colors.white,
+      ),
+      backgroundColor: Colors.blue,
+      colorText: Colors.white,
+      borderRadius: 25,
+      margin: const EdgeInsets.all(15),
+      duration: const Duration(
+        seconds: 3,
+      ),
+      isDismissible: true,
+      dismissDirection: DismissDirection.horizontal,
+      forwardAnimationCurve: Curves.easeOutBack,
+    );
+  }
+}

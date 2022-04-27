@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
 class LoginCard extends StatelessWidget {
-  bool passwordInvisible = true;
+  final bool passwordInvisible = true;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final String title;
 
-  LoginCard({Key? key}) : super(key: key);
-
+  const LoginCard({
+    this.emailController,
+    this.passwordController,
+    this.title,
+    Key key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,19 +30,24 @@ class LoginCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text("Login", style: TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
+            Text(title, style: const TextStyle(fontSize: 45, fontFamily: "Poppins-Bold", letterSpacing: .6)),
             const SizedBox(
               height: 30,
             ),
-            const Text("Username", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
-            const TextField(
-              decoration: InputDecoration(hintText: "eg: chromicle", hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+            const Text("البريد الالكتروني", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            TextField(
+              controller: emailController,
+              decoration: const InputDecoration(
+                hintText: "Example@site.domin",
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0),
+              ),
             ),
             const SizedBox(
               height: 30,
             ),
-            const Text("PassWord", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
-            TextFormField(
+            const Text("كلمة المرور", style: TextStyle(fontFamily: "Poppins", fontSize: 26)),
+            TextField(
+              controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
                   suffixIcon: IconButton(
