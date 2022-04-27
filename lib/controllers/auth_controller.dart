@@ -40,6 +40,8 @@ class AuthController extends GetxController {
   }
 
   _initialScreen(User user) {
+    // Get.offAllNamed('/main');
+
     if (user == null) {
       Get.offAllNamed('/login');
     } else {
@@ -48,7 +50,10 @@ class AuthController extends GetxController {
   }
 
   _setMembership(User user) async {
-    var snapshot = await FirebaseFirestore.instance.collection(usersCollection).where('id', isEqualTo: auth.currentUser.uid).get();
+    var snapshot = await FirebaseFirestore.instance
+        .collection(usersCollection)
+        .where('id', isEqualTo: auth.currentUser.uid)
+        .get();
 
     _membership = snapshot.docs.first.data()['membership'];
   }
@@ -63,11 +68,6 @@ class AuthController extends GetxController {
         email: auth.currentUser.email,
       );
       _userController.createUser(modle);
-      // await _firestore.collection(usersCollection).add({
-      //   'id': auth.currentUser.uid,
-      //   'membership': -1,
-      //   'email': auth.currentUser.email,
-      // });
     } catch (e) {
       CustomSnackbar(
         title: 'فشل انشاء حساب',

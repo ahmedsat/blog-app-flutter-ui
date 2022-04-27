@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elmohandes/controllers/topic_controller.dart';
+import 'package:elmohandes/core/constants.dart';
+import 'package:elmohandes/views/widgets/accordion.dart';
 import 'package:elmohandes/views/widgets/custom_scaffold.dart';
-import 'package:elmohandes/views/widgets/row_car.dart';
+import 'package:elmohandes/views/widgets/topic_list.dart';
+
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
@@ -14,74 +18,50 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<String> categories = [
-    'الأدوات المطلوبة لصيانة المحمول',
-    'الأجهزة قياس مكونات بوردة المحمول',
-    'الأجهزة المطلوبة في صيانة المحمول',
-    'فك وتركيب اي موبايل',
-    'المكونات المادية للمحمول',
-    'المكونات الألكترونية لبوردة المحمول',
-    'الدوائر الرئيسية في المحمول ',
-    'الدوائر الفرعية في المحول',
-    'كيفية ازالة وتركيب المكونات',
-    'اعطال وحلول',
-  ];
-  List<RowCard> rowCards = [
-    const RowCard(),
-    const RowCard(),
-    const RowCard(),
-    const RowCard(),
-    const RowCard(),
-    const RowCard(),
-  ];
+  final Stream<QuerySnapshot> _categoryStream =
+      FirebaseFirestore.instance.collection(categoryCollection).snapshots();
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          margin: const EdgeInsets.only(
-            left: 10,
-            right: 10,
-            top: 20,
-          ),
-          child: GetX<TopicController>(
-            // init: Get.put<TodoController>(TodoController()),
-            builder: (TopicController topicController) {
-              if (topicController != null && topicController.categorys != null) {
-                return Expanded(
-                  child: ListView.builder(
-                    itemCount: topicController.categorys.length,
-                    itemBuilder: (_, index) {
-                      return Text(topicController.categorys[index].title);
-                    },
-                  ),
-                );
-              } else {
-                return Text("loading...");
-              }
-            },
-          )),
-    );
-  }
-}
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        margin: const EdgeInsets.only(
+          left: 10,
+          right: 10,
+          top: 20,
+        ),
+        child: StreamBuilder<QuerySnapshot>(
+          stream: _categoryStream,
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.hasError) {
+              return Text('Something went wrong');
+            }
 
-/*
-ListView.builder(
-          itemCount: categories.length,
-          itemBuilder: (context, i) {
-            return Accordion(
-              title: categories[i],
-              desc: 'وصف مختصر للقسم',
-              child: Column(
-                children: rowCards,
-              ),
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Text("Loading");
+            }
+            return ListView(
+              children: snapshot.data.docs.map(
+                (DocumentSnapshot document) {
+                  Map<String, dynamic> data =
+                      document.data() as Map<String, dynamic>;
+
+                  return Accordion(
+                    title: document.id,
+                    desc: document['description'],
+                    child: TopicList(
+                      category: document.id,
+                    ),
+                  );
+                },
+              ).toList(),
             );
           },
         ),
-*/
-
-// return TodoCard(
-//   uid: controller.user.uid,
-//   todo: todoController.todos[index],
-// );
+      ),
+    );
+  }
+}

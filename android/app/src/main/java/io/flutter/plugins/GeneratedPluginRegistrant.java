@@ -21,9 +21,59 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin audio_session, com.ryanheise.audio_session.AudioSessionPlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestorePlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin cloud_firestore, io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestorePlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.functions.FlutterFirebaseFunctionsPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin cloud_functions, io.flutter.plugins.firebase.functions.FlutterFirebaseFunctionsPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.analytics.FlutterFirebaseAnalyticsPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_analytics, io.flutter.plugins.firebase.analytics.FlutterFirebaseAnalyticsPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.appcheck.FlutterFirebaseAppCheckPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_app_check, io.flutter.plugins.firebase.appcheck.FlutterFirebaseAppCheckPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_auth, io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.core.FlutterFirebaseCorePlugin());
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin firebase_core, io.flutter.plugins.firebase.core.FlutterFirebaseCorePlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.database.FirebaseDatabasePlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_database, io.flutter.plugins.firebase.database.FirebaseDatabasePlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_messaging, io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.performance.FlutterFirebasePerformancePlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_performance, io.flutter.plugins.firebase.performance.FlutterFirebasePerformancePlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.firebaseremoteconfig.FirebaseRemoteConfigPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_remote_config, io.flutter.plugins.firebase.firebaseremoteconfig.FirebaseRemoteConfigPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.storage.FlutterFirebaseStoragePlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin firebase_storage, io.flutter.plugins.firebase.storage.FlutterFirebaseStoragePlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new com.ryanheise.just_audio.JustAudioPlugin());
